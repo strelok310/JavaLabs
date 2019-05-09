@@ -1,0 +1,10 @@
+Utils.ReflectTest
+output
+PrintHello
+java.lang.Integer java.lang.String java.lang.String
+23 Random SomeParameter
+Check
+java.lang.Integer
+java.lang.String
+5
+time
