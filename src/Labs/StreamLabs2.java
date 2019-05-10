@@ -1,14 +1,13 @@
-import Utils.*;
-import kotlin.Pair;
+package Labs;
 
-import java.sql.SQLOutput;
+import Utils.Streams2.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamLabs2 {
@@ -218,7 +217,7 @@ public class StreamLabs2 {
             return fullstrList;
         }).orElse(new ArrayList<>());
         System.out.println(fullList);
-        
+
     }
 
 }

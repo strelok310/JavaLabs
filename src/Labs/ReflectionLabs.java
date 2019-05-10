@@ -1,6 +1,8 @@
-import Utils.CustomInvocationHandler;
-import Utils.ReflectTest;
-import Utils.ReflectionTestInterface;
+package Labs;
+
+import Utils.Reflection.CustomInvocationHandler;
+import Utils.Reflection.ReflectTest;
+import Utils.Reflection.ReflectionTestInterface;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,8 +29,8 @@ public class ReflectionLabs {
             //==========================================================================================================
 
             Class<?> obj = Class.forName(className);
-            //Class<?> obj = Class.forName("Utils.ReflectTest");
-            /*Object unknown = new Utils.ReflectTest();
+            //Class<?> obj = Class.forName("Utils.Reflection.ReflectTest");
+            /*Object unknown = new Utils.Reflection.ReflectTest();
             Class<?> obj = unknown.getClass();*/
 
             //Method[] methods = obj.getMethods();

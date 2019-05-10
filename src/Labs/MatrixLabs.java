@@ -1,4 +1,6 @@
-import Utils.Matrix;
+package Labs;
+
+import Utils.Matrix.Matrix;
 
 public class MatrixLabs {
     public static void main(String args[]) throws Exception {

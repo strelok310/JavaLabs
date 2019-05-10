@@ -1,4 +1,4 @@
-package Utils;
+package Utils.Reflection;
 
 public interface ReflectionTestInterface {
     public int sum(int a, int b);

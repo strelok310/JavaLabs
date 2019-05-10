@@ -1,3 +1,5 @@
+package Labs;
+
 import java.lang.annotation.Annotation;
 
 public class AnnotationLab {

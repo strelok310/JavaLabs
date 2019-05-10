@@ -1,6 +1,6 @@
-package Utils;
+package Utils.Reflection;
 
-import Utils.ReflectionTestInterface;
+import Utils.Reflection.ReflectionTestInterface;
 
 public class ReflectTest implements ReflectionTestInterface {
 

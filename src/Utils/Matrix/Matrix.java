@@ -1,4 +1,4 @@
-package Utils;
+package Utils.Matrix;
 
 import java.io.FileReader;
 import java.util.Scanner;

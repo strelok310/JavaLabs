@@ -1,4 +1,6 @@
-package Utils;
+package Utils.Reflection;
+
+import Utils.Reflection.ReflectTest;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

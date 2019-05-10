@@ -1,4 +1,4 @@
-Utils.ReflectTest
+Utils.Reflection.ReflectTest
 output
 PrintHello
 java.lang.Integer java.lang.String java.lang.String
