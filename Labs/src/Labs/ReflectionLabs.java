@@ -29,13 +29,7 @@ public class ReflectionLabs {
             //==========================================================================================================
 
             Class<?> obj = Class.forName(className);
-            //Class<?> obj = Class.forName("Utils.Reflection.ReflectTest");
-            /*Object unknown = new Utils.Reflection.ReflectTest();
-            Class<?> obj = unknown.getClass();*/
 
-            //Method[] methods = obj.getMethods();
-            //Field[] fields = obj.getFields();
-            //Constructor[] constructors = obj.getConstructors();
             Method[] methods = obj.getDeclaredMethods();
             Field[] fields = obj.getDeclaredFields();
             Constructor[] constructors = obj.getDeclaredConstructors();
