@@ -1,6 +1,9 @@
 import Utils.FileTest;
+import Utils.LoggedPerson;
 import Utils.Person;
+import Utils.UserData;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -36,26 +39,32 @@ public class StreamLabs2 {
         //==============================================================================================================
 
         System.out.println("\nSort Persons List by createdAt and logged");
-        personsList.get(0).logged = true;
-        System.out.println(personsList);
-        Stream dateLoggedStream = personsList.stream().filter((x) -> x.createdAt.isBefore(date) && x.logged);
-        System.out.println(Arrays.toString(dateLoggedStream.toArray(Person[]::new)));
+        ArrayList<LoggedPerson> loggedPersonsList = new ArrayList<>(Arrays.asList(
+                new LoggedPerson("Ivan","Ivanow", LocalDateTime.of(2019,1,15,5,17,53)),
+                new LoggedPerson("Alex","Alex", LocalDateTime.of(2019,4,8,10,55,26)),
+                new LoggedPerson("Peter","Peter", LocalDateTime.of(2019,3,29,12,3,8)),
+                new LoggedPerson("Nikita","Nikita", LocalDateTime.of(2019,2,28,9,15,46))
+        ));
+        loggedPersonsList.get(0).logged = true;
+        System.out.println(loggedPersonsList);
+        Stream dateLoggedStream = loggedPersonsList.stream().filter((x) -> x.createdAt.isBefore(date) && x.logged);
+        System.out.println(Arrays.toString(dateLoggedStream.toArray(LoggedPerson[]::new)));
 
         //==============================================================================================================
 
-        System.out.println("\nStream of even elements id");
-        ArrayList<Integer> evenList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
-        System.out.println(evenList);
-        Stream<Integer> evenStream = evenList.stream().skip(evenList.size()/2);
-        System.out.println(Arrays.toString(evenStream.toArray(Integer[]::new)));
+        System.out.println("\nStream with second half of the array");
+        ArrayList<Integer> numList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
+        System.out.println(numList);
+        Stream<Integer> secondHalfStream = numList.stream().skip(numList.size()/2 + numList.size()%2);
+        System.out.println(Arrays.toString(secondHalfStream.toArray(Integer[]::new)));
 
         //==============================================================================================================
 
         System.out.println("\nReturn selected element of Array");
-        System.out.println(evenList);
-        int value = evenList.stream().skip(5).findFirst().orElse(42);
+        System.out.println(numList);
+        int value = numList.stream().skip(5).findFirst().orElse(42);
         System.out.println("6) " + value);
-        value = evenList.stream().skip(12).findFirst().orElse(42);
+        value = numList.stream().skip(12).findFirst().orElse(42);
         System.out.println("12) " + value);
 
         //==============================================================================================================
@@ -94,9 +103,68 @@ public class StreamLabs2 {
                 else x.name = x.name + "_outdated";
             }
         });
-        System.out.println(Arrays.toString(addfileStream.toArray(FileTest[]::new)));
+        //System.out.println(Arrays.toString(addfileStream.toArray(FileTest[]::new)));
+        System.out.println("[");
+        addfileStream.forEach((x) -> System.out.println(x.toString() + ","));
+        System.out.println("]");
 
         //==============================================================================================================
+
+        System.out.println("\nStream with first half of the array");
+        System.out.println(numList);
+        Stream<Integer> firstHalfStream = numList.stream().limit(numList.size()/2 + numList.size()%2);
+        System.out.println(Arrays.toString(firstHalfStream.toArray(Integer[]::new)));
+
+        //==============================================================================================================
+
+        System.out.println("\nStream with third in the center of array");
+        ArrayList<Integer> numList2 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9));
+        System.out.println(numList2);
+        Stream<Integer> thirdStream = numList2.stream().skip(numList2.size()/3).limit(numList2.size()/3);
+        System.out.println(Arrays.toString(thirdStream.toArray(Integer[]::new)));
+
+        //==============================================================================================================
+
+        System.out.println("\nStream with 2 elements before the center of array");
+        System.out.println(numList);
+        Stream<Integer> centerStream = numList.stream().skip(numList.size()/2-2).limit(2);
+        System.out.println(Arrays.toString(centerStream.toArray(Integer[]::new)));
+
+        //==============================================================================================================
+
+        System.out.println("\nRevert sort array");
+        System.out.println(numList);
+        Stream<Integer> sortedStream = numList.stream().sorted((x,y) -> y - x);
+        System.out.println(Arrays.toString(sortedStream.toArray(Integer[]::new)));
+
+        //==============================================================================================================
+
+        System.out.println("\nRevert sort of user class array");
+        ArrayList<UserData> dataList = new ArrayList<>(Arrays.asList(
+            new UserData(15,"asd", LocalDate.of(2019,5,1)),
+            new UserData(9,"asd", LocalDate.of(2019,7,13)),
+            new UserData(100,"asd", LocalDate.of(2019,5,1)),
+            new UserData(85,"asd", LocalDate.of(2022,5,5)),
+            new UserData(100,"bcd", LocalDate.of(2019,5,1)),
+            new UserData(26,"asd", LocalDate.of(2016,5,12)),
+            new UserData(15,"asd", LocalDate.of(2014,5,10)),
+            new UserData(7,"asd", LocalDate.of(2019,3,8)),
+            new UserData(26,"asd", LocalDate.of(2018,5,10)),
+            new UserData(15,"asd", LocalDate.of(2018,5,10)),
+            new UserData(100,"qwe", LocalDate.of(2019,5,1))
+        ));
+        System.out.println(dataList);
+        Stream dataStream = dataList.stream().sorted((x,y) -> {
+            int result = y.date.compareTo(x.date);
+            if(result == 0) result = Long.compare(x.id, y.id);
+            if(result == 0) result = x.name.compareTo(y.name);
+            return result;
+        });
+        System.out.println(Arrays.toString(dataStream.toArray(UserData[]::new)));
+
+        //==============================================================================================================
+
+
 
     }
 
