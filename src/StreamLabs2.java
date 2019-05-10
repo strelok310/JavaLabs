@@ -1,7 +1,5 @@
-import Utils.FileTest;
-import Utils.LoggedPerson;
-import Utils.Person;
-import Utils.UserData;
+import Utils.*;
+import kotlin.Pair;
 
 import java.sql.SQLOutput;
 import java.time.LocalDate;
@@ -164,6 +162,46 @@ public class StreamLabs2 {
 
         //==============================================================================================================
 
+        System.out.println("\nStream with sorted unique strings");
+        ArrayList<String> stringList = new ArrayList<>(Arrays.asList(
+                "Peach",
+                "Apple",
+                "Grass",
+                "Tree",
+                "Apple",
+                "Wolf",
+                "Tree",
+                "Pineapple",
+                "Elephant",
+                "Animal",
+                "Banana"
+        ));
+        System.out.println(stringList);
+        Stream stringStream = stringList.stream().distinct().sorted();
+        System.out.println(Arrays.toString(stringStream.toArray(String[]::new)));
+
+        //==============================================================================================================
+
+        System.out.println("\nStream with sorted unique strings");
+        ArrayList<String> strnumList = new ArrayList<>(Arrays.asList(
+                "Peach_5",
+                "Apple_6",
+                "Grass_23",
+                "Tree_16",
+                "Apple_67",
+                "Wolf_16",
+                "Tree_1",
+                "Pineapple_23",
+                "Elephant_5",
+                "Animal_23",
+                "Banana_16"
+        ));
+        System.out.println(strnumList);
+        Stream strnumStream = strnumList.stream().map((x) -> {
+            String str[] = x.split("_");
+            return new MyPair(Integer.parseInt(str[1]), str[0]);
+        }).distinct().sorted((x,y) -> y.value - x.value).map((x) -> x.toString());
+        System.out.println(Arrays.toString(strnumStream.toArray(String[]::new)));
 
 
     }
