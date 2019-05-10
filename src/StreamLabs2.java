@@ -203,7 +203,22 @@ public class StreamLabs2 {
         }).distinct().sorted((x,y) -> y.value - x.value).map((x) -> x.toString());
         System.out.println(Arrays.toString(strnumStream.toArray(String[]::new)));
 
+        //==============================================================================================================
 
+        System.out.println("\nStream with sorted unique strings");
+        ArrayList<String> strList1 = new ArrayList<>(Arrays.asList("Peach","Apple"));
+        ArrayList<String> strList2 = new ArrayList<>(Arrays.asList("Grass","Tree","Wolf","Pineapple"));
+        ArrayList<String> strList3 = new ArrayList<>(Arrays.asList("Elephant","Animal","Banana"));
+        ArrayList<ArrayList<String>> strList = new ArrayList<>(Arrays.asList(strList1, strList2, strList3));
+        System.out.println(strList);
+        ArrayList<String> fullList = strList.stream().reduce((x,y) -> {
+            ArrayList<String> fullstrList = new ArrayList<>();
+            fullstrList.addAll(x);
+            fullstrList.addAll(y);
+            return fullstrList;
+        }).orElse(new ArrayList<>());
+        System.out.println(fullList);
+        
     }
 
 }
