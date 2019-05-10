@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bc58157-0a5b-4e8b-b08f-3548337bc97a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class.txt" beforeDir="false" afterPath="$PROJECT_DIR$/class.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix_A_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix_B_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AnnotationLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labs/AnnotationLab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MatrixLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labs/MatrixLabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReflectionLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labs/ReflectionLabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StreamLabs1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labs/StreamLabs1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StreamLabs2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labs/StreamLabs2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/CustomInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Reflection/CustomInvocationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Streams2/FileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/LoggedPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Streams2/LoggedPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Matrix/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/MyPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Streams2/MyPair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Streams2/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/ReflectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Reflection/ReflectTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/ReflectionTestInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Reflection/ReflectionTestInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Streams2/UserData.java" afterDir="false" />
-    </list>
+    <list default="true" id="5bc58157-0a5b-4e8b-b08f-3548337bc97a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -271,7 +251,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18869936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
