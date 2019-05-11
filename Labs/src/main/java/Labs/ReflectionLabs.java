@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class ReflectionLabs {
     public static void main(String args[]) throws Exception {
         try {
-            //Scanner in = new Scanner(new FileReader("class.txt"));
-            Scanner in = new Scanner(new FileReader(ClassLoader.getSystemClassLoader().getResource("resources/class.txt").getFile()));
+            Scanner in = new Scanner(new FileReader("class.txt"));
+            //Scanner in = new Scanner(new FileReader(ClassLoader.getSystemClassLoader().getResource("class.txt").getFile()));
 
             String className = in.nextLine();
             String fieldName = in.nextLine();

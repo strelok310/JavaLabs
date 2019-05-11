@@ -50,7 +50,7 @@ public class StreamLabs1 {
         System.out.println("\nStream from string");
         String str = "A string";
         IntStream intStream = str.chars();
-        Stream<String> stringStream = intStream.mapToObj((x) -> Character.toString(x));
+        Stream<String> stringStream = intStream.mapToObj((x) -> Character.toString((char)x));
         System.out.println(Arrays.toString(stringStream.toArray(String[]::new)));
     }
 
