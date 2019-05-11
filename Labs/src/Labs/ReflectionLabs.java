@@ -4,6 +4,7 @@ import Utils.Reflection.CustomInvocationHandler;
 import Utils.Reflection.ReflectTest;
 import Utils.Reflection.ReflectionTestInterface;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.*;
@@ -13,7 +14,8 @@ import java.util.Scanner;
 public class ReflectionLabs {
     public static void main(String args[]) throws Exception {
         try {
-            Scanner in = new Scanner(new FileReader("class.txt"));
+            //Scanner in = new Scanner(new FileReader("class.txt"));
+            Scanner in = new Scanner(new FileReader(ClassLoader.getSystemClassLoader().getResource("resources/class.txt").getFile()));
 
             String className = in.nextLine();
             String fieldName = in.nextLine();
