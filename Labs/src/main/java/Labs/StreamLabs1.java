@@ -42,7 +42,8 @@ public class StreamLabs1 {
 
     public static void Task4() throws Exception {
         System.out.println("\nStream from file");
-        Stream<String> fileStream = Files.lines(Paths.get("stream_example.txt"));
+        //Stream<String> fileStream = Files.lines(Paths.get("stream_example.txt"));
+        Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("stream_example.txt").toURI()));
         System.out.println(Arrays.toString(fileStream.toArray(String[]::new)));
     }
 

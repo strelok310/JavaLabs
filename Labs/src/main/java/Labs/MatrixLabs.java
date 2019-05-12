@@ -12,8 +12,10 @@ public class MatrixLabs {
         //b.fillRandom(0, 9);
 
         try {
-            a.fillFromFile("matrix_A.txt");
-            b.fillFromFile("matrix_B.txt");
+            //a.fillFromFile("matrix_A.txt");
+            //b.fillFromFile("matrix_B.txt");
+            a.fillFromFile(ClassLoader.getSystemClassLoader().getResource("matrix_A.txt").getFile());
+            b.fillFromFile(ClassLoader.getSystemClassLoader().getResource("matrix_B.txt").getFile());
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
