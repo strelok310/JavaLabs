@@ -53,10 +53,27 @@
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
+          <!--<executions>
+            <execution>
+              <id>tomcat-run</id>
+              <goals>
+                <goal>exec-war-only</goal>
+              </goals>
+              <phase>package</phase>
+              <configuration>
+                <path>SimpleServlet</path>
+              </configuration>
+            </execution>
+          </executions>-->
           <configuration>
+            <url>http://localhost:8080/manager/text</url>
+            <server>TomcatServer</server>
+            <path>/SimpleServlet</path>
+          </configuration>
+          <!--<configuration>
             <port>8888</port>
             <path>/</path>
-          </configuration>
+          </configuration>-->
         </plugin>
         <!--<plugin>
           <groupId>org.apache.maven.plugins</groupId>
