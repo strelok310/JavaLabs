@@ -43,22 +43,20 @@ public class ReflectTest implements ReflectionTestInterface {
         this.name = name;
     }
 
-    public void ChangeValue(int value) {
+    public void changeValue(int value) {
         this.value = value;
     }
 
-    public void Print() {
+    public void print() {
         System.out.println(this.output);
     }
 
-    private void PrintHello() {
+    private void printHello() {
         System.out.println("Hello, " + this.output);
     }
 
-    private boolean Check(int value) {
-        if(this.value > value) logic = true;
-        else logic = false;
-        return logic;
+    private boolean check(int value) {
+        return logic = this.value > value;
     }
 
     public int sum(int a, int b) {

@@ -24,4 +24,7 @@ public class UserData {
     public String toString() {
         return "\n{id:\"" + this.id + "\", name:\"" + this.name + "\", date:\"" + this.date + "\"}";
     }
+    public String toStringItem() {
+        return "{id:\"" + this.id + "\", name:\"" + this.name + "\", date:\"" + this.date + "\"}";
+    }
 }

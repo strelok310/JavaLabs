@@ -1,9 +1,9 @@
 Utils.Reflection.ReflectTest
 output
-PrintHello
+printHello
 java.lang.Integer java.lang.String java.lang.String
 23 Random SomeParameter
-Check
+check
 java.lang.Integer
 java.lang.String
 5
