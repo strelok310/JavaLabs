@@ -2,6 +2,8 @@ package Labs;
 
 import Utils.Streams2.UserData;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -110,8 +112,24 @@ public class StreamLabs3 {
         System.out.println(map);
     }
 
-    static void task4() {
-        
+    static void task4() throws Exception {
+        Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8);
+        //ArrayList<Integer> list = stream.collect(Collectors.toList());
+
+        Method a = Class.class.getDeclaredMethod("getPrimitiveClass");
+        a.setAccessible(true);
+        Class<?> b = (Class<?>)(a.invoke(null, "int"));
+
+        Arrays.stream(b.getDeclaredFields()).forEach((x) -> System.out.println(x));
+
+
+    }
+
+    static void asd() throws Exception {
+        Field field = String.class.getDeclaredField("value");
+        field.setAccessible(true);
+        field.set("hello", "bue".toCharArray());
+        System.out.println("hello");
     }
 }
 
