@@ -116,10 +116,11 @@ public class StreamLabs3 {
         Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8);
         //ArrayList<Integer> list = stream.collect(Collectors.toList());
 
-        Method a = Class.class.getDeclaredMethod("getPrimitiveClass");
+        Method a = Class.class.getDeclaredMethod("getPrimitiveClass", String.class);
         a.setAccessible(true);
         Class<?> b = (Class<?>)(a.invoke(null, "int"));
 
+        System.out.println(b.getDeclaredFields().length);
         Arrays.stream(b.getDeclaredFields()).forEach((x) -> System.out.println(x));
 
 
