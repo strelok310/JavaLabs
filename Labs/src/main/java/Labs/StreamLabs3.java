@@ -4,11 +4,11 @@ import Utils.Streams2.UserData;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamLabs3 {
@@ -116,22 +116,41 @@ public class StreamLabs3 {
         Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8);
         //ArrayList<Integer> list = stream.collect(Collectors.toList());
 
-        Method a = Class.class.getDeclaredMethod("getPrimitiveClass", String.class);
-        a.setAccessible(true);
-        Class<?> b = (Class<?>)(a.invoke(null, "int"));
-
-        System.out.println(b.getDeclaredFields().length);
-        Arrays.stream(b.getDeclaredFields()).forEach((x) -> System.out.println(x));
-
-
+        asd();
+        asd2();
     }
 
     static void asd() throws Exception {
+        Field modifiersField = Field.class.getDeclaredField( "modifiers" );
+        modifiersField.setAccessible( true );
+
+
         Field field = String.class.getDeclaredField("value");
+
+        modifiersField.setInt( field, field.getModifiers() & ~Modifier.FINAL );
+
         field.setAccessible(true);
         field.set("hello", "bue".toCharArray());
         System.out.println("hello");
     }
+
+    static void asd2() throws Exception {
+        Field field = Integer.class.getDeclaredClasses()[0].getDeclaredField("cache");
+        field.setAccessible(true);
+        Integer[] cache = (Integer[]) field.get(null);
+        Integer.valueOf(65535);
+        System.out.println(Arrays.toString(cache));
+        System.out.println(cache[129]);
+        System.out.println(cache[170]);
+        cache[129] = cache[170];
+        System.out.println(Integer.valueOf(1) == Integer.valueOf(42));
+
+        int a = Integer.valueOf(1);
+        int b = Integer.valueOf(42);
+        System.out.println(a == b);
+    }
+
+
 }
 
 
