@@ -2,17 +2,22 @@ package Labs;
 
 import Utils.Streams2.UserData;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamLabs3 {
-    public static void main(String args[]) {
-        Task1();
-        Task2();
+    public static void main(String args[]) throws Exception {
+        task1();
+        task2();
+        task3();
+        task4();
     }
 
-    static void Task1() {
+    static void task1() {
         System.out.println("\nReturn first element of array");
         ArrayList<UserData> dataList = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
@@ -41,14 +46,14 @@ public class StreamLabs3 {
         System.out.println(item.toStringItem());
     }
 
-    static void Task2() {
+    static void task2() {
         System.out.println("\nReturn first element of array");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
                 new UserData(100,"Info.txt", LocalDate.of(2020,5,17)),
                 new UserData(85,"Labs.docx", LocalDate.of(2022,5,5)),
-                new UserData(100,"secret.rar", LocalDate.of(2019,5,1))
+                new UserData(113,"secret.rar", LocalDate.of(2019,5,1))
         ));
 
         System.out.println("Input:");
@@ -81,4 +86,69 @@ public class StreamLabs3 {
 
         Arrays.stream(int.class.getDeclaredMethods()).forEach((x) -> System.out.println(x));
     }
+
+    static void task3() throws Exception {
+        System.out.println("\nCount words and sort");
+        Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
+
+        System.out.println("Intput:\nwordCount.txt");
+
+        HashMap<String, Integer> map = new HashMap<>();
+        String[] words = fileStream
+            .flatMap((x) -> Arrays.stream(x.split(" ")))
+            .peek((x) -> {
+                if(map.containsKey(x)) map.replace(x, map.get(x) + 1);
+                else map.put(x, 1);
+            })
+            .distinct()
+            .sorted((x, y) -> map.get(y) - map.get(x))
+            .toArray(String[]::new);
+
+        System.out.println("Output:");
+        System.out.println(Arrays.toString(words));
+        System.out.println("Word frequency:");
+        System.out.println(map);
+    }
+
+    static void task4() {
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
