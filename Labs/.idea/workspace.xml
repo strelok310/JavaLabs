@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wordCount.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wordCount.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="367">
+              <caret line="257" column="46" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,29 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/wordCount.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="246" column="23" lean-forward="true" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="7" column="60" lean-forward="true" selection-end-line="9" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Integer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="802" column="23" selection-start-line="802" selection-start-column="20" selection-end-line="802" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/CustomInvocationHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="432">
+              <caret line="287" column="69" lean-forward="true" selection-start-line="287" selection-start-column="69" selection-end-line="287" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -123,10 +114,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/class.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Reflection/ReflectTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/wordCount.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/wordCount.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" />
       </list>
     </option>
   </component>
@@ -230,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ReflectionLabs">
+  <component name="RunManager" selected="Application.StreamLabs3">
     <configuration name="MatrixLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.MatrixLabs" />
       <module name="Labs" />
@@ -306,8 +297,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ReflectionLabs" />
         <item itemvalue="Application.StreamLabs3" />
+        <item itemvalue="Application.ReflectionLabs" />
         <item itemvalue="Application.StreamLabs2" />
         <item itemvalue="Application.StreamLabs1" />
         <item itemvalue="Application.MatrixLabs" />
@@ -503,7 +494,6 @@
     </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/reflect/FieldAccessor.class" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/reflect/Field.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/wordCount.txt" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/Writer.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/PrintStream.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java" />
@@ -512,13 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="46" column="79" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6409">
-          <caret line="393" column="29" selection-start-line="393" selection-start-column="29" selection-end-line="393" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -562,16 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -581,8 +554,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="246" column="23" lean-forward="true" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
+        <state relative-caret-position="282">
+          <caret line="247" column="50" lean-forward="true" selection-start-line="247" selection-start-column="50" selection-end-line="247" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/wordCount.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="60" lean-forward="true" selection-end-line="9" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="287" column="69" lean-forward="true" selection-start-line="287" selection-start-column="69" selection-end-line="287" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="257" column="46" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

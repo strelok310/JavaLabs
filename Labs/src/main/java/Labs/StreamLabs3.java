@@ -21,6 +21,10 @@ public class StreamLabs3 {
         task2();
         task3();
         task4();
+        task5();
+        task6();
+        task7();
+        task8();
     }
 
     static void task1() {
@@ -135,7 +139,7 @@ public class StreamLabs3 {
 
     }
 
-    static void task4() throws Exception {
+    static void task4() {
         System.out.println(LINE);
         System.out.println("Create ArrayList from stream");
         Integer[] mas = {1,2,3,4,5,6,7,8};
@@ -155,11 +159,108 @@ public class StreamLabs3 {
         System.out.println(list);
     }
 
-    static void task5() throws Exception {
+    static void task5() {
+        System.out.println(LINE);
+        System.out.println("Filter string list by length");
 
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(
+                "Mind",
+                "Desert",
+                "Snowfall",
+                "Rendering",
+                "Harem",
+                "Fiancee",
+                "Overlord",
+                "Professional",
+                "Coal",
+                "Art",
+                "Meltdown"
+        ));
+        System.out.println("Input:");
+        System.out.println(list);
+
+        System.out.println("\nOutput:");
+
+        System.out.println("Words with length less then 6:");
+        Stream<String> stream = list.stream().filter((x) -> x.length() <= 5);
+        System.out.println(stream.collect(Collectors.toList()));
+
+        System.out.println("Words with length less then 9:");
+        stream = list.stream().filter((x) -> x.length() <= 8);
+        System.out.println(stream.collect(Collectors.toList()));
     }
 
+    static void task6() throws Exception {
+        System.out.println(LINE);
+        System.out.println("Return HashMap with words and their count");
+        Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
 
+        System.out.println("Input:\nwordCount.txt");
+
+        HashMap<String, Long> map = new HashMap<>(fileStream.flatMap((x) -> Arrays.stream(x.split(" ")))
+                .collect(Collectors.groupingBy(String::toString, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .sorted((x,y) -> Math.toIntExact(y.getValue() - x.getValue()))
+                /*.sorted((x,y) -> {
+                    int value = Math.toIntExact(y.getValue() - x.getValue());
+                    if(value == 0) value = y.getKey().compareTo(x.getKey());
+                    return value;
+                })*/
+                .limit(10)
+                .collect(Collectors.toMap((x) -> x.getKey(), (x) -> x.getValue())) );
+
+        /*HashMap<String, Long> map = fileStream.flatMap((x) -> Arrays.stream(x.split(" ")))
+                .collect(Collectors.groupingBy(String::toString, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .sorted((x,y) -> Math.toIntExact(y.getValue() - x.getValue()))
+                .limit(10)
+                .collect(Collector.of(  HashMap::new,
+                                        (x, item) -> x.put(item.getKey(), item.getValue()),
+                                        (x, y) -> { x.putAll(y); return x; }) );*/
+
+        System.out.println("\nOutput:");
+        System.out.println(map);
+    }
+
+    static void task7() throws Exception {
+        System.out.println(LINE);
+        System.out.println("Return HashMap with words and their probability");
+        Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
+
+        System.out.println("Input:\nwordCount.txt");
+
+        HashMap<String, Long> map = new HashMap<>(fileStream.flatMap((x) -> Arrays.stream(x.split(" ")))
+                                            .collect(Collectors.groupingBy(String::toString, Collectors.counting())));
+
+        int words = map.entrySet()
+                        .stream()
+                        .mapToInt((x) -> Math.toIntExact(x.getValue()))
+                        .sum();
+
+        HashMap<String, Float> freqMap = new HashMap<>(map.entrySet()
+                .stream()
+                .sorted((x,y) -> Math.toIntExact(y.getValue() - x.getValue()))
+                .limit(10)
+                .collect(Collectors.toMap((x) -> x.getKey(), (x) -> x.getValue() * 100 / Float.valueOf(words))) );
+
+        System.out.println("\nOutput:");
+        System.out.println(freqMap);
+    }
+
+    static void task8() {
+        System.out.println(LINE);
+        System.out.println("Return size of array");
+        Integer[] mas = {1,2,3,4,5,6,7,8};
+
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(mas));
+
+        System.out.println("\nOutput:");
+        long size = Arrays.stream(mas).count();
+        System.out.println(size);
+    }
 }
 
 
