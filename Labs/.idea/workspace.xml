@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="123" column="75" lean-forward="true" selection-start-line="123" selection-start-column="75" selection-end-line="123" selection-end-column="75" />
+            <state relative-caret-position="224">
+              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,38 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Class.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="2381" column="33" lean-forward="true" selection-start-line="2381" selection-start-column="33" selection-end-line="2381" selection-end-column="33" />
+            <state relative-caret-position="231">
+              <caret line="221" column="48" lean-forward="true" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/CustomInvocationHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="84" column="44" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/constant/Constable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="33" column="68" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/constant/ConstantDesc.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="69" />
+            <state relative-caret-position="255">
+              <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -130,11 +113,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Utils/Reflection/CustomInvocationHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/class.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Reflection/ReflectTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java" />
         <option value="$PROJECT_DIR$/src/main/resources/wordCount.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
       </list>
     </option>
   </component>
@@ -157,7 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,40 +196,13 @@
               <item name="Labs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-              <item name="Streams2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Labs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Labs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Labs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Labs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="Labs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StreamLabs3">
+  <component name="RunManager" selected="Application.ReflectionLabs">
     <configuration name="MatrixLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.MatrixLabs" />
       <module name="Labs" />
@@ -291,6 +247,7 @@
     <configuration name="ReflectionLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.ReflectionLabs" />
       <module name="Labs" />
+      <option name="VM_PARAMETERS" value="-XX:AutoBoxCacheMax=65536" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Labs.*" />
@@ -330,7 +287,6 @@
     <configuration name="StreamLabs3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.StreamLabs3" />
       <module name="Labs" />
-      <option name="VM_PARAMETERS" value="--illegal-access=warn -XX:AutoBoxCacheMax=65536" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Labs.*" />
@@ -350,8 +306,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StreamLabs3" />
         <item itemvalue="Application.ReflectionLabs" />
+        <item itemvalue="Application.StreamLabs3" />
         <item itemvalue="Application.StreamLabs2" />
         <item itemvalue="Application.StreamLabs1" />
         <item itemvalue="Application.MatrixLabs" />
@@ -373,8 +329,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1652452" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -383,7 +340,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -471,13 +428,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/CustomInvocationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="78" lean-forward="true" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/ReflectionTestInterface.java">
@@ -573,50 +523,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="209" column="22" lean-forward="true" selection-start-line="209" selection-start-column="22" selection-end-line="209" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/constant/ConstantDesc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/constant/Constable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="33" column="68" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/io/PrintStream.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/System.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/constant/ConstantDesc.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/constant/Constable.java" />
     <entry file="file://$PROJECT_DIR$/target/classes/Labs/StreamLabs3.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1306" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/reflect/AccessibleObject.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/jdk/internal/reflect/ConstantPool.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Integer.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/String.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/reflect/Field.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Class.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/ReflectTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="-306">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding>
             <element signature="e#1343#1344#0" expanded="true" />
             <element signature="e#1392#1393#0" expanded="true" />
@@ -631,51 +556,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/reflect/AccessibleObject.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/jdk/internal/reflect/ConstantPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="84" column="44" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="148" column="17" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="73" column="41" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="2381" column="33" lean-forward="true" selection-start-line="2381" selection-start-column="33" selection-end-line="2381" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="123" column="75" lean-forward="true" selection-start-line="123" selection-start-column="75" selection-end-line="123" selection-end-column="75" />
+        <state relative-caret-position="224">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/CustomInvocationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="221" column="48" lean-forward="true" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
         </state>
       </provider>
     </entry>

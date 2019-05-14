@@ -116,39 +116,9 @@ public class StreamLabs3 {
         Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8);
         //ArrayList<Integer> list = stream.collect(Collectors.toList());
 
-        asd();
-        asd2();
     }
 
-    static void asd() throws Exception {
-        Field modifiersField = Field.class.getDeclaredField( "modifiers" );
-        modifiersField.setAccessible( true );
 
-
-        Field field = String.class.getDeclaredField("value");
-
-        modifiersField.setInt( field, field.getModifiers() & ~Modifier.FINAL );
-
-        field.setAccessible(true);
-        field.set("hello", "bue".toCharArray());
-        System.out.println("hello");
-    }
-
-    static void asd2() throws Exception {
-        Field field = Integer.class.getDeclaredClasses()[0].getDeclaredField("cache");
-        field.setAccessible(true);
-        Integer[] cache = (Integer[]) field.get(null);
-        Integer.valueOf(65535);
-        System.out.println(Arrays.toString(cache));
-        System.out.println(cache[129]);
-        System.out.println(cache[170]);
-        cache[129] = cache[170];
-        System.out.println(Integer.valueOf(1) == Integer.valueOf(42));
-
-        int a = Integer.valueOf(1);
-        int b = Integer.valueOf(42);
-        System.out.println(a == b);
-    }
 
 
 }

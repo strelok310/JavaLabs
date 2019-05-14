@@ -15,6 +15,12 @@ import java.util.Scanner;
 
 public class ReflectionLabs {
     public static void main(String args[]) throws Exception {
+        task1();
+        task2();
+        task3();
+    }
+
+    static void task1() throws Exception {
         //Scanner in = new Scanner(new FileReader("class.txt"));
         //Scanner in = new Scanner(new FileReader(ClassLoader.getSystemClassLoader().getResource("class.txt").getFile()));
         Scanner in = new Scanner(new FileReader(ClassLoader.getSystemResource("class.txt").getFile()));
@@ -189,7 +195,7 @@ public class ReflectionLabs {
 
         //==========================================================================================================
 
-        System.out.println("Method override");
+        System.out.println("\nProxy for method:");
 
         ReflectTest testObjectProxy = new ReflectTest();
         ClassLoader classLoaderProxy = testObjectProxy.getClass().getClassLoader();
@@ -203,8 +209,53 @@ public class ReflectionLabs {
         proxy.test(512,65535);
     }
 
-    static int asd(int val) {
-        int b;
-        return b = val;
+    static void task2() throws Exception {
+        System.out.println("\nPrint hello (bye)");
+
+        Field modifiersField = Field.class.getDeclaredField( "modifiers" );
+        //modifiersField.setAccessible( true );
+
+        Field field = String.class.getDeclaredField("value");
+        //modifiersField.setInt( field, field.getModifiers() & ~Modifier.FINAL );
+
+        field.setAccessible(true);
+        field.set("hello", "bye".toCharArray());
+
+        System.out.println("hello");
+    }
+
+    static void task3() throws Exception {
+        System.out.println("\nChange logic 1 == 42");
+
+        Field field = Integer.class.getDeclaredClasses()[0].getDeclaredField("cache");
+        field.setAccessible(true);
+        Integer[] cache = (Integer[]) field.get(null);
+
+        cache[129] = cache[170];    //1 == 42
+        cache[130] = cache[65663];  //2 == 65535
+        cache[640] = cache[65663];  //512 == 65535
+
+        //==============================================================================================================
+
+        System.out.println("1 == 42 " + (Integer.valueOf(1) == Integer.valueOf(42)));
+
+        int a = Integer.valueOf(1);
+        int b = Integer.valueOf(42);
+        System.out.println("1 == 42 " + (a == b));
+
+        Integer c = 1;
+        Integer d = 42;
+        System.out.println("1 == 42 " + (c == d));
+
+        //==============================================================================================================
+
+        int e = Integer.valueOf(2);
+        int f = Integer.valueOf(65535);
+        int g = Integer.valueOf(512);
+
+        System.out.println("2 == 65535 " + (e == f));
+        System.out.println("512 == 65535 " + (g == f));
+
+        //==============================================================================================================
     }
 }
