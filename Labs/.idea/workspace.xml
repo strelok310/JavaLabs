@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wordCount.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wordCount.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -30,11 +29,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="257" column="46" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="452">
+              <caret line="418" column="37" selection-start-line="418" selection-start-column="37" selection-end-line="418" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="976" column="26" selection-start-line="976" selection-start-column="26" selection-end-line="976" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -43,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/wordCount.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="60" lean-forward="true" selection-end-line="9" selection-end-column="77" />
+              <caret line="7" column="30" selection-end-line="9" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -51,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="287" column="69" lean-forward="true" selection-start-line="287" selection-start-column="69" selection-end-line="287" selection-end-column="69" />
+            <state relative-caret-position="281">
+              <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="244" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -85,6 +90,7 @@
       <find>TYPE</find>
       <find>modifiers</find>
       <find>integerc</find>
+      <find>userdata</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,6 +147,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,7 +200,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -320,9 +326,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1684435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -331,7 +336,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,7 +356,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Reflection/Matrix/asd.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/tmp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/AnnotationLab.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -538,20 +542,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="802" column="23" selection-start-line="802" selection-start-column="20" selection-end-line="802" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Integer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -559,27 +550,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/wordCount.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="60" lean-forward="true" selection-end-line="9" selection-end-column="77" />
+          <caret line="7" column="30" selection-end-line="9" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="287" column="69" lean-forward="true" selection-start-line="287" selection-start-column="69" selection-end-line="287" selection-end-column="69" />
+        <state relative-caret-position="281">
+          <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="244" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="976" column="26" selection-start-line="976" selection-start-column="26" selection-end-line="976" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="257" column="46" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="452">
+          <caret line="418" column="37" selection-start-line="418" selection-start-column="37" selection-end-line="418" selection-end-column="37" />
         </state>
       </provider>
     </entry>

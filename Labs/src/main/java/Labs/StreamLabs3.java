@@ -2,6 +2,7 @@ package Labs;
 
 import Utils.Streams2.UserData;
 
+import java.awt.geom.Point2D;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -25,6 +26,13 @@ public class StreamLabs3 {
         task6();
         task7();
         task8();
+        task9();
+        task10();
+        task11();
+        task12();
+        task13();
+        task14();
+        task15();
     }
 
     static void task1() {
@@ -260,6 +268,155 @@ public class StreamLabs3 {
         System.out.println("\nOutput:");
         long size = Arrays.stream(mas).count();
         System.out.println(size);
+    }
+
+    static void task9() {
+        System.out.println(LINE);
+        System.out.println("Return number of elements with current date");
+        ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
+                new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
+                new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
+                new UserData(100,"Info.txt", LocalDate.of(2020,5,17)),
+                new UserData(85,"Labs.docx", LocalDate.of(2022,5,5)),
+                new UserData(113,"secret.rar", LocalDate.of(2019,5,1))
+        ));
+
+        System.out.println("Input:");
+        System.out.println(list);
+
+        LocalDate date = LocalDate.now();
+        long count = list.stream().filter((x) -> x.date.getYear() == date.getYear()).count();
+        System.out.println("\nOutput:\n" + count);
+    }
+
+    static void task10() {
+        System.out.println(LINE);
+        System.out.println("Check whether array containt name \"admin\" or not");
+        ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
+                new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
+                new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
+                new UserData(100,"admin", LocalDate.of(2020,5,17)),
+                new UserData(85,"Labs.docx", LocalDate.of(2022,5,5)),
+                new UserData(113,"secret.rar", LocalDate.of(2019,5,1))
+        ));
+
+        System.out.println("Input:");
+        System.out.println(list);
+
+        boolean adminPresented = list.stream().anyMatch((x) -> x.name.equals("admin"));
+        System.out.println("\nOutput:\n" + adminPresented);
+
+        list.remove(2);
+        System.out.println("\nInput:");
+        System.out.println(list);
+
+        adminPresented = list.stream().anyMatch((x) -> x.name.equals("admin"));
+        System.out.println("\nOutput:\n" + adminPresented);
+    }
+
+    static void task11() {
+        System.out.println(LINE);
+        System.out.println("Check whether all elements of ArrayList contains date with current year");
+        ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
+                new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
+                new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
+                new UserData(100,"Info.txt", LocalDate.of(2020,5,17)),
+                new UserData(85,"Labs.docx", LocalDate.of(2022,5,5)),
+                new UserData(113,"secret.rar", LocalDate.of(2019,5,1))
+        ));
+
+        System.out.println("Input:");
+        System.out.println(list);
+
+        LocalDate date = LocalDate.now();
+        boolean thisYear =  list.stream().allMatch((x) -> x.date.getYear() == date.getYear());
+        System.out.println("\nOutput:\n" + thisYear);
+
+        list.get(2).date = LocalDate.of(2019,5,17);
+        list.get(3).date = LocalDate.of(2019,5,5);
+        System.out.println("\nInput:");
+        System.out.println(list);
+
+        thisYear =  list.stream().allMatch((x) -> x.date.getYear() == date.getYear());
+        System.out.println("\nOutput:\n" + thisYear);
+    }
+
+    static void task12() {
+        System.out.println(LINE);
+        System.out.println("Return minimal element of array");
+        Integer[] mas = {6, 43, 3, 87, 6, 16, 4, 21, 13, 38};
+
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(mas));
+
+        Integer min = Arrays.stream(mas).min(Integer::compareTo).get();
+        System.out.println("Output:\n" + min);
+    }
+
+    static void task13() {
+        System.out.println(LINE);
+        System.out.println("Return maximal element of array");
+        Integer[] mas = {6, 43, 3, 87, 6, 16, 4, 21, 13, 38};
+
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(mas));
+
+        Integer max = Arrays.stream(mas).max(Integer::compareTo).get();
+        System.out.println("Output:\n" + max);
+    }
+
+    static void task14() {
+        System.out.println(LINE);
+        System.out.println("Return nearest point to X");
+        ArrayList<Point2D.Float> list = new ArrayList<>(Arrays.asList(
+                new Point2D.Float(1.3f,6.4f),
+                new Point2D.Float(10.5f,3.5f),
+                new Point2D.Float(1.1f,4.7f),
+                new Point2D.Float(10.3f,4.7f),
+                new Point2D.Float(1.1f,7.6f),
+                new Point2D.Float(1.5f,3.2f),
+                new Point2D.Float(5.1f,8.5f),
+                new Point2D.Float(6.3f,2.4f),
+                new Point2D.Float(1.1f,5.7f),
+                new Point2D.Float(8.4f,8.9f),
+                new Point2D.Float(6.9f,4.8f)
+        ));
+        Point2D.Float point = new Point2D.Float(5.0f, 5.0f);
+
+        System.out.println("Input:");
+        list.stream().forEach((x) -> System.out.println(x));
+        System.out.println("X: " + point);
+
+        Point2D.Float nearest = list.stream().min((p1, p2) -> Double.compare(point.distance(p1), point.distance(p2))).get();
+        System.out.println("\nOutput:");
+        System.out.println(nearest);
+    }
+
+    static void task15() {
+        System.out.println(LINE);
+        System.out.println("Return furthest point to X");
+        ArrayList<Point2D.Float> list = new ArrayList<>(Arrays.asList(
+                new Point2D.Float(1.3f,6.4f),
+                new Point2D.Float(10.5f,3.5f),
+                new Point2D.Float(1.1f,4.7f),
+                new Point2D.Float(10.3f,4.7f),
+                new Point2D.Float(1.1f,7.6f),
+                new Point2D.Float(1.5f,3.2f),
+                new Point2D.Float(5.1f,8.5f),
+                new Point2D.Float(6.3f,2.4f),
+                new Point2D.Float(1.1f,5.7f),
+                new Point2D.Float(8.4f,8.9f),
+                new Point2D.Float(6.9f,4.8f)
+        ));
+        Point2D.Float point = new Point2D.Float(5.0f, 5.0f);
+
+        System.out.println("Input:");
+        list.stream().forEach((x) -> System.out.println(x));
+        System.out.println("X: " + point);
+
+        Point2D.Float furthest = list.stream().max((p1, p2) -> Double.compare(point.distance(p1), point.distance(p2))).get();
+        System.out.println("\nOutput:");
+        System.out.println(furthest);
     }
 }
 
