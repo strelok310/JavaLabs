@@ -1,5 +1,6 @@
 package Labs;
 
+import Utils.Matrix.Matrix;
 import Utils.Streams2.UserData;
 
 import java.awt.geom.Point2D;
@@ -10,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -33,6 +35,7 @@ public class StreamLabs3 {
         task13();
         task14();
         task15();
+        task16();
     }
 
     static void task1() {
@@ -417,6 +420,42 @@ public class StreamLabs3 {
         Point2D.Float furthest = list.stream().max((p1, p2) -> Double.compare(point.distance(p1), point.distance(p2))).get();
         System.out.println("\nOutput:");
         System.out.println(furthest);
+    }
+
+    static void task16() {
+        System.out.println(LINE);
+        System.out.println("Exponential Random stream");
+        //Supplier<Integer> expGenerator = () -> Math.toIntExact(Math.round(100000 * (1 - Math.exp(-Math.random()) )));
+        Supplier<Integer> expGenerator = () -> Math.toIntExact(Math.round( -1000 * Math.log(1 - Math.random()) ));
+        System.out.println("Input:\nExponential Random generator");
+
+        /*int min = Stream.generate(expGenerator).limit(100000).min(Integer::compareTo).get();
+        int max = Stream.generate(expGenerator).limit(100000).max(Integer::compareTo).get();
+        double avg = Stream.generate(expGenerator).limit(100000).mapToInt(Integer::valueOf).average().getAsDouble();
+        int sum = Stream.generate(expGenerator).limit(100000).mapToInt(Integer::valueOf).sum();
+
+        System.out.println("\nOutput:");
+        System.out.println("Min: " + min);
+        System.out.println("Max: " + max);
+        System.out.println("Average: " + avg);
+        System.out.println("Sum: " + sum);*/
+
+
+
+        IntSummaryStatistics stat = Stream.generate(expGenerator).limit(100000).collect(Collectors.summarizingInt((x) -> x));
+
+        System.out.println("\nOutput:");
+        System.out.println("Min: " + stat.getMin());
+        System.out.println("Max: " + stat.getMax());
+        System.out.println("Average: " + stat.getAverage());
+        System.out.println("Sum: " + stat.getSum());
+    }
+
+    static void task17() {
+        System.out.println(LINE);
+        System.out.println("Return all combinations of strings");
+        ArrayList<String> list = new ArrayList<>();
+
     }
 }
 

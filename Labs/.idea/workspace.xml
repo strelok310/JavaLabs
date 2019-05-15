@@ -29,17 +29,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="418" column="37" selection-start-line="418" selection-start-column="37" selection-end-line="418" selection-end-column="37" />
+            <state relative-caret-position="241">
+              <caret line="441" lean-forward="true" selection-start-line="441" selection-end-line="441" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java">
+        <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/stream/Stream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="976" column="26" selection-start-line="976" selection-start-column="26" selection-end-line="976" selection-end-column="26" />
+            <state relative-caret-position="299">
+              <caret line="1049" column="56" lean-forward="true" selection-start-line="1049" selection-start-column="56" selection-end-line="1049" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Supplier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="40" column="28" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -56,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="3672">
               <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="244" selection-end-column="11" />
             </state>
           </provider>
@@ -121,9 +130,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Utils/Reflection/ReflectTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
         <option value="$PROJECT_DIR$/src/main/resources/wordCount.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
       </list>
     </option>
   </component>
@@ -146,8 +155,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StreamLabs3">
+  <component name="RunManager" selected="Application.ReflectionLabs">
     <configuration name="MatrixLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.MatrixLabs" />
       <module name="Labs" />
@@ -327,7 +336,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -356,7 +365,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/tmp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/AnnotationLab.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -488,7 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/stream/Stream.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Streams2/MyPair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -543,13 +550,8 @@
       </provider>
     </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Integer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="247" column="50" lean-forward="true" selection-start-line="247" selection-start-column="50" selection-end-line="247" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Comparator.java" />
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -566,29 +568,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="3672">
           <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="244" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Comparator.java">
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/stream/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        <state relative-caret-position="299">
+          <caret line="1049" column="56" lean-forward="true" selection-start-line="1049" selection-start-column="56" selection-end-line="1049" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java">
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="976" column="26" selection-start-line="976" selection-start-column="26" selection-end-line="976" selection-end-column="26" />
+        <state relative-caret-position="289">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="190" column="83" lean-forward="true" selection-start-line="190" selection-start-column="83" selection-end-line="190" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="418" column="37" selection-start-line="418" selection-start-column="37" selection-end-line="418" selection-end-column="37" />
+        <state relative-caret-position="241">
+          <caret line="441" lean-forward="true" selection-start-line="441" selection-end-line="441" />
         </state>
       </provider>
     </entry>
