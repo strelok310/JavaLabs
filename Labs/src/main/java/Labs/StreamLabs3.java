@@ -425,30 +425,52 @@ public class StreamLabs3 {
     static void task16() {
         System.out.println(LINE);
         System.out.println("Exponential Random stream");
-        //Supplier<Integer> expGenerator = () -> Math.toIntExact(Math.round(100000 * (1 - Math.exp(-Math.random()) )));
         Supplier<Integer> expGenerator = () -> Math.toIntExact(Math.round( -1000 * Math.log(1 - Math.random()) ));
         System.out.println("Input:\nExponential Random generator");
 
-        /*int min = Stream.generate(expGenerator).limit(100000).min(Integer::compareTo).get();
-        int max = Stream.generate(expGenerator).limit(100000).max(Integer::compareTo).get();
-        double avg = Stream.generate(expGenerator).limit(100000).mapToInt(Integer::valueOf).average().getAsDouble();
-        int sum = Stream.generate(expGenerator).limit(100000).mapToInt(Integer::valueOf).sum();
+        final int SIZE = 100000;
 
-        System.out.println("\nOutput:");
-        System.out.println("Min: " + min);
-        System.out.println("Max: " + max);
-        System.out.println("Average: " + avg);
-        System.out.println("Sum: " + sum);*/
+        IntSummaryStatistics stat = Stream.generate(expGenerator)
+                                            .limit(SIZE)
+                                            .collect(Collectors.summarizingInt((x) -> x));
+        double variance = Stream.generate(expGenerator)
+                                .limit(SIZE)
+                                .mapToDouble(Double::valueOf)
+                                .reduce(0.0, (x,y) -> x += Math.pow(y - stat.getAverage(), 2) / (SIZE - 1));
+        double median = Stream.generate(expGenerator)
+                                .limit(SIZE)
+                                .sorted(Integer::compareTo)
+                                .skip(SIZE / 2 - 1)
+                                .limit(2)
+                                .mapToInt(Integer::intValue)
+                                .sum() / 2.0;
 
+        int mode = Stream.generate(expGenerator)
+                            .limit(SIZE)
+                            .collect(Collectors.groupingBy(Integer::intValue, Collectors.counting()))
+                            .entrySet()
+                            .stream()
+                            .sorted((x,y) -> Long.compare(x.getValue(), y.getValue()))
+                            .findFirst()
+                            .get()
+                            .getKey();
 
-
-        IntSummaryStatistics stat = Stream.generate(expGenerator).limit(100000).collect(Collectors.summarizingInt((x) -> x));
+        double deviation = Math.sqrt(variance);
 
         System.out.println("\nOutput:");
         System.out.println("Min: " + stat.getMin());
         System.out.println("Max: " + stat.getMax());
         System.out.println("Average: " + stat.getAverage());
         System.out.println("Sum: " + stat.getSum());
+
+        System.out.println("Expected value (M): " + stat.getAverage());
+        System.out.println("Variance (D): " + variance);
+        System.out.println("Median: " + median);
+        System.out.println("Mode: " + mode);
+        System.out.println("Deviation: " + deviation);
+
+
+        System.out.println("\nNote: Lambda = 0.001");
     }
 
     static void task17() {
