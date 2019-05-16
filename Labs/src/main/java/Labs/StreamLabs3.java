@@ -1,17 +1,15 @@
 package Labs;
 
-import Utils.Matrix.Matrix;
 import Utils.Streams2.UserData;
+import Utils.Streams3.Recursive;
 
 import java.awt.geom.Point2D;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -36,6 +34,7 @@ public class StreamLabs3 {
         task14();
         task15();
         task16();
+        task17();
     }
 
     static void task1() {
@@ -476,9 +475,126 @@ public class StreamLabs3 {
     static void task17() {
         System.out.println(LINE);
         System.out.println("Return all combinations of strings");
-        ArrayList<String> list = new ArrayList<>();
+        //ArrayList<String> list = new ArrayList<>();
+
+        /*String[] str = {"A", "B", "C", "D"};
+        int[] pointer = {0};
+
+        Supplier<String[]> combGen = () -> {
+            String[] res = Arrays.copyOf(str, str.length);
+
+            int i = pointer[0];
+            int j = i + 1;
+            if(j == str.length) j = 0;
+
+            String tmp = str[i];
+            str[i] = str[j];
+            str[j] = tmp;
+
+            pointer[0] = j;
+
+            return res;
+        };
+
+        int fact = 1;
+        for(int i = 1; i <= str.length; i++) fact *= i;
+
+
+        Stream.generate(combGen).limit(fact)
+                                .map((x) -> Arrays.stream(x).collect(Collectors.joining()))
+                                .forEach((x) -> System.out.println(x));*/
+
+        String[] str = {"A", "B", "C", "D"};
+
+        /*Arrays.stream(str)
+                .flatMap((x) -> Arrays.stream(str).map((a) -> x + a))
+                .flatMap((x) -> Arrays.stream(str).map((a) -> x + a))
+                .flatMap((x) -> Arrays.stream(str).map((a) -> x + a))
+                .map((x) -> Arrays.stream(x.split("")).distinct().reduce("",(a,b) -> a + b))
+                .filter((x) -> x.length() == str.length)
+                .forEach(System.out::println);*/
+
+
+        Recursive<UnaryOperator<Stream<ArrayList<String>>>> combine = new Recursive<>();
+        combine.func = (stream) -> {
+                int[] size = {1};
+                //System.out.println("size: " + stream.count());
+                stream = stream
+                        .peek((y) -> {
+                            System.out.println("qwe: " + y);
+                        })
+                    .flatMap((x) -> Arrays.stream(str)
+                                            .peek((y) -> {
+                                                System.out.println("wtf: " + y);
+                                            })
+                                            .map((y) -> {
+                                                System.out.println("X: " + x + "\t size: " + x.size() + "\tstr: " + y);
+
+                                                if(x.size() > size[0]) size[0] = x.size();
+                                                if(x.contains(y)) return x;
+
+                                                ArrayList<String> list = new ArrayList<>();
+                                                list.addAll(x);
+                                                list.add(y);
+
+                                                size[0] += 1;
+                                                //size[0] = list.size();
+                                                return list;
+                                            })
+                    .filter((y) -> y.size() == size[0])
+            );
+            System.out.println("Size: " + size[0]);
+            //if(size[0] < str.length) return combine.func.apply(stream);
+            return stream;
+        };
+        combine.func.apply(Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x)))).forEach(System.out::println);
+
+
+        /*Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x)))
+                .flatMap((x) -> Arrays.stream(str)
+                                        .map((y) -> {
+                                            if(x.contains(y)) return x;
+
+                                            ArrayList<String> list = new ArrayList<>();
+                                            list.addAll(x);
+                                            list.add(y);
+                                            return list;
+                                        })
+                                        .filter((y) -> y.size() == 2)
+                )
+                .flatMap((x) -> Arrays.stream(str)
+                        .map((y) -> {
+                            if(x.contains(y)) return x;
+
+                            ArrayList<String> list = new ArrayList<>();
+                            list.addAll(x);
+                            list.add(y);
+                            return list;
+                        })
+                        .filter((y) -> y.size() == 3)
+                )
+                .flatMap((x) -> Arrays.stream(str)
+                        .map((y) -> {
+                            if(x.contains(y)) return x;
+
+                            ArrayList<String> list = new ArrayList<>();
+                            list.addAll(x);
+                            list.add(y);
+                            return list;
+                        })
+                        .filter((y) -> y.size() == 4)
+                )
+                .forEach(System.out::println);*/
 
     }
+
+    /*static void asd() {
+
+    }
+
+    static void qwe(Stream<Integer> int i) {
+
+    }*/
 }
 
 
