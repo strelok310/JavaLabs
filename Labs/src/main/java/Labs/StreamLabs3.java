@@ -515,41 +515,6 @@ public class StreamLabs3 {
                 .forEach(System.out::println);*/
 
 
-        Recursive<UnaryOperator<Stream<ArrayList<String>>>> combine = new Recursive<>();
-        combine.func = (stream) -> {
-                int[] size = {1};
-                //System.out.println("size: " + stream.count());
-                stream = stream
-                        .peek((y) -> {
-                            System.out.println("qwe: " + y);
-                        })
-                    .flatMap((x) -> Arrays.stream(str)
-                                            .peek((y) -> {
-                                                System.out.println("wtf: " + y);
-                                            })
-                                            .map((y) -> {
-                                                System.out.println("X: " + x + "\t size: " + x.size() + "\tstr: " + y);
-
-                                                if(x.size() > size[0]) size[0] = x.size();
-                                                if(x.contains(y)) return x;
-
-                                                ArrayList<String> list = new ArrayList<>();
-                                                list.addAll(x);
-                                                list.add(y);
-
-                                                size[0] += 1;
-                                                //size[0] = list.size();
-                                                return list;
-                                            })
-                    .filter((y) -> y.size() == size[0])
-            );
-            System.out.println("Size: " + size[0]);
-            //if(size[0] < str.length) return combine.func.apply(stream);
-            return stream;
-        };
-        combine.func.apply(Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x)))).forEach(System.out::println);
-
-
         /*Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x)))
                 .flatMap((x) -> Arrays.stream(str)
                                         .map((y) -> {
@@ -586,6 +551,26 @@ public class StreamLabs3 {
                 )
                 .forEach(System.out::println);*/
 
+
+        combine(Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x))), 1, str).forEach(System.out::println);
+
+    }
+
+    static Stream<ArrayList<String>> combine(Stream<ArrayList<String>> stream, int size, String[] str) {
+        stream = stream.flatMap((x) -> Arrays.stream(str)
+                        .map((y) -> {
+                            if(x.contains(y)) return x;
+
+                            ArrayList<String> list = new ArrayList<>();
+                            list.addAll(x);
+                            list.add(y);
+
+                            return list;
+                        })
+                        .filter((y) -> y.size() == size + 1)
+        );
+        if(size < str.length - 1) return combine(stream, size + 1, str);
+        return stream;
     }
 
     /*static void asd() {
