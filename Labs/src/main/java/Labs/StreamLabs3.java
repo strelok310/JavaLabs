@@ -1,7 +1,7 @@
 package Labs;
 
 import Utils.Streams2.UserData;
-import Utils.Streams3.Recursive;
+import Utils.Streams3.Combinatorics;
 
 import java.awt.geom.Point2D;
 import java.nio.file.Files;
@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -475,111 +474,23 @@ public class StreamLabs3 {
     static void task17() {
         System.out.println(LINE);
         System.out.println("Return all combinations of strings");
-        //ArrayList<String> list = new ArrayList<>();
-
-        /*String[] str = {"A", "B", "C", "D"};
-        int[] pointer = {0};
-
-        Supplier<String[]> combGen = () -> {
-            String[] res = Arrays.copyOf(str, str.length);
-
-            int i = pointer[0];
-            int j = i + 1;
-            if(j == str.length) j = 0;
-
-            String tmp = str[i];
-            str[i] = str[j];
-            str[j] = tmp;
-
-            pointer[0] = j;
-
-            return res;
-        };
-
-        int fact = 1;
-        for(int i = 1; i <= str.length; i++) fact *= i;
-
-
-        Stream.generate(combGen).limit(fact)
-                                .map((x) -> Arrays.stream(x).collect(Collectors.joining()))
-                                .forEach((x) -> System.out.println(x));*/
-
         String[] str = {"A", "B", "C", "D"};
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(str));
 
-        /*Arrays.stream(str)
-                .flatMap((x) -> Arrays.stream(str).map((a) -> x + a))
-                .flatMap((x) -> Arrays.stream(str).map((a) -> x + a))
-                .flatMap((x) -> Arrays.stream(str).map((a) -> x + a))
-                .map((x) -> Arrays.stream(x.split("")).distinct().reduce("",(a,b) -> a + b))
-                .filter((x) -> x.length() == str.length)
-                .forEach(System.out::println);*/
+        System.out.println("\nOutput:");
 
+        System.out.println("\nVariant 1");
+        Combinatorics.combine(Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x))), 1, str)
+                     .forEach(System.out::println);
 
-        /*Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x)))
-                .flatMap((x) -> Arrays.stream(str)
-                                        .map((y) -> {
-                                            if(x.contains(y)) return x;
-
-                                            ArrayList<String> list = new ArrayList<>();
-                                            list.addAll(x);
-                                            list.add(y);
-                                            return list;
-                                        })
-                                        .filter((y) -> y.size() == 2)
-                )
-                .flatMap((x) -> Arrays.stream(str)
-                        .map((y) -> {
-                            if(x.contains(y)) return x;
-
-                            ArrayList<String> list = new ArrayList<>();
-                            list.addAll(x);
-                            list.add(y);
-                            return list;
-                        })
-                        .filter((y) -> y.size() == 3)
-                )
-                .flatMap((x) -> Arrays.stream(str)
-                        .map((y) -> {
-                            if(x.contains(y)) return x;
-
-                            ArrayList<String> list = new ArrayList<>();
-                            list.addAll(x);
-                            list.add(y);
-                            return list;
-                        })
-                        .filter((y) -> y.size() == 4)
-                )
-                .forEach(System.out::println);*/
-
-
-        combine(Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x))), 1, str).forEach(System.out::println);
-
+        System.out.println("\nVariant 2");
+        Combinatorics.combineInt(str).forEach(System.out::println);
     }
 
-    static Stream<ArrayList<String>> combine(Stream<ArrayList<String>> stream, int size, String[] str) {
-        stream = stream.flatMap((x) -> Arrays.stream(str)
-                        .map((y) -> {
-                            if(x.contains(y)) return x;
-
-                            ArrayList<String> list = new ArrayList<>();
-                            list.addAll(x);
-                            list.add(y);
-
-                            return list;
-                        })
-                        .filter((y) -> y.size() == size + 1)
-        );
-        if(size < str.length - 1) return combine(stream, size + 1, str);
-        return stream;
-    }
-
-    /*static void asd() {
+    static void task18() {
 
     }
-
-    static void qwe(Stream<Integer> int i) {
-
-    }*/
 }
 
 
