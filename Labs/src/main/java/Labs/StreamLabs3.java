@@ -482,7 +482,7 @@ public class StreamLabs3 {
         System.out.println("\nOutput:");
 
         System.out.println("\nVariant 1");
-        Combinatorics.combine(Arrays.stream(str).map((x) -> new ArrayList(Arrays.asList(x))), 1, str)
+        Combinatorics.combine(str)
                      .forEach(System.out::println);
 
         System.out.println("\nVariant 2");
@@ -504,6 +504,10 @@ public class StreamLabs3 {
 
         System.out.println("Output:");
         System.out.println(result);
+    }
+
+    static void task19() {
+
     }
 }
 
