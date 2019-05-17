@@ -1,5 +1,6 @@
 package Labs;
 
+import Utils.Matrix.Matrix;
 import Utils.Streams2.UserData;
 import Utils.Streams3.Combinatorics;
 
@@ -8,10 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Function;
+import java.util.function.IntUnaryOperator;
 import java.util.function.Supplier;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.function.UnaryOperator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.*;
 
 public class StreamLabs3 {
     private static final String LINE = "\n==============================================================================================================\n";
@@ -35,6 +39,11 @@ public class StreamLabs3 {
         task16();
         task17();
         task18();
+        task19();
+        task20();
+        task21();
+        task22();
+        task23();
     }
 
     static void task1() {
@@ -425,6 +434,7 @@ public class StreamLabs3 {
         System.out.println(LINE);
         System.out.println("Exponential Random stream");
         Supplier<Integer> expGenerator = () -> Math.toIntExact(Math.round( -1000 * Math.log(1 - Math.random()) ));
+
         System.out.println("Input:\nExponential Random generator");
 
         final int SIZE = 100000;
@@ -476,6 +486,7 @@ public class StreamLabs3 {
         System.out.println(LINE);
         System.out.println("Return all combinations of strings");
         String[] str = {"A", "B", "C", "D"};
+
         System.out.println("Input:");
         System.out.println(Arrays.toString(str));
 
@@ -492,8 +503,9 @@ public class StreamLabs3 {
 
     static void task18() {
         System.out.println(LINE);
-        System.out.println("Return all combinations of strings");
+        System.out.println("Return all combinations of unique symbols in string");
         String[] str = {"A", "B", "C"};
+
         System.out.println("Input:");
         System.out.println(Arrays.toString(str));
 
@@ -507,7 +519,104 @@ public class StreamLabs3 {
     }
 
     static void task19() {
+        System.out.println(LINE);
+        System.out.println("Return min and max values on giving range");
 
+        final int BEGIN = 1;
+        final int END = 5;
+
+        System.out.println("Input: ");
+        System.out.format("Range from %s to %s\n", BEGIN, END);
+
+        DoubleSummaryStatistics stat =  DoubleStream.iterate(Double.valueOf(BEGIN), (x) -> x + 0.2)
+                    .limit(Math.round((END - BEGIN) / 0.2))
+                    .map((x) -> Math.pow(x, Math.exp(x)) - 3 * Math.sqrt(2 * Math.round(Math.log(x)/Math.log(3)))
+                                                            / (Math.pow(x, 2) + Math.pow(5, x)) )
+                    .summaryStatistics();
+
+        System.out.println("\nOutput:");
+        System.out.println("Minimal: " + stat.getMin());
+        System.out.println("Maxiamal: " + stat.getMax());
+    }
+
+    static void task20() {
+        System.out.println(LINE);
+        System.out.println("Return Integral");
+
+        final double BEGIN = 1;
+        final double END = 10;
+        final double STEP = 0.001;
+
+        System.out.println("Input: ");
+        System.out.format("Range from %s to %s, step %s\n", BEGIN, END, STEP);
+
+        double sum =  STEP * DoubleStream.iterate(Double.valueOf(BEGIN), (x) -> x + STEP)
+                .limit(Math.round((END - BEGIN) / STEP))
+                .map((x) ->  3 * Math.sqrt(2 * Math.round(Math.log(x)/Math.log(2)))
+                             / (Math.pow(x, 2) + Math.pow(5, x)) )
+                .sum();
+
+        System.out.println("\nOutput:");
+        System.out.println("Integral: " + sum);
+    }
+
+    static void task21() {
+        System.out.println(LINE);
+        System.out.println("Apply function to all elements of stream");
+        Integer[] mas = {1,2,3,4,5,6,7,8,9,10};
+
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(mas));
+
+        UnaryOperator<Integer> func = (x) -> 3 * x + 5;
+        Stream<Integer> stream = Arrays.stream(mas).map(func);
+
+        System.out.println("\nOutput:");
+        System.out.println(Arrays.toString(stream.toArray(Integer[]::new)));
+    }
+
+    static void task22() {
+        System.out.println(LINE);
+        System.out.println("Return IntStream");
+        String[] str = {"A", "B123", "11", "A.5C", "Hello3.14world"};
+
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(str));
+
+        Pattern pattern = Pattern.compile("\\d+(\\.\\d+)?", Pattern.CASE_INSENSITIVE);
+
+        IntStream stream = Arrays.stream(str)
+                                      .filter((x) -> x.matches(".*\\d+.*"))
+                                      .map((x) -> {
+                                          Matcher matcher = pattern.matcher(x);
+                                          if(matcher.find()) return Double.valueOf(x.substring(matcher.start(), matcher.end()));
+                                          return null;
+                                      })
+                                      .filter((x) -> x != null)
+                                      .mapToInt((x) -> Math.toIntExact(Math.round(x)));
+
+        System.out.println("Output:");
+        System.out.println(Arrays.toString(stream.toArray()));
+    }
+
+    /**
+     * Вернуть сумму нечетных чисел
+     */
+
+    static void task23() {
+        System.out.println(LINE);
+        System.out.println("Return sum of odd elements");
+        int[] mas = {1,2,3,4,5,6,7,8,9,10};
+
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(mas));
+
+        int sum = Arrays.stream(mas)
+                        .filter((x) -> x % 2 != 0)
+                        .sum();
+
+        System.out.println("\nOutput:");
+        System.out.println(sum);
     }
 }
 

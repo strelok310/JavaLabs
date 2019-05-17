@@ -42,7 +42,7 @@ public class StreamLabs2 {
     }
 
     static void task1() {
-        System.out.println("Stream from ArrayList");
+        System.out.println("Return odd elements");
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,3,4,5,6,7,2,1,4));
 
         System.out.println("Input:");
