@@ -302,10 +302,14 @@ public class StreamLabs2 {
         System.out.println("Input:");
         System.out.println(strnumList);
 
-        Stream strnumStream = strnumList.stream().map((x) -> {
-            String str[] = x.split("_");
-            return new MyPair(Integer.parseInt(str[1]), str[0]);
-        }).distinct().sorted((x,y) -> y.value - x.value).map((x) -> x.toString());
+        Stream strnumStream = strnumList.stream()
+                                        .map((x) -> {
+                                            String str[] = x.split("_");
+                                            return new MyPair(Integer.parseInt(str[1]), str[0]);
+                                        })
+                                        .distinct()
+                                        .sorted((x,y) -> y.value - x.value)
+                                        .map((x) -> x.toString());
 
         System.out.println("Output:");
         System.out.println(Arrays.toString(strnumStream.toArray(String[]::new)));

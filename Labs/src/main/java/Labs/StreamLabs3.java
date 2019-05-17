@@ -3,16 +3,14 @@ package Labs;
 import Utils.Matrix.Matrix;
 import Utils.Streams2.UserData;
 import Utils.Streams3.Combinatorics;
+import Utils.Streams3.UserLogged;
 
 import java.awt.geom.Point2D;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.function.Function;
-import java.util.function.IntUnaryOperator;
-import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
+import java.util.function.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.*;
@@ -44,6 +42,8 @@ public class StreamLabs3 {
         task21();
         task22();
         task23();
+        task24();
+        task25();
     }
 
     static void task1() {
@@ -56,13 +56,18 @@ public class StreamLabs3 {
                 new UserData(85,"Labs.docx", LocalDate.of(2022,5,5)),
                 new UserData(100,"secret.rar", LocalDate.of(2019,5,1))
         ));
+        String str = "Info.txt";
 
         System.out.println("Input:");
         System.out.println(dataList);
+        System.out.println("Search for: " + str);
+
 
         //==============================================================================================================
 
-        UserData item = dataList.stream().findFirst().orElse(new UserData(3,"Picture.png", LocalDate.of(2018,6,15)));
+        UserData item = dataList.stream()
+                                .filter((x) -> x.name.equals(str))
+                                .findFirst().orElse(new UserData(3,"Picture.png", LocalDate.of(2018,6,15)));
 
         System.out.println("\nOutput:");
         System.out.println(item.toStringItem());
@@ -70,7 +75,9 @@ public class StreamLabs3 {
         //==============================================================================================================
 
         dataList.clear();
-        item = dataList.stream().findFirst().orElse(new UserData(3,"Picture.png", LocalDate.of(2018,6,15)));
+        item = dataList.stream()
+                       .filter((x) -> x.name.equals(str))
+                       .findFirst().orElse(new UserData(3,"Picture.png", LocalDate.of(2018,6,15)));
 
         System.out.println("\nOutput (not found):");
         System.out.println(item.toStringItem());
@@ -78,7 +85,7 @@ public class StreamLabs3 {
 
     static void task2() {
         System.out.println(LINE);
-        System.out.println("Return first element of array");
+        System.out.println("Return any element of array with current year");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -86,19 +93,20 @@ public class StreamLabs3 {
                 new UserData(85,"Labs.docx", LocalDate.of(2022,5,5)),
                 new UserData(113,"secret.rar", LocalDate.of(2019,5,1))
         ));
+        String str = "Info.txt";
+        LocalDate date = LocalDate.now();
+        //LocalDate date = LocalDate.of(2019,5,13);
 
         System.out.println("Input:");
         System.out.println(list);
-        LocalDate date = LocalDate.now();
-        //LocalDate date = LocalDate.of(2019,5,13);
+        System.out.println("Search for: " + str);
         System.out.println("Current date: " + date);
 
         //==============================================================================================================
 
-        UserData item = list.stream().filter((x) -> {
-            if(x.name == "Info.txt" && x.date.isAfter(date)) return true;
-            return false;
-        }).findFirst().orElse(null);
+        UserData item = list.stream()
+                            .filter((x) -> x.name.equals(str) && x.date.isAfter(date))
+                            .findAny().orElse(null);
 
         System.out.println("\nOutput:");
         System.out.println(item.toStringItem());
@@ -106,16 +114,13 @@ public class StreamLabs3 {
         //==============================================================================================================
 
         list.clear();
-        item = list.stream().filter((x) -> {
-            if(x.name == "Info.txt" && x.date.isAfter(date)) return true;
-            return false;
-        }).findFirst().orElse(null);
+        item = list.stream()
+                   .filter((x) -> x.name.equals(str) && x.date.isAfter(date))
+                   .findAny().orElse(null);
 
         System.out.println("\nOutput (not found):");
         if(item == null) System.out.println("Null");
         else System.out.println("not Null");
-
-        Arrays.stream(int.class.getDeclaredMethods()).forEach((x) -> System.out.println(x));
     }
 
     static void task3() throws Exception {
@@ -123,7 +128,7 @@ public class StreamLabs3 {
         System.out.println("Count words and sort");
         Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
 
-        System.out.println("Intput:\nwordCount.txt");
+        System.out.println("Input:\nwordCount.txt");
 
         //Variant 1
         System.out.println("\nVariant 1:");
@@ -221,11 +226,6 @@ public class StreamLabs3 {
                 .entrySet()
                 .stream()
                 .sorted((x,y) -> Math.toIntExact(y.getValue() - x.getValue()))
-                /*.sorted((x,y) -> {
-                    int value = Math.toIntExact(y.getValue() - x.getValue());
-                    if(value == 0) value = y.getKey().compareTo(x.getKey());
-                    return value;
-                })*/
                 .limit(10)
                 .collect(Collectors.toMap((x) -> x.getKey(), (x) -> x.getValue())) );
 
@@ -302,7 +302,7 @@ public class StreamLabs3 {
 
     static void task10() {
         System.out.println(LINE);
-        System.out.println("Check whether array containt name \"admin\" or not");
+        System.out.println("Check whether array contains name \"admin\" or not");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -563,16 +563,21 @@ public class StreamLabs3 {
     static void task21() {
         System.out.println(LINE);
         System.out.println("Apply function to all elements of stream");
-        Integer[] mas = {1,2,3,4,5,6,7,8,9,10};
+        StringBuilder[] str = {
+            new StringBuilder("Snowfall"),
+            new StringBuilder("Overlord"),
+            new StringBuilder("Meltdown"),
+            new StringBuilder("Nuclear"),
+            new StringBuilder("Keanu")
+        };
 
         System.out.println("Input:");
-        System.out.println(Arrays.toString(mas));
+        System.out.println(Arrays.toString(str));
 
-        UnaryOperator<Integer> func = (x) -> 3 * x + 5;
-        Stream<Integer> stream = Arrays.stream(mas).map(func);
+        Stream<StringBuilder> stream = Arrays.stream(str).peek((x) -> x.append("_new"));
 
         System.out.println("\nOutput:");
-        System.out.println(Arrays.toString(stream.toArray(Integer[]::new)));
+        System.out.println(Arrays.toString(stream.toArray(StringBuilder[]::new)));
     }
 
     static void task22() {
@@ -617,6 +622,71 @@ public class StreamLabs3 {
 
         System.out.println("\nOutput:");
         System.out.println(sum);
+    }
+
+    static void task24() {
+        System.out.println(LINE);
+        System.out.println("Return first element of array");
+        ArrayList<UserLogged> list = new ArrayList<>(Arrays.asList(
+                new UserLogged(15,"Snowfall", true),
+                new UserLogged(9,"Overlord", false),
+                new UserLogged(100,"Meltdown", true),
+                new UserLogged(85,"Nuclear", true),
+                new UserLogged(99,"Keanu", false)
+        ));
+
+        System.out.println("Input:");
+        System.out.println(list);
+
+        Map result = list.stream().collect(Collectors.groupingBy((x) -> x.logged));
+
+        System.out.println("Output");
+        System.out.println(result);
+    }
+
+    static void task25() {
+        System.out.println(LINE);
+        System.out.println("Return first element of array");
+        ArrayList<UserLogged> list = new ArrayList<>(Arrays.asList(
+                new UserLogged(15,"Snowfall", true),
+                new UserLogged(1,"Sun", true),
+                new UserLogged(23,"Snow", true),
+                new UserLogged(9,"Overlord", false),
+                new UserLogged(100,"Meltdown", true),
+                new UserLogged(89,"Steam", true),
+                new UserLogged(85,"Nuclear", true),
+                new UserLogged(37,"Slime", false),
+                new UserLogged(99,"Keanu", false)
+        ));
+
+        System.out.println("Input:");
+        System.out.println(list);
+
+        Map result = list.stream()
+                .map((x) -> x.name)
+                .collect(Collectors.groupingBy((x) -> x.substring(0,1)))
+                .entrySet()
+                .stream()
+                .collect(Collectors.groupingBy((x) -> x.getValue().size() < 5))
+                .entrySet()
+                .stream()
+                .map((x) -> {
+                    if(!x.getKey()) return x;
+                    HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                    map.putAll(x.getValue());
+                    return x.getValue()
+                            .stream()
+                            .reduce(new HashMap<String, List<String>>(), (z, y) -> {
+                                return z;
+                            });
+                });
+
+        //HashMap<String, List<String>>
+        //HashMap<String, HashMap<String, List<String>>>
+
+
+        System.out.println("Output");
+        System.out.println(result);
     }
 }
 
