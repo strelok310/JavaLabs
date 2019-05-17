@@ -34,6 +34,7 @@ public class StreamLabs3 {
         task15();
         task16();
         task17();
+        task18();
     }
 
     static void task1() {
@@ -485,11 +486,24 @@ public class StreamLabs3 {
                      .forEach(System.out::println);
 
         System.out.println("\nVariant 2");
-        Combinatorics.combineInt(str).forEach(System.out::println);
+        Combinatorics.combineInt(str)
+                     .forEach(System.out::println);
     }
 
     static void task18() {
+        System.out.println(LINE);
+        System.out.println("Return all combinations of strings");
+        String[] str = {"A", "B", "C"};
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(str));
 
+        String result = Combinatorics.combineInt(str)
+                                     .map((x) -> x.stream()
+                                                  .reduce("", (z, w) -> z + w))
+                                     .reduce("", (z,w) -> z + w);
+
+        System.out.println("Output:");
+        System.out.println(result);
     }
 }
 
