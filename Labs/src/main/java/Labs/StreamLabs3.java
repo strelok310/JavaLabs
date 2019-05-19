@@ -44,6 +44,7 @@ public class StreamLabs3 {
         task23();
         task24();
         task25();
+        task26();
     }
 
     static void task1() {
@@ -662,30 +663,67 @@ public class StreamLabs3 {
         System.out.println("Input:");
         System.out.println(list);
 
-        Map result = list.stream()
+        HashMap<String, ArrayList<String>> result = list.stream()
                 .map((x) -> x.name)
                 .collect(Collectors.groupingBy((x) -> x.substring(0,1)))
                 .entrySet()
                 .stream()
-                .collect(Collectors.groupingBy((x) -> x.getValue().size() < 5))
-                .entrySet()
-                .stream()
                 .map((x) -> {
-                    if(!x.getKey()) return x;
-                    HashMap<String, List<String>> map = new HashMap<String, List<String>>();
-                    map.putAll(x.getValue());
-                    return x.getValue()
-                            .stream()
-                            .reduce(new HashMap<String, List<String>>(), (z, y) -> {
-                                return z;
-                            });
+                    HashMap<String, ArrayList<String>> map = new HashMap<>();
+                    map.put(x.getKey(), new ArrayList<>(x.getValue()));
+                    return map;
+                })
+                .reduce(new HashMap<String, ArrayList<String>>(), (map, x) -> {
+                    if(x.get(x.keySet().toArray()[0]).size() >= 5) map.putAll(x);
+                    else {
+                        Map.Entry<String, ArrayList<String>> entry = map.entrySet()
+                                                                        .stream()
+                                                                        .filter((y) -> y.getValue().size() < 5)
+                                                                        .findFirst().orElse(null);
+                        if(entry == null) map.putAll(x);
+                        else {
+                            String key = entry.getKey();
+                            String key2 = (String) x.keySet().toArray()[0];
+
+                            ArrayList<String> value = entry.getValue();
+                            value.addAll(x.get(key2));
+
+                            map.remove(key);
+                            if(key.length() != 1) key = key.substring(0,1);
+                            if(key.compareTo(key2) > 0) key = key + "-" + key2;
+                            else key = key2 + "-" + key;
+                            map.put(key, value);
+                        }
+                    }
+                    return map;
                 });
 
-        //HashMap<String, List<String>>
-        //HashMap<String, HashMap<String, List<String>>>
-
-
         System.out.println("Output");
+        System.out.println(result);
+    }
+
+    static void task26() {
+        System.out.println(LINE);
+        System.out.println("Return html list");
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(
+                "Mind",
+                "Desert",
+                "Snowfall",
+                "Rendering",
+                "Harem",
+                "Fiancee",
+                "Overlord",
+                "Professional",
+                "Coal",
+                "Art",
+                "Meltdown"
+        ));
+        System.out.println("Input:");
+        System.out.println(list);
+
+        String result = list.stream().collect(Collectors.joining("</li>\n</ul>\n<ul>\n\t<li>", "<div>\n<ul>\n\t<li>", "</li>\n</ul>\n</div>"));
+
+        System.out.println("\nOutput:");
         System.out.println(result);
     }
 }
