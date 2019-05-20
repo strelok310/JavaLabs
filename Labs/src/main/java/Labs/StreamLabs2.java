@@ -62,7 +62,7 @@ public class StreamLabs2 {
 
     static void task2() {
         System.out.println(LINE);
-        System.out.println("\nFilter Persons List by createdAt");
+        System.out.println("Filter Persons List by createdAt");
         ArrayList<Person> personsList = new ArrayList<>(Arrays.asList(
                 new Person("Ivan","Ivanow", LocalDateTime.of(2019,1,15,5,17,53)),
                 new Person("Alex","Alex", LocalDateTime.of(2019,4,8,10,55,26)),
@@ -88,7 +88,7 @@ public class StreamLabs2 {
 
     static void task3() {
         System.out.println(LINE);
-        System.out.println("\nFilter Persons List by createdAt and logged");
+        System.out.println("Filter Persons List by createdAt and logged");
         ArrayList<LoggedPerson> loggedPersonsList = new ArrayList<>(Arrays.asList(
                 new LoggedPerson("Ivan","Ivanow", LocalDateTime.of(2019,1,15,5,17,53)),
                 new LoggedPerson("Alex","Alex", LocalDateTime.of(2019,4,8,10,55,26)),
@@ -114,7 +114,7 @@ public class StreamLabs2 {
 
     static void task4() {
         System.out.println(LINE);
-        System.out.println("\nStream with second half of the array");
+        System.out.println("Stream with second half of the array");
         ArrayList<Integer> numList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 
         System.out.println("Input:");
@@ -133,7 +133,7 @@ public class StreamLabs2 {
 
     static void task5() {
         System.out.println(LINE);
-        System.out.println("\nReturn selected element of Array");
+        System.out.println("Return selected element of Array");
         ArrayList<Integer> numList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 
         System.out.println("Input:");
@@ -152,7 +152,7 @@ public class StreamLabs2 {
 
     static void task6() {
         System.out.println(LINE);
-        System.out.println("\nReturn array with unique elements");
+        System.out.println("Return array with unique elements");
         ArrayList<Integer> duplicatesList = new ArrayList<>(Arrays.asList(1,1,3,4,3,6,7,8));
 
         System.out.println("Input:");
@@ -170,7 +170,7 @@ public class StreamLabs2 {
 
     static void task7() {
         System.out.println(LINE);
-        System.out.println("\nAdd _outdated to each element of array");
+        System.out.println("Add _outdated to each element of array");
         ArrayList<String> addList = new ArrayList<>(Arrays.asList("log1", "log2", "log3"));
 
         System.out.println("Input:");
@@ -193,7 +193,7 @@ public class StreamLabs2 {
 
     static void task8() {
         System.out.println(LINE);
-        System.out.println("\nAdd _outdated to name and print result using forEach");
+        System.out.println("Add _outdated to name and print result using forEach");
         ArrayList<FileTest> addfilesList = new ArrayList<>(Arrays.asList(
                 new FileTest("1", LocalDate.of(2001, 11, 3)),
                 new FileTest("1.txt", LocalDate.of(2001,11,3)),
@@ -228,7 +228,7 @@ public class StreamLabs2 {
 
     static void task9() {
         System.out.println(LINE);
-        System.out.println("\nStream with first half of the array");
+        System.out.println("Stream with first half of the array");
         ArrayList<Integer> numList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 
         System.out.println("Input:");
@@ -246,7 +246,7 @@ public class StreamLabs2 {
 
     static void task10() {
         System.out.println(LINE);
-        System.out.println("\nStream with third in the center of array");
+        System.out.println("Stream with third in the center of array");
         ArrayList<Integer> numList2 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9));
 
         System.out.println("Input:");
@@ -264,7 +264,7 @@ public class StreamLabs2 {
 
     static void task11() {
         System.out.println(LINE);
-        System.out.println("\nStream with 2 elements before the center of array");
+        System.out.println("Stream with 2 elements before the center of array");
         ArrayList<Integer> numList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 
         System.out.println("Input:");
@@ -282,7 +282,7 @@ public class StreamLabs2 {
 
     static void task12() {
         System.out.println(LINE);
-        System.out.println("\nRevert sort array");
+        System.out.println("Revert sort array");
         ArrayList<Integer> numList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 
         System.out.println("Input:");
@@ -303,7 +303,7 @@ public class StreamLabs2 {
 
     static void task13() {
         System.out.println(LINE);
-        System.out.println("\nRevert sort of user class array");
+        System.out.println("Revert sort of user class array");
         ArrayList<UserData> dataList = new ArrayList<>(Arrays.asList(
                 new UserData(15,"asd", LocalDate.of(2019,5,1)),
                 new UserData(9,"asd", LocalDate.of(2019,7,13)),
@@ -338,7 +338,7 @@ public class StreamLabs2 {
 
     static void task14() {
         System.out.println(LINE);
-        System.out.println("\nStream with sorted unique strings");
+        System.out.println("Stream with sorted unique strings");
         ArrayList<String> stringList = new ArrayList<>(Arrays.asList(
                 "Peach",
                 "Apple",
@@ -369,7 +369,7 @@ public class StreamLabs2 {
 
     static void task15() {
         System.out.println(LINE);
-        System.out.println("\nStream with sorted unique strings");
+        System.out.println("Stream with sorted unique strings");
         ArrayList<String> strnumList = new ArrayList<>(Arrays.asList(
                 "Peach_5",
                 "Apple_6",
@@ -407,7 +407,7 @@ public class StreamLabs2 {
 
     static void task16() {
         System.out.println(LINE);
-        System.out.println("\nCreate IntStream");
+        System.out.println("Create IntStream");
         ArrayList<Integer> intList = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
 
         System.out.println("Input:");
@@ -438,7 +438,7 @@ public class StreamLabs2 {
 
     static void task17() {
         System.out.println(LINE);
-        System.out.println("\nStream with sorted unique strings");
+        System.out.println("Stream with sorted unique strings");
         ArrayList<String> strList1 = new ArrayList<>(Arrays.asList("Peach","Apple"));
         ArrayList<String> strList2 = new ArrayList<>(Arrays.asList("Grass","Tree","Wolf","Pineapple"));
         ArrayList<String> strList3 = new ArrayList<>(Arrays.asList("Elephant","Animal","Banana"));
@@ -470,7 +470,7 @@ public class StreamLabs2 {
 
     static void task18() {
         System.out.println(LINE);
-        System.out.println("\nSplit strings by symbol \":\"");
+        System.out.println("Split strings by symbol \":\"");
         ArrayList<String> strList = new ArrayList<>(Arrays.asList(
                 "Peach:Apple:Grass",
                 "Tree:Apple",

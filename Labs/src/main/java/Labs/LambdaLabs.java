@@ -1,18 +1,53 @@
 package Labs;
 
+import Utils.Lambdas.CallFunction;
 import Utils.Tmp;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class LambdaLabs {
+    private static final String LINE = "\n==============================================================================================================\n";
 
-    static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) throws Exception {
+        taskTest1();
+        taskTest2();
     }
 
+    /**
+     * Вернуть лямбду, которая печатает “Hello world!”
+     */
+
+    static CallFunction task1() {
+        return () -> System.out.println("Hello world!");
+    }
+
+    static void taskTest1() {
+        System.out.println(LINE);
+        System.out.println("Return lambda that prints \"Hello world!\"");
+        task1().call();
+    }
+
+    /**
+     * Вернуть лямбду, которая поприветствует того, чье имя будет передано первым аргументом
+     */
+
+    static Consumer<String> task2() {
+        return x -> System.out.println("Hello " + x + " !");
+    }
+
+    static void taskTest2() {
+        System.out.println(LINE);
+        System.out.println("Greet someone");
+        task2().accept("Roman");
+    }
+
+
+
+    //==============================================================================
 
     static void task() {
         //кэширование результата функции
