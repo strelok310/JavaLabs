@@ -1,6 +1,8 @@
 package Labs;
 
 import Utils.Lambdas.CallFunction;
+import Utils.Lambdas.TernaryFunction;
+import Utils.Lambdas.TriFunction;
 import Utils.Tmp;
 
 import java.time.LocalDate;
@@ -24,6 +26,10 @@ public class LambdaLabs {
         taskTest6();
         taskTest7();
         taskTest8();
+        taskTest9();
+        taskTest10();
+        taskTest11();
+        taskTest12();
     }
 
     /**
@@ -207,7 +213,7 @@ public class LambdaLabs {
 
     static void taskTest8() {
         System.out.println(LINE);
-        System.out.println("Check affiliation Fibonacci");
+        System.out.println("Check affiliation to Fibonacci");
 
         Predicate<Integer> fibonacci = task8().get();
         System.out.println("13 (t): " + fibonacci.test(13));
@@ -218,6 +224,65 @@ public class LambdaLabs {
         System.out.println("26 (f): " + fibonacci.test(26));
     }
 
+    /**
+     * Вернуть лямбду, которая возвращает сумму двух входных аргументов
+     */
+
+    static BiFunction<Integer,Integer,Integer> task9() {
+        return (x, y) -> x + y;
+    }
+
+    static void taskTest9() {
+        System.out.println(LINE);
+        System.out.println("Get sum of two numbers");
+
+        System.out.println("26 + 91 = " + task9().apply(26,91));
+    }
+
+    /**
+     * К предыдущей лямбде добавить возведение в квадрат
+     */
+
+    static UnaryOperator<BiFunction<Integer,Integer,Integer>> task10() {
+        return x -> x.andThen(y -> y*y);
+    }
+
+    static void taskTest10() {
+        System.out.println(LINE);
+        System.out.println("Get square sum of two numbers");
+
+        System.out.println("(26 + 91)^2 = " + task10().apply(task9()).apply(26,91));
+    }
+
+    /**
+     * Вернуть лямбду, которая возвращает сумму трех входных аргументов
+     */
+
+    static TriFunction<Integer,Integer,Integer,Integer> task11() {
+        return (x,y,z) -> x + y + z;
+    }
+
+    static void taskTest11() {
+        System.out.println(LINE);
+        System.out.println("Get sum of three numbers");
+
+        System.out.println("26 + 91 + 37 = " + task11().apply(26,91, 37));
+    }
+
+    /**
+     * Вернуть лямбду, которая возводит число в квадрат
+     */
+
+    static UnaryOperator<TriFunction<Integer,Integer,Integer,Integer>> task12() {
+        return x -> x.andThen(y -> y*y);
+    }
+
+    static void taskTest12() {
+        System.out.println(LINE);
+        System.out.println("Get square sum of three numbers");
+
+        System.out.println("(26 + 91 + 37)^2 = " + task12().apply(task11()).apply(26,91, 37));
+    }
 
     //==============================================================================
 
