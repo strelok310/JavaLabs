@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class LoggedPerson extends Person {
 
-    public boolean logged;
+    private boolean logged;
 
     public LoggedPerson() {}
 
@@ -22,8 +22,16 @@ public class LoggedPerson extends Person {
         this.logged = item.logged;
     }
 
+    public boolean isLogged() {
+        return this.logged;
+    }
+
+    public void setLogged(boolean logged) {
+        this.logged = logged;
+    }
+
     public String toString() {
-        return "{firstName:\"" + this.firstName + "\", lastName:\"" + this.lastName +
+        return "\n{firstName:\"" + this.firstName + "\", lastName:\"" + this.lastName +
                 "\", createdAt:\"" + this.createdAt.toString() + "\", logged:\"" + this.logged + "\"}";
     }
 

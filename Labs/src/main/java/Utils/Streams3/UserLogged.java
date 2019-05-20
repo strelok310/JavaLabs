@@ -1,9 +1,9 @@
 package Utils.Streams3;
 
 public class UserLogged {
-    public long id;
-    public String name;
-    public boolean logged;
+    private long id;
+    private String name;
+    private boolean logged;
 
     public UserLogged() {}
 
@@ -17,6 +17,30 @@ public class UserLogged {
         this.id = item.id;
         this.name = item.name;
         this.logged =  item.logged;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isLogged() {
+        return this.logged;
+    }
+
+    public void setLogged(boolean logged) {
+        this.logged = logged;
     }
 
     public String toString() {

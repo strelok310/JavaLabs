@@ -1,8 +1,8 @@
 package Utils.Streams2;
 
 public class MyPair {
-    public int value;
-    public String prefix;
+    private int value;
+    private String prefix;
 
     public MyPair() {}
 
@@ -14,6 +14,22 @@ public class MyPair {
     public MyPair(MyPair item) {
         this.value = item.value;
         this.prefix = item.prefix;
+    }
+
+    public int getValue() {
+        return this.value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public String getPrefix() {
+        return this.prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
 
     @Override

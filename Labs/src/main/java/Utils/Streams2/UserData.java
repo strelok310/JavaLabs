@@ -3,9 +3,9 @@ package Utils.Streams2;
 import java.time.LocalDate;
 
 public class UserData {
-    public long id;
-    public String name;
-    public LocalDate date;
+    private long id;
+    private String name;
+    private LocalDate date;
 
     public UserData() {}
 
@@ -19,6 +19,30 @@ public class UserData {
         this.id = item.id;
         this.name = item.name;
         this.date = item.date;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getDate() {
+        return this.date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public String toString() {

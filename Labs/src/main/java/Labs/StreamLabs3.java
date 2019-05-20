@@ -1,6 +1,5 @@
 package Labs;
 
-import Utils.Matrix.Matrix;
 import Utils.Streams2.UserData;
 import Utils.Streams3.Combinatorics;
 import Utils.Streams3.UserLogged;
@@ -47,6 +46,11 @@ public class StreamLabs3 {
         task26();
     }
 
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, date - LocalDate ) Найти первый элемент в массиве по
+     * заданному имени. В случае отсутствия такового вернуть нового пользователя.
+     */
+
     static void task1() {
         System.out.println(LINE);
         System.out.println("Return first element of array");
@@ -67,7 +71,7 @@ public class StreamLabs3 {
         //==============================================================================================================
 
         UserData item = dataList.stream()
-                                .filter((x) -> x.name.equals(str))
+                                .filter((x) -> x.getName().equals(str))
                                 .findFirst().orElse(new UserData(3,"Picture.png", LocalDate.of(2018,6,15)));
 
         System.out.println("\nOutput:");
@@ -77,16 +81,21 @@ public class StreamLabs3 {
 
         dataList.clear();
         item = dataList.stream()
-                       .filter((x) -> x.name.equals(str))
+                       .filter((x) -> x.getName().equals(str))
                        .findFirst().orElse(new UserData(3,"Picture.png", LocalDate.of(2018,6,15)));
 
         System.out.println("\nOutput (not found):");
         System.out.println(item.toStringItem());
     }
 
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, date - LocalDate ) Найти любой элемент в массиве по
+     * заданному имени с date больше текущей даты. В случае отсутствия такового вернуть null.
+     */
+
     static void task2() {
         System.out.println(LINE);
-        System.out.println("Return any element of array with current year");
+        System.out.println("Return any element of array with date after current");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -106,7 +115,7 @@ public class StreamLabs3 {
         //==============================================================================================================
 
         UserData item = list.stream()
-                            .filter((x) -> x.name.equals(str) && x.date.isAfter(date))
+                            .filter((x) -> x.getName().equals(str) && x.getDate().isAfter(date))
                             .findAny().orElse(null);
 
         System.out.println("\nOutput:");
@@ -116,13 +125,18 @@ public class StreamLabs3 {
 
         list.clear();
         item = list.stream()
-                   .filter((x) -> x.name.equals(str) && x.date.isAfter(date))
+                   .filter((x) -> x.getName().equals(str) && x.getDate().isAfter(date))
                    .findAny().orElse(null);
 
         System.out.println("\nOutput (not found):");
         if(item == null) System.out.println("Null");
         else System.out.println("not Null");
     }
+
+    /**
+     * Дан текстовый файл по пути ./payload/java8/stream/wordCount.txt. Вернут стрим со словами, отсортированными
+     * по частоте встречи по убыванию.
+     */
 
     static void task3() throws Exception {
         System.out.println(LINE);
@@ -144,7 +158,7 @@ public class StreamLabs3 {
             .sorted((x, y) -> map.get(y) - map.get(x))
             .toArray(String[]::new);
 
-        System.out.println("Output:");
+        System.out.println("\nOutput:");
         System.out.println(Arrays.toString(words));
         System.out.println("Word frequency:");
         System.out.println(map);
@@ -164,11 +178,19 @@ public class StreamLabs3 {
 
     }
 
+    /**
+     * Дан стрим, преобразовать его в ArrayList
+     */
+
     static void task4() {
         System.out.println(LINE);
         System.out.println("Create ArrayList from stream");
         Integer[] mas = {1,2,3,4,5,6,7,8};
 
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(mas));
+
+        System.out.println("\nOutput:");
         System.out.println("\nVariant 1:");
         ArrayList<Integer> list = new ArrayList<>(Arrays.stream(mas).collect(Collectors.toList()));
         System.out.println(list);
@@ -183,6 +205,10 @@ public class StreamLabs3 {
                                                         (x, y) -> { x.addAll(y); return x; }));
         System.out.println(list);
     }
+
+    /**
+     * Дан список слов. Используя стрим вернуть список, из которого исключены слова длиннее заданного значения.
+     */
 
     static void task5() {
         System.out.println(LINE);
@@ -215,6 +241,11 @@ public class StreamLabs3 {
         System.out.println(stream.collect(Collectors.toList()));
     }
 
+    /**
+     * Дан текстовый файл по пути ./payload/java8/stream/wordCount.txt. Вернуть HashMap, где ключ – слово, а
+     * значение – количество встреч слова в тексте. HashMap должен хранить только 10 самых частых слов
+     */
+
     static void task6() throws Exception {
         System.out.println(LINE);
         System.out.println("Return HashMap with words and their count");
@@ -244,6 +275,11 @@ public class StreamLabs3 {
         System.out.println(map);
     }
 
+    /**
+     * Дан текстовый файл по пути ./payload/java8/stream/wordCount.txt. Вернуть HashMap, где ключ – слово, а
+     * значение – вероятность встречи слова в тексте. HashMap должен хранить только 10 самых частых слов
+     */
+
     static void task7() throws Exception {
         System.out.println(LINE);
         System.out.println("Return HashMap with words and their probability");
@@ -269,6 +305,10 @@ public class StreamLabs3 {
         System.out.println(freqMap);
     }
 
+    /**
+     * Посчитать количество элементов в массиве
+     */
+
     static void task8() {
         System.out.println(LINE);
         System.out.println("Return size of array");
@@ -282,9 +322,14 @@ public class StreamLabs3 {
         System.out.println(size);
     }
 
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, date - LocalDate ). Посчитать количество объектов, у
+     * которых date лежит в пределах текущего года.
+     */
+
     static void task9() {
         System.out.println(LINE);
-        System.out.println("Return number of elements with current date");
+        System.out.println("Return number of elements with current year");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -297,9 +342,14 @@ public class StreamLabs3 {
         System.out.println(list);
 
         LocalDate date = LocalDate.now();
-        long count = list.stream().filter((x) -> x.date.getYear() == date.getYear()).count();
+        long count = list.stream().filter((x) -> x.getDate().getYear() == date.getYear()).count();
         System.out.println("\nOutput:\n" + count);
     }
+
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, date - LocalDate ). Убедиться, есть ли в массиве
+     * пользователь с name = admin
+     */
 
     static void task10() {
         System.out.println(LINE);
@@ -315,16 +365,21 @@ public class StreamLabs3 {
         System.out.println("Input:");
         System.out.println(list);
 
-        boolean adminPresented = list.stream().anyMatch((x) -> x.name.equals("admin"));
+        boolean adminPresented = list.stream().anyMatch((x) -> x.getName().equals("admin"));
         System.out.println("\nOutput:\n" + adminPresented);
 
         list.remove(2);
         System.out.println("\nInput:");
         System.out.println(list);
 
-        adminPresented = list.stream().anyMatch((x) -> x.name.equals("admin"));
+        adminPresented = list.stream().anyMatch((x) -> x.getName().equals("admin"));
         System.out.println("\nOutput:\n" + adminPresented);
     }
+
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, date - LocalDate ). Убедиться, лежат ли date всех объектов в
+     * пределах текущего года.
+     */
 
     static void task11() {
         System.out.println(LINE);
@@ -341,17 +396,21 @@ public class StreamLabs3 {
         System.out.println(list);
 
         LocalDate date = LocalDate.now();
-        boolean thisYear =  list.stream().allMatch((x) -> x.date.getYear() == date.getYear());
+        boolean thisYear =  list.stream().allMatch((x) -> x.getDate().getYear() == date.getYear());
         System.out.println("\nOutput:\n" + thisYear);
 
-        list.get(2).date = LocalDate.of(2019,5,17);
-        list.get(3).date = LocalDate.of(2019,5,5);
+        list.get(2).setDate(LocalDate.of(2019,5,17));
+        list.get(3).setDate(LocalDate.of(2019,5,5));
         System.out.println("\nInput:");
         System.out.println(list);
 
-        thisYear =  list.stream().allMatch((x) -> x.date.getYear() == date.getYear());
+        thisYear =  list.stream().allMatch((x) -> x.getDate().getYear() == date.getYear());
         System.out.println("\nOutput:\n" + thisYear);
     }
+
+    /**
+     * Дан массив. Найти минимальное число.
+     */
 
     static void task12() {
         System.out.println(LINE);
@@ -362,8 +421,12 @@ public class StreamLabs3 {
         System.out.println(Arrays.toString(mas));
 
         Integer min = Arrays.stream(mas).min(Integer::compareTo).get();
-        System.out.println("Output:\n" + min);
+        System.out.println("\nOutput:\n" + min);
     }
+
+    /**
+     * Дан массив. Найти максимальное число.
+     */
 
     static void task13() {
         System.out.println(LINE);
@@ -374,12 +437,17 @@ public class StreamLabs3 {
         System.out.println(Arrays.toString(mas));
 
         Integer max = Arrays.stream(mas).max(Integer::compareTo).get();
-        System.out.println("Output:\n" + max);
+        System.out.println("\nOutput:\n" + max);
     }
+
+    /**
+     * Дан массив точек (поля: x – float, y - float). Дана точка X с ненулевыми координатами. Найти ближайшую точку
+     * из массива к X.
+     */
 
     static void task14() {
         System.out.println(LINE);
-        System.out.println("Return nearest point to X");
+        System.out.println("Return the nearest point to X");
         ArrayList<Point2D.Float> list = new ArrayList<>(Arrays.asList(
                 new Point2D.Float(1.3f,6.4f),
                 new Point2D.Float(10.5f,3.5f),
@@ -404,9 +472,14 @@ public class StreamLabs3 {
         System.out.println(nearest);
     }
 
+    /**
+     * Дан массив точек (поля: x – float, y - float). Дана точка X с ненулевыми координатами. Найти наиболее
+     * удаленную точку из массива к X.
+     */
+
     static void task15() {
         System.out.println(LINE);
-        System.out.println("Return furthest point to X");
+        System.out.println("Return the furthest point to X");
         ArrayList<Point2D.Float> list = new ArrayList<>(Arrays.asList(
                 new Point2D.Float(1.3f,6.4f),
                 new Point2D.Float(10.5f,3.5f),
@@ -430,6 +503,12 @@ public class StreamLabs3 {
         System.out.println("\nOutput:");
         System.out.println(furthest);
     }
+
+    /**
+     * Сгенерировать случайную последовательность из 100000 чисел с экспоненциальным распределением.
+     * Рассчитать минимальное, максимальное, среднее, сумму, мат. ожидание, дисперсию, ср. квадратичное отклонение,
+     * моду, медиану
+     */
 
     static void task16() {
         System.out.println(LINE);
@@ -483,6 +562,10 @@ public class StreamLabs3 {
         System.out.println("\nNote: Lambda = 0.001");
     }
 
+    /**
+     * Дан массив строк. Вернуть массив всех возможных комбинаций.
+     */
+
     static void task17() {
         System.out.println(LINE);
         System.out.println("Return all combinations of strings");
@@ -502,6 +585,11 @@ public class StreamLabs3 {
                      .forEach(System.out::println);
     }
 
+    /**
+     * Дан массив уникальных символов. Вернуть строку, являющуюся конкатенацией всех возможных вариантов
+     * перестановок для массива.
+     */
+
     static void task18() {
         System.out.println(LINE);
         System.out.println("Return all combinations of unique symbols in string");
@@ -515,9 +603,13 @@ public class StreamLabs3 {
                                                   .reduce("", (z, w) -> z + w))
                                      .reduce("", (z,w) -> z + w);
 
-        System.out.println("Output:");
+        System.out.println("\nOutput:");
         System.out.println(result);
     }
+
+    /**
+     * Дано уравнение. Попытаться найти минимум и максимум на заданном диапазоне.
+     */
 
     static void task19() {
         System.out.println(LINE);
@@ -540,6 +632,10 @@ public class StreamLabs3 {
         System.out.println("Maxiamal: " + stat.getMax());
     }
 
+    /**
+     * Рассчитать интеграл на заданном диапазоне с заданным шагом.
+     */
+
     static void task20() {
         System.out.println(LINE);
         System.out.println("Return Integral");
@@ -561,6 +657,10 @@ public class StreamLabs3 {
         System.out.println("Integral: " + sum);
     }
 
+    /**
+     * Применить к каждому элементу массива заданную функцию.
+     */
+
     static void task21() {
         System.out.println(LINE);
         System.out.println("Apply function to all elements of stream");
@@ -580,6 +680,11 @@ public class StreamLabs3 {
         System.out.println("\nOutput:");
         System.out.println(Arrays.toString(stream.toArray(StringBuilder[]::new)));
     }
+
+    /**
+     * Дан массив строк. Некоторые элементы могут содержать целочисленные или вещественные числа. Необходимо
+     * вернуть примитимный стрим целых чисел ( вещественные необходимо округлить вниз)
+     */
 
     static void task22() {
         System.out.println(LINE);
@@ -601,7 +706,7 @@ public class StreamLabs3 {
                                       .filter((x) -> x != null)
                                       .mapToInt((x) -> Math.toIntExact(Math.round(x)));
 
-        System.out.println("Output:");
+        System.out.println("\nOutput:");
         System.out.println(Arrays.toString(stream.toArray()));
     }
 
@@ -625,9 +730,13 @@ public class StreamLabs3 {
         System.out.println(sum);
     }
 
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, logged - Boolean ). Разделить на две части по флагу logged
+     */
+
     static void task24() {
         System.out.println(LINE);
-        System.out.println("Return first element of array");
+        System.out.println("Group array by logged flag");
         ArrayList<UserLogged> list = new ArrayList<>(Arrays.asList(
                 new UserLogged(15,"Snowfall", true),
                 new UserLogged(9,"Overlord", false),
@@ -639,11 +748,17 @@ public class StreamLabs3 {
         System.out.println("Input:");
         System.out.println(list);
 
-        Map result = list.stream().collect(Collectors.groupingBy((x) -> x.logged));
+        Map result = list.stream().collect(Collectors.groupingBy(UserLogged::isLogged));
 
-        System.out.println("Output");
+        System.out.println("\nOutput");
         System.out.println(result);
     }
+
+    /**
+     * Дан массив объектов (поля: id – Long, name - String, logged - Boolean ). Разделить по алфавиту. Если буква
+     * содержит менее 5 записей, объединить их (например А-Г). Вернуть HashMap, где ключ: буква или диапазон, значение:
+     * список пользователей, у которых имя лежит в заданном диапазоне (или на заданную букву)
+     */
 
     static void task25() {
         System.out.println(LINE);
@@ -664,7 +779,7 @@ public class StreamLabs3 {
         System.out.println(list);
 
         HashMap<String, ArrayList<String>> result = list.stream()
-                .map((x) -> x.name)
+                .map(UserLogged::getName)
                 .collect(Collectors.groupingBy((x) -> x.substring(0,1)))
                 .entrySet()
                 .stream()
@@ -698,9 +813,13 @@ public class StreamLabs3 {
                     return map;
                 });
 
-        System.out.println("Output");
+        System.out.println("\nOutput");
         System.out.println(result);
     }
+
+    /**
+     * Дан список списков строк. Вернуть строку по шаблону
+     */
 
     static void task26() {
         System.out.println(LINE);
@@ -727,41 +846,3 @@ public class StreamLabs3 {
         System.out.println(result);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

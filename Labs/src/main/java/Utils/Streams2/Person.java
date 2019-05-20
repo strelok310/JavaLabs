@@ -28,7 +28,7 @@ public class Person {
     }
 
     public String toString() {
-        return "{firstName:\"" + this.firstName + "\", lastName:\"" + this.lastName +
+        return "\n{firstName:\"" + this.firstName + "\", lastName:\"" + this.lastName +
                 "\", createdAt:\"" + this.createdAt.toString() + "\"}";
     }
 }
