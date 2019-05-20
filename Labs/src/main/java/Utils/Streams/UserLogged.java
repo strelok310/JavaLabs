@@ -1,4 +1,4 @@
-package Utils.Streams3;
+package Utils.Streams;
 
 public class UserLogged {
     private long id;

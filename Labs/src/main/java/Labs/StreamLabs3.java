@@ -1,8 +1,8 @@
 package Labs;
 
-import Utils.Streams2.UserData;
-import Utils.Streams3.Combinatorics;
-import Utils.Streams3.UserLogged;
+import Utils.Streams.UserData;
+import Utils.Streams.Combinatorics;
+import Utils.Streams.UserLogged;
 
 import java.awt.geom.Point2D;
 import java.nio.file.Files;

@@ -276,7 +276,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StreamLabs2">
+  <component name="RunManager" selected="Application.StreamLabs3">
     <configuration name="MatrixLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.MatrixLabs" />
       <module name="Labs" />
@@ -352,8 +352,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StreamLabs2" />
         <item itemvalue="Application.StreamLabs3" />
+        <item itemvalue="Application.StreamLabs2" />
         <item itemvalue="Application.StreamLabs1" />
         <item itemvalue="Application.ReflectionLabs" />
         <item itemvalue="Application.MatrixLabs" />

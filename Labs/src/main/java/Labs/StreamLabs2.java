@@ -1,6 +1,6 @@
 package Labs;
 
-import Utils.Streams2.*;
+import Utils.Streams.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

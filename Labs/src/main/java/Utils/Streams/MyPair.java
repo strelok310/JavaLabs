@@ -1,4 +1,4 @@
-package Utils.Streams2;
+package Utils.Streams;
 
 public class MyPair {
     private int value;
