@@ -2,17 +2,13 @@ package Labs;
 
 import Utils.Lambdas.CallFunction;
 import Utils.Lambdas.TernaryFunction;
-import Utils.Lambdas.TriFunction;
 import Utils.Tmp;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.function.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class LambdaLabs {
     private static final String LINE = "\n==============================================================================================================\n";
@@ -30,6 +26,8 @@ public class LambdaLabs {
         taskTest10();
         taskTest11();
         taskTest12();
+        taskTest13();
+        taskTest14();
     }
 
     /**
@@ -42,7 +40,7 @@ public class LambdaLabs {
 
     static void taskTest1() {
         System.out.println(LINE);
-        System.out.println("Return lambda that prints \"Hello world!\"");
+        System.out.println("Return lambda that prints \"Hello world!\"\n");
         task1().call();
     }
 
@@ -56,7 +54,7 @@ public class LambdaLabs {
 
     static void taskTest2() {
         System.out.println(LINE);
-        System.out.println("Greet someone");
+        System.out.println("Greet someone\n");
         task2().accept("Roma");
     }
 
@@ -71,7 +69,7 @@ public class LambdaLabs {
 
     static void taskTest3() {
         System.out.println(LINE);
-        System.out.println("Add \"Have a nice day!\"");
+        System.out.println("Add \"Have a nice day!\"\n");
         task3().apply(task2()).accept("Roma");
     }
 
@@ -85,7 +83,7 @@ public class LambdaLabs {
 
     static void taskTest4() {
         System.out.println(LINE);
-        System.out.println("Return current time");
+        System.out.println("Return current time\n");
         System.out.println("Current time: " + task4().get());
     }
 
@@ -101,7 +99,7 @@ public class LambdaLabs {
 
     static void taskTest5() {
         System.out.println(LINE);
-        System.out.println("Check email");
+        System.out.println("Check email\n");
 
         String[] emails = {
             "123@123.by",
@@ -134,7 +132,7 @@ public class LambdaLabs {
 
     static void taskTest6() {
         System.out.println(LINE);
-        System.out.println("Check email and length");
+        System.out.println("Check email and length\n");
 
         String[] emails = {
                 "123@123.by",
@@ -168,7 +166,7 @@ public class LambdaLabs {
 
     static void taskTest7() {
         System.out.println(LINE);
-        System.out.println("Negate Check email and length");
+        System.out.println("Negate Check email and length\n");
 
         String[] emails = {
                 "123@123.by",
@@ -213,7 +211,7 @@ public class LambdaLabs {
 
     static void taskTest8() {
         System.out.println(LINE);
-        System.out.println("Check affiliation to Fibonacci");
+        System.out.println("Check affiliation to Fibonacci\n");
 
         Predicate<Integer> fibonacci = task8().get();
         System.out.println("13 (t): " + fibonacci.test(13));
@@ -234,7 +232,7 @@ public class LambdaLabs {
 
     static void taskTest9() {
         System.out.println(LINE);
-        System.out.println("Get sum of two numbers");
+        System.out.println("Get sum of two numbers\n");
 
         System.out.println("26 + 91 = " + task9().apply(26,91));
     }
@@ -249,7 +247,7 @@ public class LambdaLabs {
 
     static void taskTest10() {
         System.out.println(LINE);
-        System.out.println("Get square sum of two numbers");
+        System.out.println("Get square sum of two numbers\n");
 
         System.out.println("(26 + 91)^2 = " + task10().apply(task9()).apply(26,91));
     }
@@ -258,13 +256,13 @@ public class LambdaLabs {
      * Вернуть лямбду, которая возвращает сумму трех входных аргументов
      */
 
-    static TriFunction<Integer,Integer,Integer,Integer> task11() {
+    static TernaryFunction<Integer> task11() {
         return (x,y,z) -> x + y + z;
     }
 
     static void taskTest11() {
         System.out.println(LINE);
-        System.out.println("Get sum of three numbers");
+        System.out.println("Get sum of three numbers\n");
 
         System.out.println("26 + 91 + 37 = " + task11().apply(26,91, 37));
     }
@@ -273,16 +271,59 @@ public class LambdaLabs {
      * Вернуть лямбду, которая возводит число в квадрат
      */
 
-    static UnaryOperator<TriFunction<Integer,Integer,Integer,Integer>> task12() {
+    static UnaryOperator<TernaryFunction<Integer>> task12() {
         return x -> x.andThen(y -> y*y);
     }
 
     static void taskTest12() {
         System.out.println(LINE);
-        System.out.println("Get square sum of three numbers");
+        System.out.println("Get square sum of three numbers\n");
 
-        System.out.println("(26 + 91 + 37)^2 = " + task12().apply(task11()).apply(26,91, 37));
+        TernaryFunction<Integer> lambda11 = task11();
+        TernaryFunction<Integer> lambda12 = task12().apply(lambda11);
+        System.out.println("(26 + 91 + 37)^2 = " + lambda12.apply(26,91, 37));
     }
+
+    /**
+     * Добавить к предыдущей лямбде инкремент перед
+     */
+
+    static UnaryOperator<TernaryFunction<Integer>> task13() {
+        return x -> x.andThen(y -> ++y);
+    }
+
+    static void taskTest13() {
+        System.out.println(LINE);
+        System.out.println("Add pre-increment to previous lambda\n");
+
+        TernaryFunction<Integer> lambda11 = task11();
+        TernaryFunction<Integer> lambda12 = task12().apply(lambda11);
+        TernaryFunction<Integer> lambda13 = task13().apply(lambda12);
+        System.out.println("(26 + 91 + 37)^2 = " + lambda13.apply(26,91, 37));
+    }
+
+    /**
+     * Добавить к предыдущей лямбде декремент после
+     */
+
+    static UnaryOperator<TernaryFunction<Integer>> task14() {
+        return x -> x.andThen(y -> y--);
+    }
+
+    static void taskTest14() {
+        System.out.println(LINE);
+        System.out.println("Add post-decrement to previous lambda\n");
+
+        TernaryFunction<Integer> lambda11 = task11();
+        TernaryFunction<Integer> lambda12 = task12().apply(lambda11);
+        TernaryFunction<Integer> lambda13 = task13().apply(lambda12);
+        TernaryFunction<Integer> lambda14 = task14().apply(lambda13);
+        System.out.println("(26 + 91 + 37)^2 = " + lambda14.apply(26,91, 37));
+    }
+
+    /**
+     *
+     */
 
     //==============================================================================
 
