@@ -1,6 +1,7 @@
 package Labs;
 
 import Utils.Lambdas.CallFunction;
+import Utils.Lambdas.FiveFunction;
 import Utils.Lambdas.TernaryFunction;
 import Utils.Tmp;
 
@@ -28,6 +29,9 @@ public class LambdaLabs {
         taskTest12();
         taskTest13();
         taskTest14();
+        taskTest15();
+        taskTest16();
+        taskTest17();
     }
 
     /**
@@ -40,7 +44,7 @@ public class LambdaLabs {
 
     static void taskTest1() {
         System.out.println(LINE);
-        System.out.println("Return lambda that prints \"Hello world!\"\n");
+        System.out.println("1) Return lambda that prints \"Hello world!\"\n");
         task1().call();
     }
 
@@ -54,7 +58,7 @@ public class LambdaLabs {
 
     static void taskTest2() {
         System.out.println(LINE);
-        System.out.println("Greet someone\n");
+        System.out.println("2) Greet someone\n");
         task2().accept("Roma");
     }
 
@@ -69,7 +73,7 @@ public class LambdaLabs {
 
     static void taskTest3() {
         System.out.println(LINE);
-        System.out.println("Add \"Have a nice day!\"\n");
+        System.out.println("3) Add \"Have a nice day!\"\n");
         task3().apply(task2()).accept("Roma");
     }
 
@@ -83,7 +87,7 @@ public class LambdaLabs {
 
     static void taskTest4() {
         System.out.println(LINE);
-        System.out.println("Return current time\n");
+        System.out.println("4) Return current time\n");
         System.out.println("Current time: " + task4().get());
     }
 
@@ -99,7 +103,7 @@ public class LambdaLabs {
 
     static void taskTest5() {
         System.out.println(LINE);
-        System.out.println("Check email\n");
+        System.out.println("5) Check email\n");
 
         String[] emails = {
             "123@123.by",
@@ -132,7 +136,7 @@ public class LambdaLabs {
 
     static void taskTest6() {
         System.out.println(LINE);
-        System.out.println("Check email and length\n");
+        System.out.println("6) Check email and length\n");
 
         String[] emails = {
                 "123@123.by",
@@ -166,7 +170,7 @@ public class LambdaLabs {
 
     static void taskTest7() {
         System.out.println(LINE);
-        System.out.println("Negate Check email and length\n");
+        System.out.println("7) Negate Check email and length\n");
 
         String[] emails = {
                 "123@123.by",
@@ -211,7 +215,7 @@ public class LambdaLabs {
 
     static void taskTest8() {
         System.out.println(LINE);
-        System.out.println("Check affiliation to Fibonacci\n");
+        System.out.println("8) Check affiliation to Fibonacci\n");
 
         Predicate<Integer> fibonacci = task8().get();
         System.out.println("13 (t): " + fibonacci.test(13));
@@ -232,7 +236,7 @@ public class LambdaLabs {
 
     static void taskTest9() {
         System.out.println(LINE);
-        System.out.println("Get sum of two numbers\n");
+        System.out.println("9) Get sum of two numbers\n");
 
         System.out.println("26 + 91 = " + task9().apply(26,91));
     }
@@ -247,7 +251,7 @@ public class LambdaLabs {
 
     static void taskTest10() {
         System.out.println(LINE);
-        System.out.println("Get square sum of two numbers\n");
+        System.out.println("10) Get square sum of two numbers\n");
 
         System.out.println("(26 + 91)^2 = " + task10().apply(task9()).apply(26,91));
     }
@@ -262,7 +266,7 @@ public class LambdaLabs {
 
     static void taskTest11() {
         System.out.println(LINE);
-        System.out.println("Get sum of three numbers\n");
+        System.out.println("11) Get sum of three numbers\n");
 
         System.out.println("26 + 91 + 37 = " + task11().apply(26,91, 37));
     }
@@ -277,7 +281,7 @@ public class LambdaLabs {
 
     static void taskTest12() {
         System.out.println(LINE);
-        System.out.println("Get square sum of three numbers\n");
+        System.out.println("12) Get square sum of three numbers\n");
 
         TernaryFunction<Integer> lambda11 = task11();
         TernaryFunction<Integer> lambda12 = task12().apply(lambda11);
@@ -294,7 +298,7 @@ public class LambdaLabs {
 
     static void taskTest13() {
         System.out.println(LINE);
-        System.out.println("Add pre-increment to previous lambda\n");
+        System.out.println("13) Add pre-increment to previous lambda\n");
 
         TernaryFunction<Integer> lambda11 = task11();
         TernaryFunction<Integer> lambda12 = task12().apply(lambda11);
@@ -312,7 +316,7 @@ public class LambdaLabs {
 
     static void taskTest14() {
         System.out.println(LINE);
-        System.out.println("Add post-decrement to previous lambda\n");
+        System.out.println("14) Add post-decrement to previous lambda\n");
 
         TernaryFunction<Integer> lambda11 = task11();
         TernaryFunction<Integer> lambda12 = task12().apply(lambda11);
@@ -322,8 +326,56 @@ public class LambdaLabs {
     }
 
     /**
-     *
+     * Вернуть лямбду, которая решает уравнение x^2 + 3x – 1 для заданного x
      */
+
+    static UnaryOperator<Double> task15() {
+        return x -> Math.pow(x, 2) + 3 * x - 1;
+    }
+
+    static void taskTest15() {
+        System.out.println(LINE);
+        System.out.println("15) Solve equation\n");
+
+        System.out.println("x = 5.0");
+        System.out.println("Result: " + task15().apply(5.0));
+    }
+
+    /**
+     * Вернуть лямбду, которая решает уравнение (x^2 + 3x – 1)^2 + 3* (x^2 + 3x – 1) -1  для заданного x.
+     * Необходимо решить задачу переиспользованием предыдущей лямбды.
+     */
+
+    static Function<UnaryOperator<Double>, Function<Double, Double>> task16() {
+        return x -> x.andThen(x);
+    }
+
+    static void taskTest16() {
+        System.out.println(LINE);
+        System.out.println("16) Solve equation reusing previous lambda\n");
+
+        UnaryOperator<Double> lambda15 = task15();
+        Function<Double, Double> lambda16 = task16().apply(lambda15);
+
+        System.out.println("x = 5.0");
+        System.out.println("Result: " + lambda16.apply(5.0));
+    }
+
+    /**
+     * Вернуть лямбду, которая решает уравнение x*x*x + y*y*y + z*z*z + u*u*u + v*v*v для заданных (x,y,z,u,v)
+     */
+
+    static FiveFunction<Integer> task17() {
+        return (x,y,z,u,v) -> x*x*x + y*y*y + z*z*z + u*u*u + v*v*v;
+    }
+
+    static void taskTest17() {
+        System.out.println(LINE);
+        System.out.println("17) Solve equation x*x*x + y*y*y + z*z*z + u*u*u + v*v*v \n");
+
+        System.out.println("Solve 1, 2, 3, 4 ,5");
+        System.out.println("Result: " + task17().apply(1,2,3,4,5));
+    }
 
     //==============================================================================
 

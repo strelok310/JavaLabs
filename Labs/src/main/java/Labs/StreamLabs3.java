@@ -53,7 +53,7 @@ public class StreamLabs3 {
 
     static void task1() {
         System.out.println(LINE);
-        System.out.println("Return first element of array");
+        System.out.println("1) Return first element of array");
         ArrayList<UserData> dataList = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -95,7 +95,7 @@ public class StreamLabs3 {
 
     static void task2() {
         System.out.println(LINE);
-        System.out.println("Return any element of array with date after current");
+        System.out.println("2) Return any element of array with date after current");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -140,7 +140,7 @@ public class StreamLabs3 {
 
     static void task3() throws Exception {
         System.out.println(LINE);
-        System.out.println("Count words and sort");
+        System.out.println("3) Count words and sort");
         Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
 
         System.out.println("Input:\nwordCount.txt");
@@ -184,7 +184,7 @@ public class StreamLabs3 {
 
     static void task4() {
         System.out.println(LINE);
-        System.out.println("Create ArrayList from stream");
+        System.out.println("4) Create ArrayList from stream");
         Integer[] mas = {1,2,3,4,5,6,7,8};
 
         System.out.println("Input:");
@@ -212,7 +212,7 @@ public class StreamLabs3 {
 
     static void task5() {
         System.out.println(LINE);
-        System.out.println("Filter string list by length");
+        System.out.println("5) Filter string list by length");
 
         ArrayList<String> list = new ArrayList<>(Arrays.asList(
                 "Mind",
@@ -248,7 +248,7 @@ public class StreamLabs3 {
 
     static void task6() throws Exception {
         System.out.println(LINE);
-        System.out.println("Return HashMap with words and their count");
+        System.out.println("6) Return HashMap with words and their count");
         Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
 
         System.out.println("Input:\nwordCount.txt");
@@ -282,7 +282,7 @@ public class StreamLabs3 {
 
     static void task7() throws Exception {
         System.out.println(LINE);
-        System.out.println("Return HashMap with words and their probability");
+        System.out.println("7) Return HashMap with words and their probability");
         Stream<String> fileStream = Files.lines(Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI()));
 
         System.out.println("Input:\nwordCount.txt");
@@ -311,7 +311,7 @@ public class StreamLabs3 {
 
     static void task8() {
         System.out.println(LINE);
-        System.out.println("Return size of array");
+        System.out.println("8) Return size of array");
         Integer[] mas = {1,2,3,4,5,6,7,8};
 
         System.out.println("Input:");
@@ -329,7 +329,7 @@ public class StreamLabs3 {
 
     static void task9() {
         System.out.println(LINE);
-        System.out.println("Return number of elements with current year");
+        System.out.println("9) Return number of elements with current year");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -353,7 +353,7 @@ public class StreamLabs3 {
 
     static void task10() {
         System.out.println(LINE);
-        System.out.println("Check whether array contains name \"admin\" or not");
+        System.out.println("10) Check whether array contains name \"admin\" or not");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -383,7 +383,7 @@ public class StreamLabs3 {
 
     static void task11() {
         System.out.println(LINE);
-        System.out.println("Check whether all elements of ArrayList contains date with current year");
+        System.out.println("11) Check whether all elements of ArrayList contains date with current year");
         ArrayList<UserData> list = new ArrayList<>(Arrays.asList(
                 new UserData(15,"Image.jpg", LocalDate.of(2019,5,1)),
                 new UserData(9,"Star_Wars.mkv", LocalDate.of(2019,7,13)),
@@ -414,7 +414,7 @@ public class StreamLabs3 {
 
     static void task12() {
         System.out.println(LINE);
-        System.out.println("Return minimal element of array");
+        System.out.println("12) Return minimal element of array");
         Integer[] mas = {6, 43, 3, 87, 6, 16, 4, 21, 13, 38};
 
         System.out.println("Input:");
@@ -430,7 +430,7 @@ public class StreamLabs3 {
 
     static void task13() {
         System.out.println(LINE);
-        System.out.println("Return maximal element of array");
+        System.out.println("13) Return maximal element of array");
         Integer[] mas = {6, 43, 3, 87, 6, 16, 4, 21, 13, 38};
 
         System.out.println("Input:");
@@ -447,7 +447,7 @@ public class StreamLabs3 {
 
     static void task14() {
         System.out.println(LINE);
-        System.out.println("Return the nearest point to X");
+        System.out.println("14) Return the nearest point to X");
         ArrayList<Point2D.Float> list = new ArrayList<>(Arrays.asList(
                 new Point2D.Float(1.3f,6.4f),
                 new Point2D.Float(10.5f,3.5f),
@@ -479,7 +479,7 @@ public class StreamLabs3 {
 
     static void task15() {
         System.out.println(LINE);
-        System.out.println("Return the furthest point to X");
+        System.out.println("15) Return the furthest point to X");
         ArrayList<Point2D.Float> list = new ArrayList<>(Arrays.asList(
                 new Point2D.Float(1.3f,6.4f),
                 new Point2D.Float(10.5f,3.5f),
@@ -512,7 +512,7 @@ public class StreamLabs3 {
 
     static void task16() {
         System.out.println(LINE);
-        System.out.println("Exponential Random stream");
+        System.out.println("16) Exponential Random stream");
         Supplier<Integer> expGenerator = () -> Math.toIntExact(Math.round( -1000 * Math.log(1 - Math.random()) ));
 
         System.out.println("Input:\nExponential Random generator");
@@ -568,7 +568,7 @@ public class StreamLabs3 {
 
     static void task17() {
         System.out.println(LINE);
-        System.out.println("Return all combinations of strings");
+        System.out.println("17) Return all combinations of strings");
         String[] str = {"A", "B", "C", "D"};
 
         System.out.println("Input:");
@@ -592,7 +592,7 @@ public class StreamLabs3 {
 
     static void task18() {
         System.out.println(LINE);
-        System.out.println("Return all combinations of unique symbols in string");
+        System.out.println("18) Return all combinations of unique symbols in string");
         String[] str = {"A", "B", "C"};
 
         System.out.println("Input:");
@@ -613,7 +613,7 @@ public class StreamLabs3 {
 
     static void task19() {
         System.out.println(LINE);
-        System.out.println("Return min and max values on giving range");
+        System.out.println("19) Return min and max values on giving range");
 
         final int BEGIN = 1;
         final int END = 5;
@@ -638,7 +638,7 @@ public class StreamLabs3 {
 
     static void task20() {
         System.out.println(LINE);
-        System.out.println("Return Integral");
+        System.out.println("20) Return Integral");
 
         final double BEGIN = 1;
         final double END = 10;
@@ -663,7 +663,7 @@ public class StreamLabs3 {
 
     static void task21() {
         System.out.println(LINE);
-        System.out.println("Apply function to all elements of stream");
+        System.out.println("21) Apply function to all elements of stream");
         StringBuilder[] str = {
             new StringBuilder("Snowfall"),
             new StringBuilder("Overlord"),
@@ -688,7 +688,7 @@ public class StreamLabs3 {
 
     static void task22() {
         System.out.println(LINE);
-        System.out.println("Return IntStream");
+        System.out.println("22) Return IntStream");
         String[] str = {"A", "B123", "11", "A.5C", "Hello3.14world"};
 
         System.out.println("Input:");
@@ -716,7 +716,7 @@ public class StreamLabs3 {
 
     static void task23() {
         System.out.println(LINE);
-        System.out.println("Return sum of odd elements");
+        System.out.println("23) Return sum of odd elements");
         int[] mas = {1,2,3,4,5,6,7,8,9,10};
 
         System.out.println("Input:");
@@ -736,7 +736,7 @@ public class StreamLabs3 {
 
     static void task24() {
         System.out.println(LINE);
-        System.out.println("Group array by logged flag");
+        System.out.println("24) Group array by logged flag");
         ArrayList<UserLogged> list = new ArrayList<>(Arrays.asList(
                 new UserLogged(15,"Snowfall", true),
                 new UserLogged(9,"Overlord", false),
@@ -762,7 +762,7 @@ public class StreamLabs3 {
 
     static void task25() {
         System.out.println(LINE);
-        System.out.println("Return first element of array");
+        System.out.println("25) Return first element of array");
         ArrayList<UserLogged> list = new ArrayList<>(Arrays.asList(
                 new UserLogged(15,"Snowfall", true),
                 new UserLogged(1,"Sun", true),
@@ -823,7 +823,7 @@ public class StreamLabs3 {
 
     static void task26() {
         System.out.println(LINE);
-        System.out.println("Return html list");
+        System.out.println("26) Return html list");
         ArrayList<String> list = new ArrayList<>(Arrays.asList(
                 "Mind",
                 "Desert",
