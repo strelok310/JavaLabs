@@ -1,6 +1,7 @@
 package Labs;
 
 import Utils.Lambdas.CallFunction;
+import Utils.Lambdas.ComposeFunction;
 import Utils.Lambdas.FiveFunction;
 import Utils.Lambdas.TernaryFunction;
 import Utils.Tmp;
@@ -32,6 +33,8 @@ public class LambdaLabs {
         taskTest15();
         taskTest16();
         taskTest17();
+        taskTest18();
+        taskTest19();
     }
 
     /**
@@ -375,6 +378,65 @@ public class LambdaLabs {
 
         System.out.println("Solve 1, 2, 3, 4 ,5");
         System.out.println("Result: " + task17().apply(1,2,3,4,5));
+    }
+
+    /**
+     * Вернуть лямбду, которая возвращает лямбду, возводящую в квадрат по заданной степени
+     */
+
+    static Function<Integer, UnaryOperator<Integer>> task18() {
+        return x -> y -> (int) Math.pow(y, x);
+    }
+
+    static void taskTest18() {
+        System.out.println(LINE);
+        System.out.println("18) Exponentiation Lambda \n");
+
+        System.out.println("Result 2^10: " + task18().apply(10).apply(2));
+        System.out.println("Result 3^5: " + task18().apply(5).apply(3));
+    }
+
+    /**
+     * Вернуть лямбду, которая производит композицию двух функций. (f1,f2) => f2(f1(x)) .
+     * Для этого реализовать функциональный интерфейс. Пример использования:
+     */
+
+    static BiFunction<Function<Integer,Integer>,
+                      Function<Integer,Integer>,
+                      Function<Integer,Integer>> task19() {
+        return (x,y) -> y.compose(x);
+    }
+
+    static ComposeFunction<Integer> task19v2() {
+        return (x,y) -> y.compose(x);
+    }
+
+    static void taskTest19() {
+        System.out.println(LINE);
+        System.out.println("19) Compose lambdas\n");
+
+        System.out.println("Variant 1:");
+
+        int result = task19().apply(x -> x*2, x -> x-1).apply(10);
+        System.out.println(result);
+
+        result = task19().apply(task19().apply(x -> x*x, x -> x-10),
+                                task19().apply(x -> x/2, x -> x + 1))
+                         .apply(10);
+        System.out.println(result);
+
+        //==============================================================================================================
+
+        System.out.println("\nVariant 2:");
+
+        result = task19v2().compose(x -> x*2, x -> x-1).apply(10);
+        System.out.println(result);
+
+        result = task19v2().compose(task19().apply(x -> x*x, x -> x-10),
+                                    task19v2().compose(x -> x/2, x -> x + 1))
+                           .apply(10);
+        System.out.println(result);
+
     }
 
     //==============================================================================
