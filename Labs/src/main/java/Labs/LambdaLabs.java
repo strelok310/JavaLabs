@@ -35,6 +35,7 @@ public class LambdaLabs {
         taskTest17();
         taskTest18();
         taskTest19();
+        taskTest20();
     }
 
     /**
@@ -439,6 +440,42 @@ public class LambdaLabs {
 
     }
 
+    /**
+     * Вернуть лямбду, которая вернет полином, основанный на переданных коэффициентах
+     */
+
+    static BiFunction<Integer[], Integer, Integer> task20() {
+        return (mas, x) -> {
+            int sum = 0, exp = mas.length - 1;
+            for(Integer item : mas) sum += item * Math.pow(x, exp--);
+            return sum;
+        };
+    }
+
+    static void taskTest20() {
+        System.out.println(LINE);
+        System.out.println("20) Return lambda that solve polynomial\n");
+
+        Integer[] polynomial1 = {2, 3, 5};
+        Integer[] polynomial2 = {-5, -10};
+        Integer[] polynomial3 = {8};
+
+        int result1 = task20().apply(polynomial1, 5);
+        int result2 = task20().apply(polynomial2, 5);
+        int result3 = task20().apply(polynomial3, 5);
+
+        System.out.println("X = 5");
+        System.out.println("Input:");
+        System.out.println(Arrays.toString(polynomial1));
+        System.out.println(Arrays.toString(polynomial2));
+        System.out.println(Arrays.toString(polynomial3));
+
+        System.out.println("\nOutput");
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
+    }
+
     //==============================================================================
 
     static void task() {
@@ -465,21 +502,4 @@ public class LambdaLabs {
         System.out.println(f.apply(func));
     }
 
-    static void asd() {
-        Consumer<String> wtf = (s) -> System.out.println("hi, "+s);
-
-        /*Consumer<Consumer<String>> qwe = (x) -> {
-            x.accept("Darth Vader");
-            System.out.println("Have a nice day!");
-        };*/
-
-        Consumer<Tmp> qwe = (x) -> {
-            x.apply();
-            System.out.println("Have a nice day!");
-        };
-
-        Function<String, Tmp> func = (x) -> () -> System.out.println(x);
-
-        qwe.accept(func.apply("Darth Vader"));
-    }
 }
