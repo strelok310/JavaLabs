@@ -1,7 +1,6 @@
 package Labs;
 
 import Utils.Lambdas.*;
-import Utils.Tmp;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -35,6 +34,8 @@ public class LambdaLabs {
         taskTest20();
         taskTest21();
         taskTest22();
+        taskTest23();
+        taskTest24();
     }
 
     /**
@@ -527,6 +528,53 @@ public class LambdaLabs {
         System.out.println("22) Rerun lambda in case of exception\n");
 
         task22().apply(9).accept(() -> { throw new Exception("error"); } );
+    }
+
+    /**
+     * Вернуть лямбду, которая перед и после запуска переданной функции f, вызывает функцию логгера logFunc
+     */
+
+    static InterceptFunction<UnaryOperator<Integer>, Consumer> task23() {
+        return (x,y) -> z -> {
+            y.accept("Before: " + z);
+            Integer result = x.apply(z);
+            y.accept("After: " + result);
+            return result;
+        };
+    }
+
+    static void taskTest23() {
+        System.out.println(LINE);
+        System.out.println("23) Rerun lambda in case of exception\n");
+
+        //Variant 1
+        task23().intercept(x -> x + 1, System.out::println).apply(10);
+
+        //Variant 2
+        System.out.println();
+        LoggedFunction<Integer, Integer> f = x -> x + 1;
+        f.intercept(System.out::println).apply(10);
+    }
+
+    /**
+     * Вернуть лямбду, представляющую из себя последовательность, которая начинается с переданного x
+     */
+
+    static Function<Long, Supplier> task24() {
+        return x -> {
+            Long[] value = {x};
+            return () -> value[0]++;
+        };
+    }
+
+    static void taskTest24() {
+        System.out.println(LINE);
+        System.out.println("24) Sequence generator\n");
+
+        Supplier<Long> generator = task24().apply(100L);
+        System.out.println(generator.get());
+        System.out.println(generator.get());
+        System.out.println(generator.get());
     }
 
 }
