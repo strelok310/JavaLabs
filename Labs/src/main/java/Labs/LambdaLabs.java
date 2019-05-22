@@ -1,9 +1,6 @@
 package Labs;
 
-import Utils.Lambdas.CallFunction;
-import Utils.Lambdas.ComposeFunction;
-import Utils.Lambdas.FiveFunction;
-import Utils.Lambdas.TernaryFunction;
+import Utils.Lambdas.*;
 import Utils.Tmp;
 
 import java.time.LocalTime;
@@ -36,6 +33,8 @@ public class LambdaLabs {
         taskTest18();
         taskTest19();
         taskTest20();
+        taskTest21();
+        taskTest22();
     }
 
     /**
@@ -476,30 +475,75 @@ public class LambdaLabs {
         System.out.println(result3);
     }
 
-    //==============================================================================
+    /**
+     * Вернуть лямбду, которая кеширует результат некоторой функции, которая является входных аргументом
+     */
 
-    static void task() {
-        //кэширование результата функции
-        Supplier<Double> func = () -> Math.random();
-        Supplier<Double> func_const = () -> Math.random() * 100;
-
-        Supplier<Function<Supplier, Object>> lambda = () -> {
+    static Supplier<Function<Supplier, Object>> task21() {
+        return () -> {
             HashMap<Supplier, Object> cache = new HashMap<>();
-            return (x) -> {
+            return x -> {
                 if(!cache.containsKey(x)) cache.put(x, x.get());
                 return cache.get(x);
             };
         };
+    }
 
-        Function<Supplier, Object> f = lambda.get();
+    static void taskTest21() {
+        System.out.println(LINE);
+        System.out.println("21) Cache result of the function\n");
 
-        System.out.println(f.apply(func));
-        System.out.println(f.apply(func));
-        System.out.println(f.apply(func));
-        System.out.println(f.apply(func_const));
-        System.out.println(f.apply(func));
-        System.out.println(f.apply(func_const));
-        System.out.println(f.apply(func));
+        Supplier<Double> func1 = () -> Math.random();
+        Supplier<Double> func2 = () -> Math.random() * 100;
+
+        Function<Supplier, Object> f = task21().get();
+
+        System.out.println(f.apply(func1));
+        System.out.println(f.apply(func1));
+        System.out.println(f.apply(func2));
+        System.out.println(f.apply(func1));
+        System.out.println(f.apply(func2));
+        System.out.println(f.apply(func1));
+    }
+
+    /**
+     * Вернуть лямбду, которая запускает переданную функцию f, и в случае исключения перезапускает ее n раз
+     */
+
+    static Function<Integer, Consumer<ThrowingCall>> task22() {
+        return x -> {
+            Integer[] n = {x};
+            return y -> {
+                while(n[0]-- > 0) {
+                    try { y.call(); return; }
+                    catch (Exception e) { System.out.println("Exception: " + e.getMessage()); }
+                }
+            };
+        };
+    }
+
+    static void taskTest22() {
+        System.out.println(LINE);
+        System.out.println("22) Rerun lambda in case of exception\n");
+
+        task22().apply(9).accept(() -> { throw new Exception("error"); } );
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
