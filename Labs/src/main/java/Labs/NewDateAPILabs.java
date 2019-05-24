@@ -3,7 +3,6 @@ package Labs;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
 public class NewDateAPILabs {
@@ -25,6 +24,7 @@ public class NewDateAPILabs {
         task13();
         task14();
         task15();
+        task16();
     }
 
     /**
@@ -204,9 +204,7 @@ public class NewDateAPILabs {
         System.out.println(LINE);
         System.out.println("14) Get date of next thursday\n");
 
-        LocalDate date = LocalDate.of(2019,5,23)
-                //.now()
-                .with(TemporalAdjusters.next(DayOfWeek.THURSDAY));
+        LocalDate date = LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.THURSDAY));
         System.out.println(date);
     }
 
@@ -223,19 +221,20 @@ public class NewDateAPILabs {
                                   .plusWeeks(1);
         System.out.println(date);
     }
+
+    /**
+     * Преобразовать ZonedDateTime дял ващего региона в LocalDateTime для региона UTC.
+     */
+
+    static void task16() {
+        System.out.println(LINE);
+        System.out.println("16) Convert time in local zone in ZonedDateTime to LocalDateTime UTC\n");
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("Europe/Minsk"));
+        LocalDateTime localDateTime = zonedDateTime.withZoneSameInstant(ZoneOffset.UTC).toLocalDateTime();
+
+        System.out.println("ZonedDateTime: " + zonedDateTime);
+        System.out.println("LocalDateTime: " + localDateTime);
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
