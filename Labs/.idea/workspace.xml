@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/NIO/ShowDirectory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tmp.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+            <state relative-caret-position="469">
+              <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,10 +44,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="25" column="100" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="100" />
+            <state relative-caret-position="331">
+              <caret line="481" column="36" lean-forward="true" selection-start-line="481" selection-start-column="36" selection-end-line="481" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="546" column="47" lean-forward="true" selection-start-line="546" selection-start-column="47" selection-end-line="546" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -55,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="66" column="117" lean-forward="true" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="117" />
+            <state relative-caret-position="-58">
+              <caret line="66" column="117" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -77,7 +89,7 @@
         <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/file/SimpleFileVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
-              <caret line="72" column="26" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="72" selection-end-column="26" />
+              <caret line="72" column="26" selection-start-line="71" selection-start-column="4" selection-end-line="72" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -257,15 +269,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
               <item name="Lambdas" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Labs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-              <item name="NIO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
@@ -483,9 +486,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/ToLongFunction.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/DoubleConsumer.java" />
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/Supplier.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/BiConsumer.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/IntFunction.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/LongBinaryOperator.java" />
@@ -494,16 +494,6 @@
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/UnaryOperator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Lambdas/TriFunction.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Lambdas/FiveFunction.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="481" column="36" lean-forward="true" selection-start-line="481" selection-start-column="36" selection-end-line="481" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Lambdas/ComposeFunction.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/Function.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/BiFunction.java" />
@@ -710,17 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="583" column="25" selection-start-line="583" selection-start-column="25" selection-end-line="583" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/file/SimpleFileVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
-          <caret line="72" column="26" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="72" selection-end-column="26" />
+          <caret line="72" column="26" selection-start-line="71" selection-start-column="4" selection-end-line="72" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -734,7 +717,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -751,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="66" column="117" lean-forward="true" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -765,10 +741,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/tmp.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stream_example.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/matrix_A.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="481" column="36" lean-forward="true" selection-start-line="481" selection-start-column="36" selection-end-line="481" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="546" column="47" lean-forward="true" selection-start-line="546" selection-start-column="47" selection-end-line="546" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="66" column="117" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+        <state relative-caret-position="469">
+          <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -2,12 +2,15 @@ package Labs;
 
 import Utils.NIO.ShowDirectory;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
@@ -20,6 +23,10 @@ public class NIOLabs {
         task5();
         task6();
         task7();
+        task8();
+        task9();
+        task10();
+        task11();
     }
 
     /**
@@ -123,7 +130,87 @@ public class NIOLabs {
         System.out.println(mas.size() + " lines have been read");
     }
 
+    /**
+     * Сымитировать ошибку в процессе чтения файла (выбросить исключение). Корректно освободить все ресурсы.
+     */
 
+    static void task8() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("8) Throw exception during reading file and free resources\n");
+
+        Path path = Paths.get(ClassLoader.getSystemResource("class.txt").toURI());
+        try(BufferedReader bf = Files.newBufferedReader(path)) {
+            String str = null;
+            while((str = bf.readLine()) != null) {
+                System.out.println("String: " + str);
+                throw new IOException("Test IO error");
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * Добавить строку в конец файла
+     */
+
+    static void task9() throws IOException {
+        System.out.println(LINE);
+        System.out.println("9) Add line in the end of file\n");
+
+        Path path = Paths.get("D:/tmp_time.txt");
+        if(!Files.exists(path)) Files.createFile(path);
+
+        //Variant 1
+        Files.write(path, ("\n" + LocalDateTime.now().toString()).getBytes(), StandardOpenOption.APPEND);
+
+        //Variant 2
+        try(BufferedWriter bw = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
+            bw.newLine();
+            String str = LocalDateTime.now().toString();
+            bw.write(str, 0, str.length());
+        }
+        catch (IOException e) {
+            throw e;
+        }
+
+    }
+
+    /**
+     * Записать в массив первые три строки из файла
+     */
+
+    static void task10() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("10) Read first three lines from file\n");
+
+        ArrayList<String> list = new ArrayList<>();
+        Path path = Paths.get(ClassLoader.getSystemResource("stream_example.txt").toURI());
+        try(BufferedReader br = Files.newBufferedReader(path)) {
+            while (list.size() < 3) list.add(br.readLine());
+        }
+        catch (IOException e) {
+            throw e;
+        }
+
+        System.out.println(list);
+    }
+
+    /**
+     * Записать в массив последние две строки из файла
+     */
+
+    static void task11() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("11) Read last two lines from file\n");
+
+        ArrayList<String> list = new ArrayList<>();
+        Path path = Paths.get(ClassLoader.getSystemResource("stream_example.txt").toURI());
+        long count = Files.lines(path).count();
+        list.addAll(Files.lines(path).skip(count-2).collect(Collectors.toList()));
+        System.out.println(list);
+    }
 
 }
 
