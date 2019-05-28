@@ -28,6 +28,8 @@ public class NIOLabs {
         task13();
         task14();
         task15();
+        task16();
+        task17();
     }
 
     /**
@@ -317,8 +319,32 @@ public class NIOLabs {
         }
     }
 
+    /**
+     * Использовать PrintStream для вывода в файл
+     */
 
+    static void task16() throws IOException {
+        System.out.println(LINE);
+        System.out.println("16) Write to file by PrintStream\n");
 
+        try(PrintStream output = new PrintStream("D:/tmp_task16.txt")) {
+            output.println("Hello world!");
+        }
+        catch (IOException e) {
+            throw e;
+        }
+    }
+
+    /**
+     * Использовать DataInputStream для записи примитивов в файл. Прочитать с использованием DataOutputStream
+     */
+
+    static void task17() {
+        System.out.println(LINE);
+        System.out.println("17) Use DataInputStream/DataOutputStream to read/write primitives\n");
+
+        
+    }
 }
 
 
