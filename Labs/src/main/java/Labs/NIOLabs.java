@@ -1,5 +1,6 @@
 package Labs;
 
+import Utils.NIO.SerializableData;
 import Utils.NIO.ShowDirectory;
 
 import java.io.*;
@@ -30,6 +31,7 @@ public class NIOLabs {
         task15();
         task16();
         task17();
+        task18();
     }
 
     /**
@@ -379,6 +381,39 @@ public class NIOLabs {
             throw e;
         }
     }
+
+    /**
+     * Использовать ObjectInputStream для сериализации. Десериализовать серилизованный объект.
+     */
+
+    static void task18() throws IOException, ClassNotFoundException {
+        System.out.println(LINE);
+        System.out.println("18) Serialize and deserialize object\n");
+
+        SerializableData data = new SerializableData(6, true, "Hello");
+        SerializableData newData;
+
+        try(FileOutputStream file = new FileOutputStream(ClassLoader.getSystemResource("nio_data.bin").getPath());
+            ObjectOutputStream output = new ObjectOutputStream(file)) {
+
+            output.writeObject(data);
+        }
+        catch (IOException e) {
+            throw e;
+        }
+
+        try(FileInputStream file = new FileInputStream(ClassLoader.getSystemResource("nio_data.bin").getPath());
+            ObjectInputStream input = new ObjectInputStream(file)) {
+
+            newData = (SerializableData) input.readObject();
+        }
+        catch (IOException | ClassNotFoundException e) {
+            throw e;
+        }
+
+        System.out.println(newData);
+    }
+
 }
 
 
