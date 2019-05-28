@@ -288,7 +288,7 @@ public class NIOLabs {
         ByteArrayInputStream byteInput = new ByteArrayInputStream(new byte[] {1,2,3,4,5});
         ByteArrayOutputStream byteOutput = new ByteArrayOutputStream();
 
-
+        //Convert input to output
         try(BufferedInputStream input = new BufferedInputStream(byteInput);
             BufferedOutputStream output = new BufferedOutputStream(byteOutput)) {
 
@@ -303,7 +303,21 @@ public class NIOLabs {
         }
 
         System.out.println("Output stream: " + Arrays.toString(byteOutput.toByteArray()));
+
+        //Convert output to input
+        byteInput = new ByteArrayInputStream(byteOutput.toByteArray());
+        try(BufferedInputStream input = new BufferedInputStream(byteInput)) {
+
+            buf = new byte[input.available()];
+            input.read(buf);
+            System.out.println("Input stream: " + Arrays.toString(buf));
+        }
+        catch (IOException e) {
+            throw e;
+        }
     }
+
+
 
 }
 
