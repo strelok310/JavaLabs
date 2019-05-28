@@ -158,12 +158,13 @@ public class NIOLabs {
      * Добавить строку в конец файла
      */
 
-    static void task9() throws IOException {
+    static void task9() throws IOException, URISyntaxException {
         System.out.println(LINE);
         System.out.println("9) Add line in the end of file\n");
 
-        Path path = Paths.get("D:/tmp_time.txt");
-        if(!Files.exists(path)) Files.createFile(path);
+        //Path path = Paths.get("D:/tmp_time.txt");
+        //if(!Files.exists(path)) Files.createFile(path);
+        Path path = Paths.get(ClassLoader.getSystemResource("nio_time.txt").toURI());
 
         //Variant 1
         Files.write(path, ("\n" + LocalDateTime.now().toString()).getBytes(), StandardOpenOption.APPEND);
@@ -327,7 +328,8 @@ public class NIOLabs {
         System.out.println(LINE);
         System.out.println("16) Write to file by PrintStream\n");
 
-        try(PrintStream output = new PrintStream("D:/tmp_task16.txt")) {
+        //try(PrintStream output = new PrintStream("D:/tmp_task16.txt")) {
+        try(PrintStream output = new PrintStream(ClassLoader.getSystemResource("nio_print.txt").getPath())) {
             output.println("Hello world!");
         }
         catch (IOException e) {
@@ -339,11 +341,43 @@ public class NIOLabs {
      * Использовать DataInputStream для записи примитивов в файл. Прочитать с использованием DataOutputStream
      */
 
-    static void task17() {
+    static void task17() throws IOException {
         System.out.println(LINE);
         System.out.println("17) Use DataInputStream/DataOutputStream to read/write primitives\n");
 
-        
+        try(FileOutputStream file = new FileOutputStream(ClassLoader.getSystemResource("nio_primitives.bin").getPath());
+            DataOutputStream output = new DataOutputStream(file)) {
+
+            output.writeBoolean(true);
+            output.writeByte(0xf);
+            output.writeChar('C');
+            output.writeShort(9);
+            output.writeInt(36);
+            output.writeLong(26L);
+            output.writeFloat(1.3f);
+            output.writeDouble(9.11);
+            output.writeUTF("Hello world!");
+        }
+        catch (IOException e) {
+            throw e;
+        }
+
+        try(FileInputStream file = new FileInputStream(ClassLoader.getSystemResource("nio_primitives.bin").getPath());
+            DataInputStream input = new DataInputStream(file)) {
+
+            boolean a = input.readBoolean();    System.out.println("Boolean: " + a);
+            byte b = input.readByte();          System.out.println("Byte: " + b);
+            char c = input.readChar();          System.out.println("Char: " + c);
+            short d = input.readShort();        System.out.println("Short: " + d);
+            int f = input.readInt();            System.out.println("Integer: " + f);
+            long g = input.readLong();          System.out.println("Long: " + g);
+            float h = input.readFloat();        System.out.println("Float: " + h);
+            double i = input.readDouble();      System.out.println("Double: " + i);
+            String str = input.readUTF();       System.out.println("String: " + str);
+        }
+        catch (IOException e) {
+            throw e;
+        }
     }
 }
 
