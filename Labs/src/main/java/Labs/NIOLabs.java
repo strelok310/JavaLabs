@@ -2,15 +2,12 @@ package Labs;
 
 import Utils.NIO.ShowDirectory;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
@@ -29,6 +26,8 @@ public class NIOLabs {
         task11();
         task12();
         task13();
+        task14();
+        task15();
     }
 
     /**
@@ -224,7 +223,7 @@ public class NIOLabs {
 
         Path path = Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI());
         String str = Files.lines(path)
-                          .flatMap(x -> Arrays.stream(x.split(" |\\,|\\.|\\?|\\!|\\-")))
+                          .flatMap(x -> Arrays.stream(x.split("\\s|\\,|\\.|\\?|\\!|\\-\\:")))
                           .sorted((x,y) -> y.length() - x.length())
                           .findFirst().orElse(null);
 
@@ -242,7 +241,7 @@ public class NIOLabs {
 
         Path path = Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI());
         Map.Entry<String, Long> word = Files.lines(path)
-              .flatMap((x) -> Arrays.stream(x.split(" |\\,|\\.|\\?|\\!|\\-")))
+              .flatMap((x) -> Arrays.stream(x.split("\\s|\\,|\\.|\\?|\\!|\\-\\:")))
               .collect(Collectors.groupingBy(String::toString, Collectors.counting()))
               .entrySet()
               .stream()
@@ -252,6 +251,60 @@ public class NIOLabs {
         if(word != null) System.out.println("Word: " + word.getKey());
         else System.out.println("No words found");
     }
+
+    /**
+     * Преобразовать ByteArrayInputStream в ByteArrayOutputStream и обратно
+     */
+
+    static void task14() {
+        System.out.println(LINE);
+        System.out.println("14) Convert ByteArrayInputStream to ByteArrayOutputStream and vice versa\n");
+
+        ByteArrayInputStream input = new ByteArrayInputStream(new byte[] {1,2,3,4,5});
+        byte[] buf = new byte[input.available()];
+        input.read(buf, 0, input.available());
+        System.out.println("Input stream: " + Arrays.toString(buf));
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        output.write(buf, 0, buf.length);
+        System.out.println("Output stream: " + Arrays.toString(output.toByteArray()));
+
+        input = new ByteArrayInputStream(output.toByteArray());
+        buf = new byte[input.available()];
+        input.read(buf, 0, input.available());
+        System.out.println("Input stream: " + Arrays.toString(buf));
+    }
+
+    /**
+     * Преобразовать BufferedInputStream в BufferedOutputStream и обратно
+     */
+
+    static void task15() throws IOException {
+        System.out.println(LINE);
+        System.out.println("15) Convert BufferedInputStream to BufferedOutputStream  and vice versa\n");
+
+        byte[] buf;
+
+        ByteArrayInputStream byteInput = new ByteArrayInputStream(new byte[] {1,2,3,4,5});
+        ByteArrayOutputStream byteOutput = new ByteArrayOutputStream();
+
+
+        try(BufferedInputStream input = new BufferedInputStream(byteInput);
+            BufferedOutputStream output = new BufferedOutputStream(byteOutput)) {
+
+            buf = new byte[input.available()];
+            input.read(buf);
+            System.out.println("Input stream: " + Arrays.toString(buf));
+
+            output.write(buf);
+        }
+        catch (IOException e) {
+            throw e;
+        }
+
+        System.out.println("Output stream: " + Arrays.toString(byteOutput.toByteArray()));
+    }
+
 }
 
 

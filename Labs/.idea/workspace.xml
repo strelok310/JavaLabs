@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="248" column="75" selection-start-line="248" selection-start-column="31" selection-end-line="248" selection-end-column="75" />
+            <state relative-caret-position="374">
+              <caret line="303" lean-forward="true" selection-start-line="303" selection-end-line="303" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="172" column="55" lean-forward="true" selection-start-line="172" selection-start-column="55" selection-end-line="172" selection-end-column="55" />
+            <state relative-caret-position="312">
+              <caret line="187" column="15" selection-start-line="187" selection-start-column="15" selection-end-line="187" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -93,6 +92,7 @@
       <find>thir</find>
       <find>ordinal</find>
       <find>wordco</find>
+      <find>Integer.parse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,8 +142,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Labs/LambdaLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/ShowDirectory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
       </list>
     </option>
   </component>
@@ -444,8 +444,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/IntFunction.java" />
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/LongBinaryOperator.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/IntBinaryOperator.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/BinaryOperator.java" />
     <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/UnaryOperator.java" />
@@ -731,20 +729,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="248" column="75" selection-start-line="248" selection-start-column="31" selection-end-line="248" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="187" column="15" selection-start-line="187" selection-start-column="15" selection-end-line="187" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/BufferedInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="172" column="55" lean-forward="true" selection-start-line="172" selection-start-column="55" selection-end-line="172" selection-end-column="55" />
+        <state relative-caret-position="-4276">
+          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/FilterInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="131" column="15" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="303" lean-forward="true" selection-start-line="303" selection-end-line="303" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
