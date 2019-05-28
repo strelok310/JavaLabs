@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
@@ -27,6 +27,8 @@ public class NIOLabs {
         task9();
         task10();
         task11();
+        task12();
+        task13();
     }
 
     /**
@@ -212,6 +214,44 @@ public class NIOLabs {
         System.out.println(list);
     }
 
+    /**
+     * Найти самое длинное слово в файле
+     */
+
+    static void task12() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("12) Find the longest word in the file\n");
+
+        Path path = Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI());
+        String str = Files.lines(path)
+                          .flatMap(x -> Arrays.stream(x.split(" |\\,|\\.|\\?|\\!|\\-")))
+                          .sorted((x,y) -> y.length() - x.length())
+                          .findFirst().orElse(null);
+
+        if(str != null) System.out.println("The longest word: " + str);
+        else System.out.println("No words found");
+    }
+
+    /**
+     * Найти самое частое слово в файле
+     */
+
+    static void task13() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("13) Find the most frequent word in the file\n");
+
+        Path path = Paths.get(ClassLoader.getSystemResource("wordCount.txt").toURI());
+        Map.Entry<String, Long> word = Files.lines(path)
+              .flatMap((x) -> Arrays.stream(x.split(" |\\,|\\.|\\?|\\!|\\-")))
+              .collect(Collectors.groupingBy(String::toString, Collectors.counting()))
+              .entrySet()
+              .stream()
+              .sorted((x,y) -> Math.toIntExact(y.getValue() - x.getValue()))
+              .findFirst().orElse(null);
+
+        if(word != null) System.out.println("Word: " + word.getKey());
+        else System.out.println("No words found");
+    }
 }
 
 

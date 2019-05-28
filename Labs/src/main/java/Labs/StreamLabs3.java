@@ -172,7 +172,7 @@ public class StreamLabs3 {
                                             .collect(Collectors.groupingBy(String::toString, Collectors.counting()))
                                             .entrySet()
                                             .stream()
-                                            .sorted((x,y) -> Integer.parseInt(String.valueOf(y.getValue() - x.getValue())))
+                                            .sorted((x,y) -> Math.toIntExact(y.getValue() - x.getValue()))
                                             .map((x) -> x.getKey());
         System.out.println(Arrays.toString(res.toArray(String[]::new)));
 
