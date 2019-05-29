@@ -38,6 +38,7 @@ public class NIOLabs {
         task17();
         task18();
         task19();
+        task20();
     }
 
     /**
@@ -498,6 +499,32 @@ public class NIOLabs {
             double compression = Double.valueOf(csize) / size * 100;
             System.out.format("\t%-20s \t%10d | %-10d Bytes (%.1f %%)\n", x.getName(), size, csize, compression);
         });
+    }
+
+    /**
+     * Считать последние 1000 символов из файла
+     */
+
+    static void task20() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("20) Read last 1000 symbols from file\n");
+
+        Path path = Paths.get(ClassLoader.getSystemResource("nio_symbols.txt").toURI());
+        long size = Files.size(path);
+        System.out.println("File size: " + size + " Bytes");
+
+        try(FileReader file = new FileReader(ClassLoader.getSystemResource("nio_symbols.txt").getPath())) {
+            size = file.skip(size);
+        }
+        System.out.println(size + " characters\n");
+
+        char[] symbols = new char[1000];
+        try(FileReader file = new FileReader(ClassLoader.getSystemResource("nio_symbols.txt").getPath())) {
+            file.skip(size - 1000);
+            file.read(symbols, 0, 1000);
+        }
+
+        System.out.println(symbols);
     }
 
 }
