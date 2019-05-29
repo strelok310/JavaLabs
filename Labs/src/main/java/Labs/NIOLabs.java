@@ -5,10 +5,15 @@ import Utils.NIO.ShowDirectory;
 
 import java.io.*;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 
 public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
@@ -32,6 +37,7 @@ public class NIOLabs {
         task16();
         task17();
         task18();
+        task19();
     }
 
     /**
@@ -412,6 +418,79 @@ public class NIOLabs {
         }
 
         System.out.println(newData);
+    }
+
+    /**
+     * Заархивировать в zip несколько файлов. Разархивировать файлы из zip.
+     * Расчитать размер каждого файла в архиве
+     */
+
+    static void task19() throws IOException {
+        System.out.println(LINE);
+        System.out.println("19) Compress/decompress some files to/from zip\n");
+
+        Path pathDir = Paths.get("D:/java_nio_tmp/");
+        if(!Files.exists(pathDir)) Files.createDirectory(pathDir);
+        Path path = Paths.get("D:/java_nio_tmp/tmp.zip");
+        URL filePath;
+
+        String[] files = {
+            "class.txt",
+            "matrix_A.txt",
+            "matrix_B.txt",
+            "nio_data.bin",
+            "nio_primitives.bin",
+            "nio_print.txt",
+            "nio_time.txt",
+            "stream_example.txt",
+            "wordCount.txt"
+        };
+
+        System.out.println("Compressing files:");
+        try(FileOutputStream zipFile = new FileOutputStream("D:/java_nio_tmp/tmp.zip");
+            ZipOutputStream zip = new ZipOutputStream(zipFile)) {
+
+            for(String item : files) {
+                if((filePath = ClassLoader.getSystemResource(item)) != null) {
+                    try( FileInputStream file = new FileInputStream(filePath.getPath()) ) {
+                        byte[] data = new byte[file.available()];
+                        file.read(data);
+
+                        zip.putNextEntry(new ZipEntry(item));
+                        zip.write(data);
+                        zip.closeEntry();
+
+                        System.out.println("\t" + item + " added to zip");
+                    }
+                }
+            }
+        }
+        System.out.println("Compression completed");
+
+        System.out.println();
+
+        System.out.println("Decompressing files:");
+        try(FileInputStream zipFile = new FileInputStream("D:/java_nio_tmp/tmp.zip");
+            ZipInputStream zip = new ZipInputStream(zipFile)) {
+
+            ZipEntry entry;
+            while((entry = zip.getNextEntry()) != null) {
+                long size = entry.getSize();
+                long csize = entry.getCompressedSize();
+                double compression = Double.valueOf(size) / csize * 100;
+                System.out.format("\t%20s \t%d | %d (%.1f %%)\n", entry.getName(), size, csize, compression);
+
+                try(FileOutputStream file = new FileOutputStream("D:/java_nio_tmp/" + entry.getName())) {
+                    int data;
+                    while((data = zip.read()) != -1) file.write(data);
+                }
+                zip.closeEntry();
+            }
+        }
+        System.out.println("Decompression completed");
+
+        ZipFile zf = new ZipFile("D:/java_nio_tmp/tmp.zip");
+        zf.stream().forEach(x -> System.out.println(((ZipEntry) x).getName() + " " + ((ZipEntry) x).getSize() + " " + ((ZipEntry) x).getCompressedSize()));
     }
 
 }
