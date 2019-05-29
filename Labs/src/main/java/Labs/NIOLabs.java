@@ -469,28 +469,35 @@ public class NIOLabs {
 
         System.out.println();
 
-        System.out.println("Decompressing files:");
-        try(FileInputStream zipFile = new FileInputStream("D:/java_nio_tmp/tmp.zip");
+        System.out.println("Extracting files:");
+        try(FileInputStream zipFile = new FileInputStream("D:/java_nio_tmp/wtf.zip");
             ZipInputStream zip = new ZipInputStream(zipFile)) {
 
             ZipEntry entry;
             while((entry = zip.getNextEntry()) != null) {
-                long size = entry.getSize();
-                long csize = entry.getCompressedSize();
-                double compression = Double.valueOf(size) / csize * 100;
-                System.out.format("\t%20s \t%d | %d (%.1f %%)\n", entry.getName(), size, csize, compression);
-
                 try(FileOutputStream file = new FileOutputStream("D:/java_nio_tmp/" + entry.getName())) {
                     int data;
                     while((data = zip.read()) != -1) file.write(data);
                 }
+
+                long size = entry.getSize();
+                long csize = entry.getCompressedSize();
+                double compression = Double.valueOf(csize) / size * 100;
+                System.out.format("\t%-20s \t%10d | %-10d Bytes (%.1f %%)\n", entry.getName(), size, csize, compression);
+
                 zip.closeEntry();
             }
         }
-        System.out.println("Decompression completed");
+        System.out.println("Extraction completed");
 
+        System.out.println("\nContent of zip file:");
         ZipFile zf = new ZipFile("D:/java_nio_tmp/tmp.zip");
-        zf.stream().forEach(x -> System.out.println(((ZipEntry) x).getName() + " " + ((ZipEntry) x).getSize() + " " + ((ZipEntry) x).getCompressedSize()));
+        zf.stream().forEach(x -> {
+            long size = x.getSize();
+            long csize = x.getCompressedSize();
+            double compression = Double.valueOf(csize) / size * 100;
+            System.out.format("\t%-20s \t%10d | %-10d Bytes (%.1f %%)\n", x.getName(), size, csize, compression);
+        });
     }
 
 }
