@@ -2,14 +2,14 @@ package Labs;
 
 import Utils.NIO.SerializableData;
 import Utils.NIO.ShowDirectory;
+import Utils.NIO.TimeClientThread;
+import Utils.NIO.TimeServerThread;
 
 import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
+import java.net.*;
 import java.nio.file.*;
-import java.time.LocalDateTime;
+import java.rmi.UnknownHostException;
+import java.time.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
@@ -542,11 +542,41 @@ public class NIOLabs {
      * в заданной TimeZone. Реализовать клиента, который будет отправлять свою либо случайную TimeZone на сервер.
      */
 
-    static void task21() {
+    static void task21() throws IOException {
         System.out.println(LINE);
         System.out.println("21) Create server that receives TimeZone and send current time for it\n");
 
-        
+        String[] zones = {
+                "UTC",
+                "Europe/Minsk",
+                "Asia/Tokyo",
+                "Asia/Bangkok",
+                "Asia/Shanghai",
+                "America/New_York",
+                "Europe/Berlin"
+        };
+
+        Thread clientThread = new TimeClientThread("Client", zones);
+        clientThread.start();
+
+        //Server side begin
+
+        int count = zones.length;
+        try(ServerSocket server = new ServerSocket(1503)) {
+            while(count != 0) {
+                new TimeServerThread("Client_" + LocalTime.now(), server.accept()).run();
+                count--;
+            }
+        }
+
+        //Server side end
+
+        try {
+            clientThread.join();
+        }
+        catch (InterruptedException e) {
+            System.out.println(clientThread.getName() + " finished");
+        }
     }
 
 }

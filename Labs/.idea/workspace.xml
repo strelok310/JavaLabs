@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/NIO/TimeClientThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/NIO/TimeServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/nio_symbols.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/nio_characters.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,11 +20,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="122" column="72" selection-start-line="122" selection-start-column="56" selection-end-line="122" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="548" column="8" selection-start-line="548" selection-start-column="8" selection-end-line="548" selection-end-column="8" />
+            <state relative-caret-position="459">
+              <caret line="564" column="59" lean-forward="true" selection-start-line="564" selection-start-column="59" selection-end-line="564" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/TimeClientThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/TimeServerThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,8 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logic</find>
-      <find>out</find>
       <find>setOut</find>
       <find>setOut(</find>
       <find>getPrimitiveClass</find>
@@ -92,6 +127,8 @@
       <find>method</find>
       <find>task16</find>
       <find>flag</find>
+      <find>run</find>
+      <find>void run</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,6 +182,8 @@
         <option value="$PROJECT_DIR$/target/classes/tmp.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/SerializableData.java" />
         <option value="$PROJECT_DIR$/src/main/resources/nio_symbols.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/TimeServerThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/TimeClientThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
       </list>
     </option>
@@ -458,26 +497,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="25" column="100" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/stream_example.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/matrix_A.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="66" column="117" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -492,16 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,10 +825,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="745" column="19" selection-start-line="745" selection-start-column="11" selection-end-line="745" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/time/ZoneOffset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="122" column="72" selection-start-line="122" selection-start-column="56" selection-end-line="122" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/TimeServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/TimeClientThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="548" column="8" selection-start-line="548" selection-start-column="8" selection-end-line="548" selection-end-column="8" />
+        <state relative-caret-position="459">
+          <caret line="564" column="59" lean-forward="true" selection-start-line="564" selection-start-column="59" selection-end-line="564" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
