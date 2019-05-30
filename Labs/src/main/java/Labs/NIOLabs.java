@@ -6,6 +6,8 @@ import Utils.NIO.ShowDirectory;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -39,6 +41,7 @@ public class NIOLabs {
         task18();
         task19();
         task20();
+        task21();
     }
 
     /**
@@ -507,24 +510,43 @@ public class NIOLabs {
 
     static void task20() throws IOException, URISyntaxException {
         System.out.println(LINE);
-        System.out.println("20) Read last 1000 symbols from file\n");
+        System.out.println("20) Read last 1000 characters from file\n");
 
-        Path path = Paths.get(ClassLoader.getSystemResource("nio_symbols.txt").toURI());
+        Path path = Paths.get(ClassLoader.getSystemResource("nio_characters.txt").toURI());
         long size = Files.size(path);
-        System.out.println("File size: " + size + " Bytes");
+        System.out.println(size + " Bytes");
 
-        try(FileReader file = new FileReader(ClassLoader.getSystemResource("nio_symbols.txt").getPath())) {
+        try(FileReader file = new FileReader(ClassLoader.getSystemResource("nio_characters.txt").getPath())) {
             size = file.skip(size);
         }
         System.out.println(size + " characters\n");
 
-        char[] symbols = new char[1000];
-        try(FileReader file = new FileReader(ClassLoader.getSystemResource("nio_symbols.txt").getPath())) {
-            file.skip(size - 1000);
-            file.read(symbols, 0, 1000);
+        char[] symbols;
+        try(FileReader file = new FileReader(ClassLoader.getSystemResource("nio_characters.txt").getPath())) {
+            if(size >= 1000) {
+                symbols = new char[1000];
+                file.skip(size - 1000);
+                file.read(symbols, 0, 1000);
+            }
+            else {
+                symbols = new char[Math.toIntExact(size)];
+                file.read(symbols);
+            }
         }
 
         System.out.println(symbols);
+    }
+
+    /**
+     * Используя сокет реализовать сервер, который принимает на вход TimeZone, а возвращает текущее время
+     * в заданной TimeZone. Реализовать клиента, который будет отправлять свою либо случайную TimeZone на сервер.
+     */
+
+    static void task21() {
+        System.out.println(LINE);
+        System.out.println("21) Create server that receives TimeZone and send current time for it\n");
+
+        
     }
 
 }
