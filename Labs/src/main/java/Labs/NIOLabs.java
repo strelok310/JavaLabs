@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.time.*;
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -23,7 +24,7 @@ public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
 
     public static void main(String[] args) throws Exception {
-        task1();
+        /*task1();
         task2();
         task3();
         task4();
@@ -44,7 +45,8 @@ public class NIOLabs {
         task19();
         task20();
         task21();
-        task22();
+        task22();*/
+        task23();
     }
 
     /**
@@ -630,6 +632,28 @@ public class NIOLabs {
         byte[] byteDefault = Charset.defaultCharset().encode(CharBuffer.wrap(strASCII2.toCharArray())).array();
         String strDefault = new String(byteDefault, Charset.defaultCharset());
         System.out.println(strDefault);*/
+    }
+
+    /**
+     * Откройте картинку как бинарный файл, переведите ее в Base64. Отправьте по сокету.
+     * Раскодируйте из Base64 и сохраните на диск. Убедитесь, что картинка не повреждена.
+     */
+
+    static void task23() throws IOException, URISyntaxException {
+        System.out.println(LINE);
+        System.out.println("23) Encode/Decode image to/from Base64\n");
+
+        Path path = Paths.get(ClassLoader.getSystemResource("image.jpg").toURI());
+        byte[] image = Files.readAllBytes(path);
+
+        String encodedImage = Base64.getEncoder().encodeToString(image);
+        byte[] decodedImage = Base64.getDecoder().decode(encodedImage);
+
+        Path file = Paths.get("N:\\Programming\\image.jpg");
+        Files.write(file, decodedImage);
+
+        Path tmp = Paths.get("N:\\Programming\\image.txt");
+        Files.write(tmp, encodedImage.getBytes());
     }
 
 }
