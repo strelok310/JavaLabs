@@ -7,8 +7,10 @@ import Utils.NIO.TimeServerThread;
 
 import java.io.*;
 import java.net.*;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.rmi.UnknownHostException;
 import java.time.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -42,6 +44,7 @@ public class NIOLabs {
         task19();
         task20();
         task21();
+        task22();
     }
 
     /**
@@ -577,6 +580,56 @@ public class NIOLabs {
         catch (InterruptedException e) {
             System.out.println(clientThread.getName() + " finished");
         }
+    }
+
+    /**
+     * Переведите текст из ANSII в UTF-8, затем ASCII, затем в кодировку по умолчанию
+     */
+
+    static void task22() {
+        System.out.println(LINE);
+        System.out.println("22) Change character encoding\n");
+
+        String str = "Hello world! Привет";
+        System.out.println("Original: \"" + str + "\"");
+        System.out.println(Arrays.toString(str.getBytes()));
+
+        byte[] byteASCII = str.getBytes(StandardCharsets.US_ASCII);
+        String strASCII = new String(byteASCII, StandardCharsets.US_ASCII);
+        System.out.println("\nASCII: \"" + strASCII + "\"");
+        System.out.println(Arrays.toString(byteASCII));
+
+        byte[] byteUTF8 = strASCII.getBytes(StandardCharsets.UTF_8);
+        String strUTF8 = new String(byteUTF8, StandardCharsets.UTF_8);
+        System.out.println("\nASCII to UTF-8: \"" + strUTF8 + "\"");
+        System.out.println(Arrays.toString(byteUTF8));
+
+        byte[] byteASCII2 = strUTF8.getBytes(StandardCharsets.US_ASCII);
+        String strASCII2 = new String(byteASCII2, StandardCharsets.US_ASCII);
+        System.out.println("\nUTF-8 to ASCII: \"" + strASCII2 + "\"");
+        System.out.println(Arrays.toString(byteASCII2));
+
+        byte[] byteDefault = strASCII2.getBytes(Charset.defaultCharset());
+        String strDefault = new String(byteDefault, Charset.defaultCharset());
+        System.out.println("\nASCII to default: \"" + strDefault + "\"");
+        System.out.println(Arrays.toString(byteDefault));
+
+
+        /*byte[] byteASCII = str.getBytes(StandardCharsets.US_ASCII);
+        String strASCII = new String(byteASCII, StandardCharsets.US_ASCII);
+        System.out.println(strASCII);
+
+        byte[] byteUTF8 = StandardCharsets.UTF_8.encode(CharBuffer.wrap(strASCII.toCharArray())).array();
+        String strUTF8 = new String(byteUTF8, StandardCharsets.UTF_8);
+        System.out.println(strUTF8);
+
+        byte[] byteASCII2 = StandardCharsets.US_ASCII.encode(CharBuffer.wrap(strUTF8.toCharArray())).array();
+        String strASCII2 = new String(byteASCII2, StandardCharsets.US_ASCII);
+        System.out.println(strASCII2);
+
+        byte[] byteDefault = Charset.defaultCharset().encode(CharBuffer.wrap(strASCII2.toCharArray())).array();
+        String strDefault = new String(byteDefault, Charset.defaultCharset());
+        System.out.println(strDefault);*/
     }
 
 }
