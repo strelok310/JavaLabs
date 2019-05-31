@@ -4,6 +4,7 @@ import Utils.NIO.*;
 
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -44,6 +45,7 @@ public class NIOLabs {
         task21();
         task22();
         task23();
+        task24();
     }
 
     /**
@@ -619,7 +621,7 @@ public class NIOLabs {
      * Раскодируйте из Base64 и сохраните на диск. Убедитесь, что картинка не повреждена.
      */
 
-    static void task23() throws IOException, URISyntaxException {
+    static void task23() throws IOException {
         System.out.println(LINE);
         System.out.println("23) Encode/Decode image to/from Base64\n");
 
@@ -630,6 +632,35 @@ public class NIOLabs {
 
         try(ServerSocket server = new ServerSocket(1503)) {
             new PictureServerThread("Client_" + LocalTime.now(), server.accept()).run();
+        }
+
+        //Server side end
+
+        try {
+            clientThread.join();
+        }
+        catch (InterruptedException e) {
+            System.out.println(clientThread.getName() + " finished");
+        }
+    }
+
+    /**
+     * В предыдущем задании вместо сокета отправьте данные коллеге, у которого кодировка по умолчанию
+     * отличается от вашей (например, между Windows-Linux машинами). Для передачи данных используйте
+     * любой способ (через сокет, через файл, через строку).
+     */
+
+    static void task24() throws IOException {
+        System.out.println(LINE);
+        System.out.println("24) Encode/Decode image to/from Base64 with charset\n");
+
+        Thread clientThread = new PictureCharsetClientThread("Client");
+        clientThread.start();
+
+        //Server side begin
+
+        try(ServerSocket server = new ServerSocket(1503)) {
+            new PictureCharsetServerThread("Client_" + LocalTime.now(), server.accept()).run();
         }
 
         //Server side end
