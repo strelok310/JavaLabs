@@ -12,7 +12,6 @@ public class TimeServerThread extends Thread {
 
     public TimeServerThread(String name, Socket client) {
         super(name);
-
         this.client = client;
     }
 
@@ -33,6 +32,7 @@ public class TimeServerThread extends Thread {
             output.writeObject(dateTime);
 
             System.out.println("End handling: " + this.getName());
+            client.close();
         }
         catch (IOException | ClassNotFoundException e) {
             System.out.println(this.getName() + " error: " + e.getMessage());

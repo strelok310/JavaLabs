@@ -1,9 +1,6 @@
 package Labs;
 
-import Utils.NIO.SerializableData;
-import Utils.NIO.ShowDirectory;
-import Utils.NIO.TimeClientThread;
-import Utils.NIO.TimeServerThread;
+import Utils.NIO.*;
 
 import java.io.*;
 import java.net.*;
@@ -24,7 +21,7 @@ public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
 
     public static void main(String[] args) throws Exception {
-        /*task1();
+        task1();
         task2();
         task3();
         task4();
@@ -45,7 +42,7 @@ public class NIOLabs {
         task19();
         task20();
         task21();
-        task22();*/
+        task22();
         task23();
     }
 
@@ -615,23 +612,6 @@ public class NIOLabs {
         String strDefault = new String(byteDefault, Charset.defaultCharset());
         System.out.println("\nASCII to default: \"" + strDefault + "\"");
         System.out.println(Arrays.toString(byteDefault));
-
-
-        /*byte[] byteASCII = str.getBytes(StandardCharsets.US_ASCII);
-        String strASCII = new String(byteASCII, StandardCharsets.US_ASCII);
-        System.out.println(strASCII);
-
-        byte[] byteUTF8 = StandardCharsets.UTF_8.encode(CharBuffer.wrap(strASCII.toCharArray())).array();
-        String strUTF8 = new String(byteUTF8, StandardCharsets.UTF_8);
-        System.out.println(strUTF8);
-
-        byte[] byteASCII2 = StandardCharsets.US_ASCII.encode(CharBuffer.wrap(strUTF8.toCharArray())).array();
-        String strASCII2 = new String(byteASCII2, StandardCharsets.US_ASCII);
-        System.out.println(strASCII2);
-
-        byte[] byteDefault = Charset.defaultCharset().encode(CharBuffer.wrap(strASCII2.toCharArray())).array();
-        String strDefault = new String(byteDefault, Charset.defaultCharset());
-        System.out.println(strDefault);*/
     }
 
     /**
@@ -643,17 +623,23 @@ public class NIOLabs {
         System.out.println(LINE);
         System.out.println("23) Encode/Decode image to/from Base64\n");
 
-        Path path = Paths.get(ClassLoader.getSystemResource("image.jpg").toURI());
-        byte[] image = Files.readAllBytes(path);
+        Thread clientThread = new PictureClientThread("Client");
+        clientThread.start();
 
-        String encodedImage = Base64.getEncoder().encodeToString(image);
-        byte[] decodedImage = Base64.getDecoder().decode(encodedImage);
+        //Server side begin
 
-        Path file = Paths.get("N:\\Programming\\image.jpg");
-        Files.write(file, decodedImage);
+        try(ServerSocket server = new ServerSocket(1503)) {
+            new PictureServerThread("Client_" + LocalTime.now(), server.accept()).run();
+        }
 
-        Path tmp = Paths.get("N:\\Programming\\image.txt");
-        Files.write(tmp, encodedImage.getBytes());
+        //Server side end
+
+        try {
+            clientThread.join();
+        }
+        catch (InterruptedException e) {
+            System.out.println(clientThread.getName() + " finished");
+        }
     }
 
 }
