@@ -11,15 +11,17 @@ import java.util.Base64;
 
 public class PictureCharsetServerThread extends Thread {
     private Socket client;
+    private String filePath;
 
-    public PictureCharsetServerThread(String name, Socket client) {
+    public PictureCharsetServerThread(String name, Socket client, String filePath) {
         super(name);
         this.client = client;
+        this.filePath = filePath;
     }
 
     @Override
     public void run() {
-        try(DataInputStream input = new DataInputStream(client.getInputStream())) {
+        try(DataInputStream input = new DataInputStream(this.client.getInputStream())) {
 
             System.out.println("Start handling: " + this.getName());
 
@@ -31,11 +33,11 @@ public class PictureCharsetServerThread extends Thread {
             String encodedImage = new String(image, Charset.forName(charSet));
             image = Base64.getDecoder().decode(encodedImage);
 
-            Path path = Paths.get("D:/java_nio_tmp/image2.jpg");
+            Path path = Paths.get(this.filePath);
             Files.write(path, image);
 
             System.out.println("End handling: " + this.getName());
-            client.close();
+            this.client.close();
         }
         catch (IOException e) {
             System.out.println(this.getName() + " error: " + e.getMessage());

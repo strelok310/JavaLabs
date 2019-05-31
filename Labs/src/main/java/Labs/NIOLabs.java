@@ -22,11 +22,13 @@ public class NIOLabs {
     private static final String LINE = "\n==============================================================================================================\n";
 
     public static void main(String[] args) throws Exception {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
+        task1("D:/Tasks/MDE Framework"); //Show directory
+        task2("D:/Tasks/MDE Framework", ".ttcn"); //Show all files with extension
+        task3(new String[] {"D:/Chrome.txt",
+                            "D:/Steam.rar"});   //Check files
+        task4(new String[] {"D:/Chrome.txt",
+                            "D:/Info"});        //Check file/directory
+        task5("D:/Tasks/MDE Framework/MDE_Framework_PA15.zip"); //File
         task6();
         task7();
         task8();
@@ -40,23 +42,23 @@ public class NIOLabs {
         task16();
         task17();
         task18();
-        task19();
+        task19("D:/java_nio_tmp/"); //Path to save zip and unzip files
         task20();
         task21();
         task22();
-        task23();
-        task24();
+        task23("D:/java_nio_tmp/image.jpg"); //Path where image should be saved
+        task24("D:/java_nio_tmp/image2.jpg"); //Path where image should be saved
     }
 
     /**
      * Получить список всех файлов рекурсивно от заданного пути
      */
 
-    static void task1() throws IOException {
+    static void task1(String directory) throws IOException {
         System.out.println(LINE);
         System.out.println("1) Show all files in the specified path recursively\n");
 
-        Path path = Paths.get("D:/Tasks/MDE Framework");
+        Path path = Paths.get(directory);
         ShowDirectory showDirectory = new ShowDirectory();
         Files.walkFileTree(path, showDirectory);
     }
@@ -65,12 +67,12 @@ public class NIOLabs {
      * Получить список всех файлов рекурсивно от заданного пути с заданным форматом
      */
 
-    static void task2() throws IOException {
+    static void task2(String directory, String extension) throws IOException {
         System.out.println(LINE);
         System.out.println("2) Show all files in the specified path and specified extension recursively\n");
 
-        Path path = Paths.get("D:/Tasks/MDE Framework");
-        ShowDirectory showDirectory = new ShowDirectory(".ttcn");
+        Path path = Paths.get(directory);
+        ShowDirectory showDirectory = new ShowDirectory(extension);
         Files.walkFileTree(path, showDirectory);
     }
 
@@ -78,47 +80,42 @@ public class NIOLabs {
      * Проверить, есть ли файл по заданному пути
      */
 
-    static void task3() {
+    static void task3(String[] files) {
         System.out.println(LINE);
         System.out.println("3) Check whether file exist or not\n");
 
-        Path path = Paths.get("D:/Chrome.txt");
-        if (Files.exists(path)) System.out.println(path.getFileName().toString() + " exist");
-        else System.out.println(path.getFileName().toString() + " doesn't exist");
-
-        path = Paths.get("D:/Steam.rar");
-        if (Files.exists(path)) System.out.println(path.getFileName().toString() + " exist");
-        else System.out.println(path.getFileName().toString() + " doesn't exist");
+        for(String file : files) {
+            Path path = Paths.get(file);
+            if (Files.exists(path)) System.out.println(path.getFileName().toString() + " exist");
+            else System.out.println(path.getFileName().toString() + " doesn't exist");
+        }
     }
 
     /**
      * Проверить, файл или папка расположен по заданному пути?
      */
 
-    static void task4() {
+    static void task4(String[] files) {
         System.out.println(LINE);
         System.out.println("4) Check path whether it is a file or it is a folder\n");
 
-        Path path = Paths.get("D:/Chrome.txt");
-        if(Files.isDirectory(path)) System.out.println(path.getFileName().toString() + " folder");
-        else if(!Files.exists(path)) System.out.println(path.getFileName() + "doesn't exist");
-        else System.out.println(path.getFileName().toString() + " file");
-
-        path = Paths.get("D:/Info");
-        if(Files.isDirectory(path)) System.out.println(path.getFileName().toString() + " folder");
-        else if(!Files.exists(path)) System.out.println(path.getFileName() + "doesn't exist");
-        else System.out.println(path.getFileName().toString() + " file");
+        for(String file : files) {
+            Path path = Paths.get(file);
+            if(Files.isDirectory(path)) System.out.println(path.getFileName().toString() + " folder");
+            else if(!Files.exists(path)) System.out.println(path.getFileName() + "doesn't exist");
+            else System.out.println(path.getFileName().toString() + " file");
+        }
     }
 
     /**
      * Получить размер файла в килобайтах
      */
 
-    static void task5() throws IOException {
+    static void task5(String file) throws IOException {
         System.out.println(LINE);
         System.out.println("5) Get file size\n");
 
-        Path path = Paths.get("D:/Tasks/MDE Framework/MDE_Framework_PA15.zip");
+        Path path = Paths.get(file);
         if(!Files.exists(path)) System.out.println(path.getFileName() + "doesn't exist");
         else System.out.println(Math.round(Files.size(path) / 1024.0) + " Kb");
     }
@@ -194,7 +191,6 @@ public class NIOLabs {
         catch (IOException e) {
             throw e;
         }
-
     }
 
     /**
@@ -433,13 +429,13 @@ public class NIOLabs {
      * Расчитать размер каждого файла в архиве
      */
 
-    static void task19() throws IOException {
+    static void task19(String path) throws IOException {
         System.out.println(LINE);
         System.out.println("19) Compress/decompress some files to/from zip\n");
 
-        Path pathDir = Paths.get("D:/java_nio_tmp/");
+        if(!path.endsWith("/") || !path.endsWith("\\")) path = path + "/";
+        Path pathDir = Paths.get(path);
         if(!Files.exists(pathDir)) Files.createDirectory(pathDir);
-        Path path = Paths.get("D:/java_nio_tmp/tmp.zip");
         URL filePath;
 
         String[] files = {
@@ -455,7 +451,7 @@ public class NIOLabs {
         };
 
         System.out.println("Compressing files:");
-        try(FileOutputStream zipFile = new FileOutputStream("D:/java_nio_tmp/tmp.zip");
+        try(FileOutputStream zipFile = new FileOutputStream(path + "tmp.zip");
             ZipOutputStream zip = new ZipOutputStream(zipFile)) {
 
             for(String item : files) {
@@ -478,12 +474,12 @@ public class NIOLabs {
         System.out.println();
 
         System.out.println("Extracting files:");
-        try(FileInputStream zipFile = new FileInputStream("D:/java_nio_tmp/wtf.zip");
+        try(FileInputStream zipFile = new FileInputStream(path + "tmp.zip");
             ZipInputStream zip = new ZipInputStream(zipFile)) {
 
             ZipEntry entry;
             while((entry = zip.getNextEntry()) != null) {
-                try(FileOutputStream file = new FileOutputStream("D:/java_nio_tmp/" + entry.getName())) {
+                try(FileOutputStream file = new FileOutputStream(path + entry.getName())) {
                     int data;
                     while((data = zip.read()) != -1) file.write(data);
                 }
@@ -499,7 +495,7 @@ public class NIOLabs {
         System.out.println("Extraction completed");
 
         System.out.println("\nContent of zip file:");
-        ZipFile zf = new ZipFile("D:/java_nio_tmp/tmp.zip");
+        ZipFile zf = new ZipFile(path + "tmp.zip");
         zf.stream().forEach(x -> {
             long size = x.getSize();
             long csize = x.getCompressedSize();
@@ -621,7 +617,7 @@ public class NIOLabs {
      * Раскодируйте из Base64 и сохраните на диск. Убедитесь, что картинка не повреждена.
      */
 
-    static void task23() throws IOException {
+    static void task23(String filePath) throws IOException {
         System.out.println(LINE);
         System.out.println("23) Encode/Decode image to/from Base64\n");
 
@@ -631,7 +627,7 @@ public class NIOLabs {
         //Server side begin
 
         try(ServerSocket server = new ServerSocket(1503)) {
-            new PictureServerThread("Client_" + LocalTime.now(), server.accept()).run();
+            new PictureServerThread("Client_" + LocalTime.now(), server.accept(), filePath).run();
         }
 
         //Server side end
@@ -650,7 +646,7 @@ public class NIOLabs {
      * любой способ (через сокет, через файл, через строку).
      */
 
-    static void task24() throws IOException {
+    static void task24(String filePath) throws IOException {
         System.out.println(LINE);
         System.out.println("24) Encode/Decode image to/from Base64 with charset\n");
 
@@ -660,7 +656,7 @@ public class NIOLabs {
         //Server side begin
 
         try(ServerSocket server = new ServerSocket(1503)) {
-            new PictureCharsetServerThread("Client_" + LocalTime.now(), server.accept()).run();
+            new PictureCharsetServerThread("Client_" + LocalTime.now(), server.accept(), filePath).run();
         }
 
         //Server side end
@@ -674,39 +670,3 @@ public class NIOLabs {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
