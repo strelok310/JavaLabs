@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/human.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/person2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/person3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/person4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/person5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/person6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,51 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="657" column="5" lean-forward="true" selection-start-line="657" selection-start-column="5" selection-end-line="657" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9367">
-              <caret line="567" column="24" selection-start-line="567" selection-start-column="24" selection-end-line="567" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureClientThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
-              <folding>
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="10319">
+              <caret line="623" column="37" selection-start-line="623" selection-start-column="37" selection-end-line="623" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -71,8 +37,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="527">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/person5.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -128,15 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Utils/Matrix/Matrix.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/matrix_A.txt" />
-        <option value="$PROJECT_DIR$/src/main/resources/matrix_B.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/MatrixLabs.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/stream_example.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/Utils/Tmp.java" />
-        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Utils/Reflection/CustomInvocationHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/class.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Reflection/ReflectTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/wordCount.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
@@ -160,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Utils/Lambdas/TmpBiFunction.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Lambdas/TmpFunction.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Lambdas/LoggedFunction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/LambdaLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/ShowDirectory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java" />
@@ -173,12 +150,22 @@
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/PictureCharsetServerThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/PictureClientThread.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/concurrency.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/LambdaLabs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/xmlvalidation.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/human.xsd" />
+        <option value="$PROJECT_DIR$/src/main/resources/person.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/person2.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/person3.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/person4.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/person6.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/person5.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java" />
       </list>
     </option>
   </component>
@@ -212,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -274,13 +262,54 @@
             </path>
             <path>
               <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaLabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,7 +337,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NIOLabs">
+  <component name="RunManager" selected="Application.XMLValidation">
     <configuration name="LambdaLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.LambdaLabs" />
       <module name="Labs" />
@@ -348,8 +377,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamLabs2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labs.StreamLabs2" />
+    <configuration name="StreamLabs3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Labs.StreamLabs3" />
       <module name="Labs" />
       <extension name="coverage">
         <pattern>
@@ -361,8 +390,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamLabs3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labs.StreamLabs3" />
+    <configuration name="XMLValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Labs.XMLValidation" />
       <module name="Labs" />
       <extension name="coverage">
         <pattern>
@@ -378,16 +407,16 @@
       <item itemvalue="Application.LambdaLabs" />
       <item itemvalue="Application.NIOLabs" />
       <item itemvalue="Application.NewDateAPILabs" />
-      <item itemvalue="Application.StreamLabs2" />
       <item itemvalue="Application.StreamLabs3" />
+      <item itemvalue="Application.XMLValidation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.XMLValidation" />
+        <item itemvalue="Application.LambdaLabs" />
         <item itemvalue="Application.NIOLabs" />
         <item itemvalue="Application.StreamLabs3" />
         <item itemvalue="Application.NewDateAPILabs" />
-        <item itemvalue="Application.LambdaLabs" />
-        <item itemvalue="Application.StreamLabs2" />
       </list>
     </recent_temporary>
   </component>
@@ -417,7 +446,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20255864" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -426,7 +455,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33694476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -458,40 +487,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Formatter.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/PrintStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/DeflaterOutputStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/FileOutputStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/Deflater.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/CRC32.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/ZStreamRef.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/Inflater.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/FileInputStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/FilterInputStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/PushbackInputStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/nio/cs/UTF_8.class" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Object.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Objects.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Byte.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/ZipUtils.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/ZipEntry.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/ZipCoder.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/ZipInputStream.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/zip/ZipOutputStream.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/wordCount.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="68" selection-end-line="9" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/nio_characters.txt" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/Reader.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/time/ZoneOffset.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/CharBuffer.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/StandardCharsets.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/CharsetEncoder.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/image.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/TimeClientThread.java">
@@ -515,48 +514,7 @@
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/DataInputStream.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureCharsetClientThread.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureCharsetServerThread.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="122" column="72" selection-start-line="122" selection-start-column="56" selection-end-line="122" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10208.17054/Deadlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9367">
-          <caret line="567" column="24" selection-start-line="567" selection-start-column="24" selection-end-line="567" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureClientThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10208.17054/Deadlock.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -564,13 +522,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="1754" column="71" lean-forward="true" selection-start-line="1754" selection-start-column="71" selection-end-line="1754" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://N:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Integer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Streams/MyPair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -589,24 +541,224 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Annotations/AnnotationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/AnnotationLab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/UnaryOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/time/LocalDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="136" column="19" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NewDateAPILabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="192" column="33" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="134" column="29" lean-forward="true" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/LambdaLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Lambdas/CallFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/StandardCharsets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/ShowDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="657" column="5" lean-forward="true" selection-start-line="657" selection-start-column="5" selection-end-line="657" selection-end-column="5" />
+        <state relative-caret-position="9639">
+          <caret line="579" column="27" selection-start-line="579" selection-start-column="27" selection-end-line="579" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Streams/Combinatorics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10319">
+          <caret line="623" column="37" selection-start-line="623" selection-start-column="37" selection-end-line="623" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/human.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person4.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person6.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person5.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/javax/xml/validation/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="236" column="25" selection-start-line="236" selection-start-column="25" selection-end-line="236" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

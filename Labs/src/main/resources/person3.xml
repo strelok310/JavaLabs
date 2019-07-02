@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<human>
+    <name>John</name>
+    <age>150</age>
+    <weight>65.7</weight>
+    <height>178</height>
+    <birth>1986-03-15</birth>
+</human>
