@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed84f67-4082-4ffe-8742-468aca94316d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/SConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/SData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/SProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,57 +24,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/SData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/SProducer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/SConsumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="229" lean-forward="true" selection-start-line="229" selection-end-line="229" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/person5.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="289">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -124,11 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/wordCount.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/ReflectionLabs.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Utils/Streams3/Recursive.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Utils/Streams3/Combinatorics.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Streams2/FileTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Streams2/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Streams2/LoggedPerson.java" />
@@ -159,12 +153,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/NIO/PictureClientThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/concurrency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/StreamLabs2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/LambdaLabs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/xmlvalidation.java" />
         <option value="$PROJECT_DIR$/src/main/resources/human.xsd" />
         <option value="$PROJECT_DIR$/src/main/resources/person.xml" />
@@ -174,7 +166,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/person6.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/person5.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/SData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/SProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Utils/Concurrency/SConsumer.java" />
       </list>
     </option>
   </component>
@@ -208,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -319,6 +317,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,9 +345,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Safelock">
-    <configuration name="LambdaLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labs.LambdaLabs" />
+  <component name="RunManager" selected="Application.ConcurrencyLabs">
+    <configuration name="ConcurrencyLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Labs.ConcurrencyLabs" />
       <module name="Labs" />
       <extension name="coverage">
         <pattern>
@@ -360,8 +359,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NIOLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labs.NIOLabs" />
+    <configuration name="Deadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Utils.Concurrency.Deadlock" />
+      <module name="Labs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Utils.Concurrency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LambdaLabs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Labs.LambdaLabs" />
       <module name="Labs" />
       <extension name="coverage">
         <pattern>
@@ -386,19 +398,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamLabs3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labs.StreamLabs3" />
-      <module name="Labs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Labs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="XMLValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Labs.XMLValidation" />
       <module name="Labs" />
@@ -414,18 +413,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.LambdaLabs" />
-      <item itemvalue="Application.NIOLabs" />
-      <item itemvalue="Application.StreamLabs3" />
       <item itemvalue="Application.XMLValidation" />
       <item itemvalue="Application.Safelock" />
+      <item itemvalue="Application.Deadlock" />
+      <item itemvalue="Application.ConcurrencyLabs" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConcurrencyLabs" />
+        <item itemvalue="Application.Deadlock" />
         <item itemvalue="Application.Safelock" />
         <item itemvalue="Application.XMLValidation" />
         <item itemvalue="Application.LambdaLabs" />
-        <item itemvalue="Application.NIOLabs" />
-        <item itemvalue="Application.StreamLabs3" />
       </list>
     </recent_temporary>
   </component>
@@ -455,7 +454,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -464,7 +463,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33694476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -496,11 +495,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/Reader.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/time/ZoneOffset.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/CharBuffer.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/nio/charset/CharsetEncoder.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/image.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/TimeClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -549,7 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -627,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -669,31 +655,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9639">
-          <caret line="579" column="27" selection-start-line="579" selection-start-column="27" selection-end-line="579" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Streams/Combinatorics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -739,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/person5.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/javax/xml/validation/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -753,10 +711,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/NIO/PictureServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Labs/XMLValidation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="204">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/person5.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="54" selection-start-line="54" selection-end-line="54" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="227" column="33" lean-forward="true" selection-start-line="227" selection-start-column="33" selection-end-line="227" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Deadlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -765,22 +778,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/Safelock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+        <state relative-caret-position="-7">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/NIOLabs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/SProducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="229" lean-forward="true" selection-start-line="229" selection-end-line="229" />
+        <state relative-caret-position="238">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/SData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/StreamLabs3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Labs/ConcurrencyLabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/Concurrency/SConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
         </state>
       </provider>
     </entry>
