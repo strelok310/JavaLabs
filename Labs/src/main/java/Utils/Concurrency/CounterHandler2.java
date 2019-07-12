@@ -20,10 +20,12 @@ public class CounterHandler2 implements Runnable {
                 synchronized (sync) {
                     if(SData.counter == id) {
                         SData.counter++;
+                        sync.notifyAll();
                         break;
                     }
+                    sync.wait();
                 }
-                Thread.sleep(50);
+                //Thread.sleep(50);
             }
 
             barrier.await();
